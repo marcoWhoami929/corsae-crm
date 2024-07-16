@@ -81,7 +81,7 @@
                     <div id='medical_history'>
                         <div class="col-md-12">
 
-                        </div> 
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <div class="col-md-12">
@@ -97,7 +97,7 @@
         <?php if ($this->ion_auth->in_group(array('Doctor'))) { ?>
             <div class="state-overview col-md-5" style="padding: 23px 0px;">
                 <header class="panel-heading">
-                    <i class="fa fa-user"></i>  <?php echo lang('todays_appointments'); ?>
+                    <i class="fa fa-user"></i> <?php echo lang('todays_appointments'); ?>
                 </header>
                 <div class="panel-body">
                     <div class="adv-table editable-table ">
@@ -114,39 +114,37 @@
                             </thead>
                             <tbody>
 
-                            <style>
+                                <style>
+                                    .img_url {
+                                        height: 20px;
+                                        width: 20px;
+                                        background-size: contain;
+                                        max-height: 20px;
+                                        border-radius: 100px;
+                                    }
+                                </style>
 
-                                .img_url{
-                                    height:20px;
-                                    width:20px;
-                                    background-size: contain; 
-                                    max-height:20px;
-                                    border-radius: 100px;
+                                <?php
+                                foreach ($appointments as $appointment) {
+                                    if ($appointment->date == strtotime(date('Y-m-d'))) {
+                                ?>
+                                        <tr class="">
+                                            <td> <?php echo $this->db->get_where('patient', array('id' => $appointment->patient))->row()->id; ?></td>
+                                            <td> <?php echo $this->db->get_where('patient', array('id' => $appointment->patient))->row()->name; ?></td>
+
+                                            <td class="center"> <strong> <?php echo $appointment->s_time; ?> </strong></td>
+                                            <td>
+                                                <?php echo $appointment->status; ?>
+                                            </td>
+                                            <td>
+
+                                                <a class="btn detailsbutton" title="<?php lang('history') ?>" style="color: #fff;" href="patient/medicalHistory?id=<?php echo $appointment->patient ?>"><i class="fa fa-stethoscope"></i> <?php echo lang('history'); ?></a>
+                                            </td>
+                                        </tr>
+                                <?php
+                                    }
                                 }
-
-                            </style>
-
-                            <?php
-                            foreach ($appointments as $appointment) {
-                                if ($appointment->date == strtotime(date('Y-m-d'))) {
-                                    ?>
-                                    <tr class="">
-                                        <td> <?php echo $this->db->get_where('patient', array('id' => $appointment->patient))->row()->id; ?></td>
-                                        <td> <?php echo $this->db->get_where('patient', array('id' => $appointment->patient))->row()->name; ?></td>
-
-                                        <td class="center"> <strong> <?php echo $appointment->s_time; ?> </strong></td>
-                                        <td>
-                                            <?php echo $appointment->status; ?>
-                                        </td>
-                                        <td>
-
-                                            <a class="btn detailsbutton" title="<?php lang('history') ?>" style="color: #fff;" href="patient/medicalHistory?id=<?php echo $appointment->patient ?>"><i class="fa fa-stethoscope"></i> <?php echo lang('history'); ?></a>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                }
-                            }
-                            ?>
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -177,10 +175,10 @@
         <?php echo lang('patient'); ?> :  <?php echo $this->db->count_all('patient'); ?> <hr>
                                     </div>
                                     <div class="home_section">
-        <?php echo lang('appointment'); ?> :  <?php echo $this->db->count_all('appointment'); ?> <hr>
+        <?php echo 'Citas' ?> :  <?php echo $this->db->count_all('appointment'); ?> <hr>
                                     </div>
                                     <div class="home_section">
-        <?php echo lang('prescription'); ?> :  <?php echo $this->db->count_all('prescription'); ?> <hr>
+        <?php echo 'Recetas'; ?> :  <?php echo $this->db->count_all('prescription'); ?> <hr>
                                     </div>
                                     <div class="home_section">
         <?php echo lang('case_history'); ?> :  <?php echo $this->db->count_all('medical_history'); ?> <hr>
@@ -224,7 +222,7 @@
                                 <div class="symbol green">
                                     <i class="fa fa-user-md"></i>
                                 </div>
-                                <div class="value"> 
+                                <div class="value">
                                     <h3 class="">
                                         <?php echo $this->db->count_all('doctor'); ?>
                                     </h3>
@@ -268,7 +266,7 @@
                                     <h3 class="">
                                         <?php echo $this->db->count_all('appointment'); ?>
                                     </h3>
-                                    <p><?php echo lang('appointment'); ?></p>
+                                    <p><?php echo 'Citas' ?></p>
                                 </div>
                             </section>
                             <?php if ($this->ion_auth->in_group('admin')) { ?>
@@ -288,7 +286,7 @@
                                     <h3 class="">
                                         <?php echo $this->db->count_all('prescription'); ?>
                                     </h3>
-                                    <p><?php echo lang('prescription'); ?></p>
+                                    <p><?php echo 'Recetas' ?></p>
                                 </div>
                             </section>
                             <?php if ($this->ion_auth->in_group('admin')) { ?>
@@ -511,34 +509,41 @@
                     <div class="col-md-4">
                         <section class="panel">
                             <header class="panel-heading">
-                                <?php echo date('D d F, Y'); ?>
+
+                                <?php echo $currentDay; ?>
                             </header>
                             <div class="panel-body">
                                 <div class="home_section">
-                                    <?php echo lang('income'); ?> : <?php echo $settings->currency; ?><?php echo number_format($this_day['payment'], 2, '.', ','); ?> <hr>
-                                </div>                               
-                                <div class="home_section">
-                                    <?php echo lang('expense'); ?> : <?php echo $settings->currency; ?><?php echo number_format($this_day['expense'], 2, '.', ','); ?>  <hr>
+                                    <?php echo 'Ingresos' ?> : <?php echo $settings->currency; ?><?php echo number_format($this_day['payment'], 2, '.', ','); ?>
+                                    <hr>
                                 </div>
                                 <div class="home_section">
-                                    <?php echo lang('appointment'); ?> : <?php echo $this_day['appointment']; ?> <hr>
+                                    <?php echo 'Gastos' ?> : <?php echo $settings->currency; ?><?php echo number_format($this_day['expense'], 2, '.', ','); ?>
+                                    <hr>
+                                </div>
+                                <div class="home_section">
+                                    <?php echo 'Citas' ?> : <?php echo $this_day['appointment']; ?>
+                                    <hr>
                                 </div>
                             </div>
                         </section>
 
                         <section class="panel">
                             <header class="panel-heading">
-                                <?php echo date('F, Y'); ?>
+                                <?php echo $currentMonth; ?>
                             </header>
                             <div class="panel-body">
                                 <div class="home_section">
-                                    <?php echo lang('income'); ?> : <?php echo $settings->currency; ?><?php echo number_format($this_month['payment'], 2, '.', ','); ?> <hr>
+                                    <?php echo 'Ingresos' ?> : <?php echo $settings->currency; ?><?php echo number_format($this_month['payment'], 2, '.', ','); ?>
+                                    <hr>
                                 </div>
                                 <div class="home_section">
-                                    <?php echo lang('expense'); ?> : <?php echo $settings->currency; ?><?php echo number_format($this_month['expense'], 2, '.', ','); ?> <hr>
+                                    <?php echo 'Gastos' ?> : <?php echo $settings->currency; ?><?php echo number_format($this_month['expense'], 2, '.', ','); ?>
+                                    <hr>
                                 </div>
                                 <div class="home_section">
-                                    <?php echo lang('appointment'); ?> : <?php echo $this_month['appointment']; ?> <hr>
+                                    <?php echo 'Citas' ?> : <?php echo $this_month['appointment']; ?>
+                                    <hr>
                                 </div>
                             </div>
                         </section>
@@ -550,13 +555,16 @@
                             </header>
                             <div class="panel-body">
                                 <div class="home_section">
-                                    <?php echo lang('income'); ?> : <?php echo $settings->currency; ?><?php echo number_format($this_year['payment'], 2, '.', ','); ?> <hr>
+                                    <?php echo 'Ingresos' ?> : <?php echo $settings->currency; ?><?php echo number_format($this_year['payment'], 2, '.', ','); ?>
+                                    <hr>
                                 </div>
                                 <div class="home_section">
-                                    <?php echo lang('expense'); ?> : <?php echo $settings->currency; ?><?php echo number_format($this_year['expense'], 2, '.', ','); ?> <hr>
+                                    <?php echo 'Gastos' ?> : <?php echo $settings->currency; ?><?php echo number_format($this_year['expense'], 2, '.', ','); ?>
+                                    <hr>
                                 </div>
                                 <div class="home_section">
-                                    <?php echo lang('appointment'); ?> : <?php echo $this_year['appointment']; ?> <hr>
+                                    <?php echo 'Citas' ?> : <?php echo $this_year['appointment']; ?>
+                                    <hr>
                                 </div>
                             </div>
                         </section>
@@ -578,22 +586,21 @@
 
 
         <style>
-
-            table{
+            table {
                 box-shadow: none;
             }
 
-            .fc-head{
+            .fc-head {
 
                 box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
 
             }
 
-            .panel-body{
+            .panel-body {
                 background: #fff;
             }
 
-            thead{
+            thead {
                 background: #fff;
             }
 
@@ -611,21 +618,19 @@
                 text-align: center;
             }
 
-            .add_patient{
+            .add_patient {
                 background: #009988;
             }
 
-            .add_appointment{
+            .add_appointment {
                 background: #f8d347;
             }
 
-            .add_prescription{
+            .add_prescription {
                 background: blue;
             }
 
-            .add_lab_report{
-
-            }
+            .add_lab_report {}
 
             .y-axis li span {
                 display: block;
@@ -634,30 +639,33 @@
                 width: 40px;
             }
 
-            .sale_color{
+            .sale_color {
                 background: #69D2E7 !important;
                 padding: 10px !important;
                 font-size: 5px;
                 margin-right: 10px;
             }
 
-            .expense_color{
+            .expense_color {
                 background: #F38630 !important;
                 padding: 10px !important;
                 font-size: 5px;
                 margin-right: 10px;
             }
 
-            audio, canvas, progress, video {
+            audio,
+            canvas,
+            progress,
+            video {
                 display: inline-block;
                 vertical-align: baseline;
                 width: 100% !important;
                 height: 101% !important;
                 margin-bottom: 18%;
-            }  
+            }
 
 
-            .panel-heading{
+            .panel-heading {
                 margin-top: 0px;
             }
 
@@ -667,8 +675,6 @@
                 padding: 11px 20px 0px 10px !important;
                 padding: 0px 35px 0px 25px !important;
             }
-
-
         </style>
 
 
@@ -689,12 +695,16 @@
 
 
 <script type="text/javascript">
-    google.charts.load("current", {packages: ["corechart"]});
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
     google.charts.setOnLoadCallback(drawChart);
+
     function drawChart() {
 
-        var months = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"];
+        var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
 
         var d = new Date();
         var selectedMonthName = months[d.getMonth()] + ', ' + d.getFullYear();
@@ -702,20 +712,20 @@
 
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            ['Income', <?php
-        if (!empty($this_month['payment'])) {
-            echo $this_month['payment'];
-        } else {
-            echo '0';
-        }
-        ?>],
-            ['Expense', <?php
-        if (!empty($this_month['expense'])) {
-            echo $this_month['expense'];
-        } else {
-            echo '0';
-        }
-        ?>],
+            ['Ingresos', <?php
+                            if (!empty($this_month['payment'])) {
+                                echo $this_month['payment'];
+                            } else {
+                                echo '0';
+                            }
+                            ?>],
+            ['Gastos', <?php
+                        if (!empty($this_month['expense'])) {
+                            echo $this_month['expense'];
+                        } else {
+                            echo '0';
+                        }
+                        ?>],
         ]);
 
         var options = {
@@ -732,12 +742,16 @@
 
 
 <script type="text/javascript">
-    google.charts.load("current", {packages: ["corechart"]});
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
     google.charts.setOnLoadCallback(drawChart);
+
     function drawChart() {
 
-        var months = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"];
+        var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
 
         var d = new Date();
         var selectedMonthName = months[d.getMonth()] + ', ' + d.getFullYear();
@@ -745,19 +759,19 @@
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
             ['Treated', <?php
-        if (!empty($this_month['appointment_treated'])) {
-            echo $this_month['appointment_treated'];
-        } else {
-            echo '0';
-        }
-        ?>],
+                        if (!empty($this_month['appointment_treated'])) {
+                            echo $this_month['appointment_treated'];
+                        } else {
+                            echo '0';
+                        }
+                        ?>],
             ['cancelled', <?php
-        if (!empty($this_month['appointment_cancelled'])) {
-            echo $this_month['appointment_cancelled'];
-        } else {
-            echo '0';
-        }
-        ?>],
+                            if (!empty($this_month['appointment_cancelled'])) {
+                                echo $this_month['appointment_cancelled'];
+                            } else {
+                                echo '0';
+                            }
+                            ?>],
         ]);
 
         var options = {
@@ -773,45 +787,46 @@
 
 
 <script type="text/javascript">
-    google.charts.load('current', {'packages': ['corechart']});
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
     google.charts.setOnLoadCallback(drawVisualization);
 
     function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-            ['Month', 'Income', 'Expense'],
-            ['Jan', <?php echo $this_year['payment_per_month']['january']; ?>, <?php echo $this_year['expense_per_month']['january']; ?>],
+            ['Month', 'Ingresos', 'Gastos'],
+            ['Ene', <?php echo $this_year['payment_per_month']['january']; ?>, <?php echo $this_year['expense_per_month']['january']; ?>],
             ['Feb', <?php echo $this_year['payment_per_month']['february']; ?>, <?php echo $this_year['expense_per_month']['february']; ?>],
             ['Mar', <?php echo $this_year['payment_per_month']['march']; ?>, <?php echo $this_year['expense_per_month']['march']; ?>],
-            ['Apr', <?php echo $this_year['payment_per_month']['april']; ?>, <?php echo $this_year['expense_per_month']['april']; ?>],
+            ['Abr', <?php echo $this_year['payment_per_month']['april']; ?>, <?php echo $this_year['expense_per_month']['april']; ?>],
             ['May', <?php echo $this_year['payment_per_month']['may']; ?>, <?php echo $this_year['expense_per_month']['may']; ?>],
-            ['June', <?php echo $this_year['payment_per_month']['june']; ?>, <?php echo $this_year['expense_per_month']['june']; ?>],
-            ['July', <?php echo $this_year['payment_per_month']['july']; ?>, <?php echo $this_year['expense_per_month']['july']; ?>],
-            ['Aug', <?php echo $this_year['payment_per_month']['august']; ?>, <?php echo $this_year['expense_per_month']['august']; ?>],
+            ['Jun', <?php echo $this_year['payment_per_month']['june']; ?>, <?php echo $this_year['expense_per_month']['june']; ?>],
+            ['Jul', <?php echo $this_year['payment_per_month']['july']; ?>, <?php echo $this_year['expense_per_month']['july']; ?>],
+            ['Ago', <?php echo $this_year['payment_per_month']['august']; ?>, <?php echo $this_year['expense_per_month']['august']; ?>],
             ['Sep', <?php echo $this_year['payment_per_month']['september']; ?>, <?php echo $this_year['expense_per_month']['september']; ?>],
             ['Oct', <?php echo $this_year['payment_per_month']['october']; ?>, <?php echo $this_year['expense_per_month']['october']; ?>],
             ['Nov', <?php echo $this_year['payment_per_month']['november']; ?>, <?php echo $this_year['expense_per_month']['november']; ?>],
-            ['Dec', <?php echo $this_year['payment_per_month']['december']; ?>, <?php echo $this_year['expense_per_month']['december']; ?>],
+            ['Dic', <?php echo $this_year['payment_per_month']['december']; ?>, <?php echo $this_year['expense_per_month']['december']; ?>],
         ]);
 
         var options = {
             title: new Date().getFullYear() + ' <?php echo lang('per_month_income_expense'); ?>',
-            vAxis: {title: '<?php echo $settings->currency; ?>'},
-            hAxis: {title: '<?php echo lang('months'); ?>'},
+            vAxis: {
+                title: '<?php echo $settings->currency; ?>'
+            },
+            hAxis: {
+                title: '<?php echo lang('months'); ?>'
+            },
             seriesType: 'bars',
-            series: {5: {type: 'line'}}
+            series: {
+                5: {
+                    type: 'line'
+                }
+            }
         };
 
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
         chart.draw(data, options);
     }
 </script>
-
-
-
-
-
-
-
-
-

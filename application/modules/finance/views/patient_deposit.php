@@ -454,9 +454,9 @@
                         <?php $twocheckout = $this->db->get_where('paymentGateway', array('name =' => '2Checkout'))->row(); ?>
                         <button type="submit" name="pay_now" id="submit-btn" class="btn btn-info row pull-right" <?php if ($settings->payment_gateway == 'Stripe') {
                                                                                                                     ?>onClick="stripePay(event);" <?php }
-                                                            ?><?php if ($settings->payment_gateway == '2Checkout' && $twocheckout->status == 'live') {
-                            ?>onClick="twoCheckoutPay(event);" <?php }
-                                                                ?>> <?php echo lang('submit'); ?></button>
+                                                                                                                                                    ?><?php if ($settings->payment_gateway == '2Checkout' && $twocheckout->status == 'live') {
+                                                                                                                                                        ?>onClick="twoCheckoutPay(event);" <?php }
+                                                                                                    ?>> <?php echo lang('submit'); ?></button>
                     </div>
                 </form>
             </div>
@@ -592,7 +592,7 @@
                     <div class="form-group cardsubmit  right-six col-md-12 hidden">
                         <button type="submit" name="pay_now" id="submit-btn1" class="btn btn-info row pull-right" <?php if ($settings->payment_gateway == 'Stripe') {
                                                                                                                     ?>onClick="stripePay1(event);" <?php }
-                                                            ?>> <?php echo lang('submit'); ?></button>
+                                                                                                                                                    ?>> <?php echo lang('submit'); ?></button>
                     </div>
                 </form>
             </div>
@@ -613,7 +613,7 @@
                     <div class="col-lg-12 clearfix">
                         <a href="finance/addPaymentByPatientView?id=<?php echo $patient->id; ?>&type=gen">
                             <div class="col-lg-6">
-                                <div class="flat-carousal" style="background: #39B27C;">
+                                <div class="flat-carousal" style="background: #D74A37;">
                                     <div id="owl-demo" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
                                         <?php echo lang('add_general_payment'); ?> <i style="float: right; font-size: 18px;" class="fa fa-arrow-circle-o-right"></i>
                                     </div>
@@ -622,7 +622,7 @@
                         </a>
                         <a href="finance/addPaymentByPatientView?id=<?php echo $patient->id; ?>&type=ot">
                             <div class="col-lg-6">
-                                <div class="flat-carousal" style="background: #39B27C;">
+                                <div class="flat-carousal" style="background: #D74A37;">
                                     <div id="owl-demo" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
                                         <?php echo lang('add_ot_payment'); ?> <i style="float: right; font-size: 18px;" class="fa fa-arrow-circle-o-right"></i>
                                     </div>

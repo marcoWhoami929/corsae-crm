@@ -11,7 +11,7 @@
                 else
                     echo lang('add_doctor');
                 ?>
-            </header> 
+            </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
@@ -27,24 +27,24 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><?php echo lang('name'); ?></label>
                                 <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='<?php
-                                if (!empty($setval)) {
-                                    echo set_value('name');
-                                }
-                                if (!empty($doctor->name)) {
-                                    echo $doctor->name;
-                                }
-                                ?>' placeholder="">
+                                                                                                                    if (!empty($setval)) {
+                                                                                                                        echo set_value('name');
+                                                                                                                    }
+                                                                                                                    if (!empty($doctor->name)) {
+                                                                                                                        echo $doctor->name;
+                                                                                                                    }
+                                                                                                                    ?>' placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
                                 <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='<?php
-                                if (!empty($setval)) {
-                                    echo set_value('email');
-                                }
-                                if (!empty($doctor->email)) {
-                                    echo $doctor->email;
-                                }
-                                ?>' placeholder="">
+                                                                                                                    if (!empty($setval)) {
+                                                                                                                        echo set_value('email');
+                                                                                                                    }
+                                                                                                                    if (!empty($doctor->email)) {
+                                                                                                                        echo $doctor->email;
+                                                                                                                    }
+                                                                                                                    ?>' placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><?php echo lang('password'); ?></label>
@@ -54,46 +54,46 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><?php echo lang('address'); ?></label>
                                 <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='<?php
-                                if (!empty($setval)) {
-                                    echo set_value('address');
-                                }
-                                if (!empty($doctor->address)) {
-                                    echo $doctor->address;
-                                }
-                                ?>' placeholder="">
+                                                                                                                        if (!empty($setval)) {
+                                                                                                                            echo set_value('address');
+                                                                                                                        }
+                                                                                                                        if (!empty($doctor->address)) {
+                                                                                                                            echo $doctor->address;
+                                                                                                                        }
+                                                                                                                        ?>' placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
                                 <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='<?php
-                                if (!empty($setval)) {
-                                    echo set_value('phone');
-                                }
-                                if (!empty($doctor->phone)) {
-                                    echo $doctor->phone;
-                                }
-                                ?>' placeholder="">
+                                                                                                                    if (!empty($setval)) {
+                                                                                                                        echo set_value('phone');
+                                                                                                                    }
+                                                                                                                    if (!empty($doctor->phone)) {
+                                                                                                                        echo $doctor->phone;
+                                                                                                                    }
+                                                                                                                    ?>' placeholder="">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><?php echo lang('profile'); ?></label>
                                 <input type="text" class="form-control" name="profile" id="exampleInputEmail1" value='<?php
-                                if (!empty($setval)) {
-                                    echo set_value('profile');
-                                }
-                                if (!empty($doctor->profile)) {
-                                    echo $doctor->profile;
-                                }
-                                ?>' placeholder="">
+                                                                                                                        if (!empty($setval)) {
+                                                                                                                            echo set_value('profile');
+                                                                                                                        }
+                                                                                                                        if (!empty($doctor->profile)) {
+                                                                                                                            echo $doctor->profile;
+                                                                                                                        }
+                                                                                                                        ?>' placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><?php echo lang('image'); ?></label>
                                 <input type="file" name="img_url">
                             </div>
                             <input type="hidden" name="id" value='<?php
-                            if (!empty($doctor->id)) {
-                                echo $doctor->id;
-                            }
-                            ?>'>
+                                                                    if (!empty($doctor->id)) {
+                                                                        echo $doctor->id;
+                                                                    }
+                                                                    ?>'>
                             <button type="submit" name="submit" class="btn btn-info"><?php echo lang('submit'); ?></button>
                         </form>
                     </div>

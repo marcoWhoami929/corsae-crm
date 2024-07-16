@@ -11,7 +11,7 @@
             <div class="panel-body text-center">
                 <canvas id="pie" height="300" width="400"></canvas>
                 <span class="sale_color"> </span> Sales: <?php echo $settings->currency . ' ' . $this_month[0]; ?>
-                <span class="expense_color"> </span>Expense: <?php echo $settings->currency . ' ' . $this_month[1]; ?></span>
+                <span class="expense_color"> </span>Gastos: <?php echo $settings->currency . ' ' . $this_month[1]; ?></span>
             </div>
         </section>
 
@@ -169,10 +169,10 @@
                                                                                                             echo array_sum($jan2);
                                                                                                         }
                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jan2)) {
-                                                                                        echo 'height:' . array_sum($jan2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>"></div>
+                                                                                                                                                                if (!empty($jan2)) {
+                                                                                                                                                                    echo 'height:' . array_sum($jan2) * 100 / $round2;
+                                                                                                                                                                }
+                                                                                                                                                                ?>"></div>
                 </div>
                 <div class="bar ">
                     <div class="title">FEB</div>
@@ -181,10 +181,10 @@
                                                                                                             echo array_sum($feb2);
                                                                                                         }
                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($feb2)) {
-                                                                                        echo 'height:' . array_sum($feb2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                if (!empty($feb2)) {
+                                                                                                                                                                    echo 'height:' . array_sum($feb2) * 100 / $round2;
+                                                                                                                                                                }
+                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">MAR</div>
@@ -193,10 +193,10 @@
                                                                                                             echo array_sum($mar2);
                                                                                                         }
                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($mar2)) {
-                                                                                        echo 'height:' . array_sum($mar2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%"></div>
+                                                                                                                                                                if (!empty($mar2)) {
+                                                                                                                                                                    echo 'height:' . array_sum($mar2) * 100 / $round2;
+                                                                                                                                                                }
+                                                                                                                                                                ?>%"></div>
                 </div>
                 <div class="bar ">
                     <div class="title">APR</div>
@@ -205,10 +205,10 @@
                                                                                                             echo array_sum($apr2);
                                                                                                         }
                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($apr2)) {
-                                                                                        echo 'height:' . array_sum($apr2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                if (!empty($apr2)) {
+                                                                                                                                                                    echo 'height:' . array_sum($apr2) * 100 / $round2;
+                                                                                                                                                                }
+                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar">
                         <div class="title">MAY</div>
@@ -217,10 +217,10 @@
                                                                                                                 echo array_sum($may2);
                                                                                                             }
                                                                                                             ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($may2)) {
-                                                                                        echo 'height:' . array_sum($may2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                    if (!empty($may2)) {
+                                                                                                                                                                        echo 'height:' . array_sum($may2) * 100 / $round2;
+                                                                                                                                                                    }
+                                                                                                                                                                    ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">JUN</div>
@@ -229,10 +229,10 @@
                                                                                                                 echo array_sum($jun2);
                                                                                                             }
                                                                                                             ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jun2)) {
-                                                                                        echo 'height:' . array_sum($jun2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                    if (!empty($jun2)) {
+                                                                                                                                                                        echo 'height:' . array_sum($jun2) * 100 / $round2;
+                                                                                                                                                                    }
+                                                                                                                                                                    ?>%""></div>
                         </div>
                         <div class=" bar">
                             <div class="title">JUL</div>
@@ -241,10 +241,10 @@
                                                                                                                     echo array_sum($jul2);
                                                                                                                 }
                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jul2)) {
-                                                                                        echo 'height:' . array_sum($jul2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                        if (!empty($jul2)) {
+                                                                                                                                                                            echo 'height:' . array_sum($jul2) * 100 / $round2;
+                                                                                                                                                                        }
+                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">AUG</div>
@@ -253,10 +253,10 @@
                                                                                                                     echo array_sum($aug2);
                                                                                                                 }
                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($aug2)) {
-                                                                                        echo 'height:' . array_sum($aug2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                        if (!empty($aug2)) {
+                                                                                                                                                                            echo 'height:' . array_sum($aug2) * 100 / $round2;
+                                                                                                                                                                        }
+                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">SEP</div>
@@ -265,10 +265,10 @@
                                                                                                                     echo array_sum($sep2);
                                                                                                                 }
                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($sep2)) {
-                                                                                        echo 'height:' . array_sum($sep2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                        if (!empty($sep2)) {
+                                                                                                                                                                            echo 'height:' . array_sum($sep2) * 100 / $round2;
+                                                                                                                                                                        }
+                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">OCT</div>
@@ -277,10 +277,10 @@
                                                                                                                     echo array_sum($oct2);
                                                                                                                 }
                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($oct2)) {
-                                                                                        echo 'height:' . array_sum($oct2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                        if (!empty($oct2)) {
+                                                                                                                                                                            echo 'height:' . array_sum($oct2) * 100 / $round2;
+                                                                                                                                                                        }
+                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">NOV</div>
@@ -289,10 +289,10 @@
                                                                                                                     echo array_sum($nov2);
                                                                                                                 }
                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($nov2)) {
-                                                                                        echo 'height:' . array_sum($nov2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                        if (!empty($nov2)) {
+                                                                                                                                                                            echo 'height:' . array_sum($nov2) * 100 / $round2;
+                                                                                                                                                                        }
+                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">DEC</div>
@@ -301,10 +301,10 @@
                                                                                                                     echo array_sum($dec2);
                                                                                                                 }
                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($dec2)) {
-                                                                                        echo 'height:' . array_sum($dec2) * 100 / $round2;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                        if (!empty($dec2)) {
+                                                                                                                                                                            echo 'height:' . array_sum($dec2) * 100 / $round2;
+                                                                                                                                                                        }
+                                                                                                                                                                        ?>%""></div>
                         </div>
                     </div>
                     <!--custom chart end-->
@@ -460,10 +460,10 @@
                                                                                                                                     echo array_sum($jan1);
                                                                                                                                 }
                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jan1)) {
-                                                                                        echo 'height:' . array_sum($jan1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>"></div>
+                                                                                                                                                                                        if (!empty($jan1)) {
+                                                                                                                                                                                            echo 'height:' . array_sum($jan1) * 100 / $round1;
+                                                                                                                                                                                        }
+                                                                                                                                                                                        ?>"></div>
                                         </div>
                                         <div class="bar ">
                                             <div class="title">FEB</div>
@@ -472,10 +472,10 @@
                                                                                                                                     echo array_sum($feb1);
                                                                                                                                 }
                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($feb1)) {
-                                                                                        echo 'height:' . array_sum($feb1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                        if (!empty($feb1)) {
+                                                                                                                                                                                            echo 'height:' . array_sum($feb1) * 100 / $round1;
+                                                                                                                                                                                        }
+                                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">MAR</div>
@@ -484,10 +484,10 @@
                                                                                                                                     echo array_sum($mar1);
                                                                                                                                 }
                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($mar1)) {
-                                                                                        echo 'height:' . array_sum($mar1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%"></div>
+                                                                                                                                                                                        if (!empty($mar1)) {
+                                                                                                                                                                                            echo 'height:' . array_sum($mar1) * 100 / $round1;
+                                                                                                                                                                                        }
+                                                                                                                                                                                        ?>%"></div>
                                         </div>
                                         <div class="bar ">
                                             <div class="title">APR</div>
@@ -496,10 +496,10 @@
                                                                                                                                     echo array_sum($apr1);
                                                                                                                                 }
                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($apr1)) {
-                                                                                        echo 'height:' . array_sum($apr1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                        if (!empty($apr1)) {
+                                                                                                                                                                                            echo 'height:' . array_sum($apr1) * 100 / $round1;
+                                                                                                                                                                                        }
+                                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar">
                                                 <div class="title">MAY</div>
@@ -508,10 +508,10 @@
                                                                                                                                         echo array_sum($may1);
                                                                                                                                     }
                                                                                                                                     ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($may1)) {
-                                                                                        echo 'height:' . array_sum($may1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                            if (!empty($may1)) {
+                                                                                                                                                                                                echo 'height:' . array_sum($may1) * 100 / $round1;
+                                                                                                                                                                                            }
+                                                                                                                                                                                            ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">JUN</div>
@@ -520,10 +520,10 @@
                                                                                                                                         echo array_sum($jun1);
                                                                                                                                     }
                                                                                                                                     ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jun1)) {
-                                                                                        echo 'height:' . array_sum($jun1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                            if (!empty($jun1)) {
+                                                                                                                                                                                                echo 'height:' . array_sum($jun1) * 100 / $round1;
+                                                                                                                                                                                            }
+                                                                                                                                                                                            ?>%""></div>
                         </div>
                         <div class=" bar">
                                                     <div class="title">JUL</div>
@@ -532,10 +532,10 @@
                                                                                                                                             echo array_sum($jul1);
                                                                                                                                         }
                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jul1)) {
-                                                                                        echo 'height:' . array_sum($jul1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                if (!empty($jul1)) {
+                                                                                                                                                                                                    echo 'height:' . array_sum($jul1) * 100 / $round1;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">AUG</div>
@@ -544,10 +544,10 @@
                                                                                                                                             echo array_sum($aug1);
                                                                                                                                         }
                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($aug1)) {
-                                                                                        echo 'height:' . array_sum($aug1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                if (!empty($aug1)) {
+                                                                                                                                                                                                    echo 'height:' . array_sum($aug1) * 100 / $round1;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">SEP</div>
@@ -556,10 +556,10 @@
                                                                                                                                             echo array_sum($sep1);
                                                                                                                                         }
                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($sep1)) {
-                                                                                        echo 'height:' . array_sum($sep1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                if (!empty($sep1)) {
+                                                                                                                                                                                                    echo 'height:' . array_sum($sep1) * 100 / $round1;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">OCT</div>
@@ -568,10 +568,10 @@
                                                                                                                                             echo array_sum($oct1);
                                                                                                                                         }
                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($oct1)) {
-                                                                                        echo 'height:' . array_sum($oct1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                if (!empty($oct1)) {
+                                                                                                                                                                                                    echo 'height:' . array_sum($oct1) * 100 / $round1;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">NOV</div>
@@ -580,10 +580,10 @@
                                                                                                                                             echo array_sum($nov1);
                                                                                                                                         }
                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($nov1)) {
-                                                                                        echo 'height:' . array_sum($nov1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                if (!empty($nov1)) {
+                                                                                                                                                                                                    echo 'height:' . array_sum($nov1) * 100 / $round1;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">DEC</div>
@@ -592,10 +592,10 @@
                                                                                                                                             echo array_sum($dec1);
                                                                                                                                         }
                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($dec1)) {
-                                                                                        echo 'height:' . array_sum($dec1) * 100 / $round1;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                if (!empty($dec1)) {
+                                                                                                                                                                                                    echo 'height:' . array_sum($dec1) * 100 / $round1;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                ?>%""></div>
                         </div>
                     </div>
                     <!--custom chart end-->
@@ -750,10 +750,10 @@
                                                                                                                                                             echo array_sum($jan);
                                                                                                                                                         }
                                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jan)) {
-                                                                                        echo 'height:' . array_sum($jan) * 100 / $round;
-                                                                                    }
-                                                                                    ?>"></div>
+                                                                                                                                                                                                                if (!empty($jan)) {
+                                                                                                                                                                                                                    echo 'height:' . array_sum($jan) * 100 / $round;
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                ?>"></div>
                                                                 </div>
                                                                 <div class="bar ">
                                                                     <div class="title">FEB</div>
@@ -762,10 +762,10 @@
                                                                                                                                                             echo array_sum($feb);
                                                                                                                                                         }
                                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($feb)) {
-                                                                                        echo 'height:' . array_sum($feb) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                if (!empty($feb)) {
+                                                                                                                                                                                                                    echo 'height:' . array_sum($feb) * 100 / $round;
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">MAR</div>
@@ -774,10 +774,10 @@
                                                                                                                                                             echo array_sum($mar);
                                                                                                                                                         }
                                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($mar)) {
-                                                                                        echo 'height:' . array_sum($mar) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%"></div>
+                                                                                                                                                                                                                if (!empty($mar)) {
+                                                                                                                                                                                                                    echo 'height:' . array_sum($mar) * 100 / $round;
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                ?>%"></div>
                                                                 </div>
                                                                 <div class="bar ">
                                                                     <div class="title">APR</div>
@@ -786,10 +786,10 @@
                                                                                                                                                             echo array_sum($apr);
                                                                                                                                                         }
                                                                                                                                                         ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($apr)) {
-                                                                                        echo 'height:' . array_sum($apr) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                if (!empty($apr)) {
+                                                                                                                                                                                                                    echo 'height:' . array_sum($apr) * 100 / $round;
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                ?>%""></div>
                         </div>
                         <div class=" bar">
                                                                         <div class="title">MAY</div>
@@ -798,10 +798,10 @@
                                                                                                                                                                 echo array_sum($may);
                                                                                                                                                             }
                                                                                                                                                             ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($may)) {
-                                                                                        echo 'height:' . array_sum($may) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                    if (!empty($may)) {
+                                                                                                                                                                                                                        echo 'height:' . array_sum($may) * 100 / $round;
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                    ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">JUN</div>
@@ -810,10 +810,10 @@
                                                                                                                                                                 echo array_sum($jun);
                                                                                                                                                             }
                                                                                                                                                             ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jun)) {
-                                                                                        echo 'height:' . array_sum($jun) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                    if (!empty($jun)) {
+                                                                                                                                                                                                                        echo 'height:' . array_sum($jun) * 100 / $round;
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                    ?>%""></div>
                         </div>
                         <div class=" bar">
                                                                             <div class="title">JUL</div>
@@ -822,10 +822,10 @@
                                                                                                                                                                     echo array_sum($jul);
                                                                                                                                                                 }
                                                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($jul)) {
-                                                                                        echo 'height:' . array_sum($jul) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%"></div>
+                                                                                                                                                                                                                        if (!empty($jul)) {
+                                                                                                                                                                                                                            echo 'height:' . array_sum($jul) * 100 / $round;
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        ?>%"></div>
                                                                         </div>
                                                                         <div class="bar ">
                                                                             <div class="title">AUG</div>
@@ -834,10 +834,10 @@
                                                                                                                                                                     echo array_sum($aug);
                                                                                                                                                                 }
                                                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($aug)) {
-                                                                                        echo 'height:' . array_sum($aug) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                        if (!empty($aug)) {
+                                                                                                                                                                                                                            echo 'height:' . array_sum($aug) * 100 / $round;
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">SEP</div>
@@ -846,10 +846,10 @@
                                                                                                                                                                     echo array_sum($sep);
                                                                                                                                                                 }
                                                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($sep)) {
-                                                                                        echo 'height:' . array_sum($sep) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                        if (!empty($sep)) {
+                                                                                                                                                                                                                            echo 'height:' . array_sum($sep) * 100 / $round;
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">OCT</div>
@@ -858,10 +858,10 @@
                                                                                                                                                                     echo array_sum($oct);
                                                                                                                                                                 }
                                                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($oct)) {
-                                                                                        echo 'height:' . array_sum($oct) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                        if (!empty($oct)) {
+                                                                                                                                                                                                                            echo 'height:' . array_sum($oct) * 100 / $round;
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">NOV</div>
@@ -870,10 +870,10 @@
                                                                                                                                                                     echo array_sum($nov);
                                                                                                                                                                 }
                                                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($nov)) {
-                                                                                        echo 'height:' . array_sum($nov) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                        if (!empty($nov)) {
+                                                                                                                                                                                                                            echo 'height:' . array_sum($nov) * 100 / $round;
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        ?>%""></div>
                         </div>
                         <div class=" bar ">
                             <div class=" title">DEC</div>
@@ -882,10 +882,10 @@
                                                                                                                                                                     echo array_sum($dec);
                                                                                                                                                                 }
                                                                                                                                                                 ?>" data-toggle="tooltip" data-placement="top" style="<?php
-                                                                                    if (!empty($dec)) {
-                                                                                        echo 'height:' . array_sum($dec) * 100 / $round;
-                                                                                    }
-                                                                                    ?>%""></div>
+                                                                                                                                                                                                                        if (!empty($dec)) {
+                                                                                                                                                                                                                            echo 'height:' . array_sum($dec) * 100 / $round;
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        ?>%""></div>
                         </div>
                     </div>
                     <!--custom chart end-->

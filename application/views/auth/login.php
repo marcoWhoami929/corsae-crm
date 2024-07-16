@@ -52,8 +52,8 @@
             <h2 class="login form-signin-heading"><span class="login-title"><?php echo $this->db->get('settings')->row()->title; ?></span><br /><br /><img alt="" src="uploads/logo1.png" width="100%"></h2>
             <div id="infoMessage"><?php echo $message; ?></div>
             <div class="login-wrap">
-                <input type="text" class="form-control" name="identity" placeholder="User Email" autofocus>
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input type="text" class="form-control" name="identity" placeholder="Correo Electrónico" autofocus>
+                <input type="password" class="form-control" name="password" placeholder="Contraseña">
 
 
 

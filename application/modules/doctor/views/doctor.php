@@ -94,7 +94,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('profile'); ?></label>
-                        <input type="text" class="form-control" name="profile" id="exampleInputEmail1" value='' placeholder="">
+                        <input type="text" class="form-control" name="profile" id="exampleInputEmail1" value='Optometrista' placeholder="" readonly>
                     </div>
                     <div class="form-group last col-md-6">
                         <label class="control-label">Subir Imagen</label>
@@ -117,10 +117,13 @@
                         </div>
                     </div>
                     <div class="form-group col-md-12">
-                        <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo lang('submit'); ?></button>
+                        <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo 'Guardar' ?></button>
                     </div>
 
                 </form>
+
+            </div>
+            <div class="modal-footer">
 
             </div>
         </div><!-- /.modal-content -->

@@ -193,8 +193,8 @@ ul {
 }
 
 .btn-info {
-    background: #39B27C;
-    border-color: #39B27C;
+    background: #D74A37;
+    border-color: #D74A37;
     color: #f1f1f1;
     font-weight: 600;
     border-radius: 0px;
@@ -427,13 +427,13 @@ ul {
     border-color: green;
     border-radius: 0px;
 
-    background-color: #39B27C;
-    border-color: #39B27C;
+    background-color: #D74A37;
+    border-color: #D74A37;
     color: #FFFFFF;
 }
 .add_payment_button:hover{
-    background: #39B27C ;
-    border-color: #39B27C;
+    background: #132D3F; ;
+    border-color: #D74A37;
     border-radius: 0px;
 }
 .detailsbutton{
@@ -455,8 +455,8 @@ ul {
     border-color: #418bca;
     border-radius: 0px;
     // width: 100px;
-    background: #39B27C;
-    // border-color: #39B27C;
+    background: #D74A37;
+    // border-color: #D74A37;
     border-radius: 4px;
     color: #fff;
 }
@@ -466,8 +466,8 @@ ul {
     border-color: #418bca;
     border-radius: 0px;
     // width: 100px;
-    background: #39B27C;
-    // border-color: #39B27C;
+    background: #D74A37;
+    // border-color: #D74A37;
     border-radius: 4px;
     color: #fff;
 }
@@ -495,9 +495,9 @@ ul {
 
 
 .green{
-    background: #39B27C;
+    background: #D74A37;
     color: #fff;
-    border-color: #39B27C;
+    border-color: #D74A37;
     color: #FFFFFF;
 }
 
@@ -508,7 +508,7 @@ header .green{
 
 header .green:hover{
     margin-top: 0px !important;
-    background: #39B27C !important;
+    background: #132D3F; !important;
     color: #fff !important;
     background-color: #41cac0 !important;
     border-color: #41cac0 !important;
@@ -572,7 +572,7 @@ table{
 
 .fa-dedent:before, .fa-outdent:before{
     content: "\f03b";
-    background: #39B27C;
+    background: #D74A37;
     padding: 6px 11px;
     color: #fff;
     //  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -584,7 +584,7 @@ table{
 }
 
 .badge.bg-success{
-    background: #39B27C !important;
+    background: #132D3F; !important;
 }
 
 .badge.bg-important{
@@ -592,7 +592,7 @@ table{
 }
 
 .state-overview .terques {
-    background: #39B27C !important;
+    background: #132D3F; !important;
 }
 
 .state-overview .blue {
@@ -619,7 +619,7 @@ a.logo {
 }
 
 .weather-bg .panel-body{
-    background: #39B27C;
+    background: #D74A37;
     background: #777 !important;
     padding: 10px !important;
 }
@@ -675,7 +675,7 @@ form{
 }
 
 .flashmessage {
-    background: #39B27C;
+    background: #D74A37;
     color: #f1f1f1;
     padding: 3px;
     font-size: 21px;
@@ -788,7 +788,7 @@ button.dt-button, div.dt-button, a.dt-button {
 
 
 .home_sec_green{
-    background: #39B27C !important;
+    background: #132D3F; !important;
     background: #fff !important;
 }
 

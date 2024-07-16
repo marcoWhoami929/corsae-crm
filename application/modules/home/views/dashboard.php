@@ -6,9 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Rizvi">
-    <meta name="keyword" content="Php, Hospital, Clinic, Management, Software, Php, CodeIgniter, Hms, Accounting">
-    <link rel="shortcut icon" href="uploads/favicon.png">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="uploads/logo1.png">
     <?php
     $class_name = $this->router->fetch_class();
     $class_name_lang = lang($class_name);
@@ -566,7 +565,7 @@
                         <li>
                             <a href="prescription/all">
                                 <i class="fas fa-prescription"></i>
-                                <span> <?php echo lang('prescription'); ?> </span>
+                                <span> <?php echo 'Recetas' ?> </span>
                             </a>
                         </li>
                     <?php } ?>
@@ -608,7 +607,7 @@
                         <li>
                             <a href="prescription">
                                 <i class="fa fa-prescription"></i>
-                                <span><?php echo lang('prescription'); ?></span>
+                                <span><?php echo 'Recetas' ?></span>
                             </a>
                         </li>
                     <?php } ?>
@@ -944,7 +943,7 @@
                         <li>
                             <a href="patient/myPrescription">
                                 <i class="fa fa-medkit"></i>
-                                <span> <?php echo lang('prescription'); ?> </span>
+                                <span> <?php echo 'Recetas' ?> </span>
                             </a>
                         </li>
 
