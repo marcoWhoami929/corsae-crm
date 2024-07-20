@@ -13,7 +13,7 @@
                     <a data-toggle="modal" href="#myModal">
                         <div class="btn-group">
                             <button id="" class="btn btn-xs green">
-                                <i class="fa fa-plus-circle"></i> <?php echo lang('deposit'); ?>
+                                <i class="fa fa-plus-circle"></i> <?php echo 'Abonar' ?>
                             </button>
                         </div>
                     </a>
@@ -50,31 +50,32 @@
                                 <!--     <label class="control-label col-md-3">Date Range</label> -->
                                 <div class="col-md-6">
                                     <div class="input-group input-large" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
-                                        <input type="text" class="form-control dpd1" name="date_from" value="<?php
-                                                                                                                if (!empty($date_from)) {
-                                                                                                                    echo date('m/d/Y', $date_from);
-                                                                                                                }
-                                                                                                                ?>" placeholder="<?php echo lang('date_from'); ?>" readonly="">
+
+                                        <input type="text" class="form-control dpd1 form-control-inline input-medium default-date-picker" name="date_from" value="<?php
+                                                                                                                                                                    if (!empty($date_from)) {
+                                                                                                                                                                        echo date('m/d/Y', $date_from);
+                                                                                                                                                                    }
+                                                                                                                                                                    ?>" placeholder="<?php echo lang('date_from'); ?>" readonly="">
                                         <span class="input-group-addon"><?php echo lang('to'); ?></span>
-                                        <input type="text" class="form-control dpd2" name="date_to" value="<?php
-                                                                                                            if (!empty($date_to)) {
-                                                                                                                echo date('m/d/Y', $date_to);
-                                                                                                            }
-                                                                                                            ?>" placeholder="<?php echo lang('date_to'); ?>" readonly="">
+                                        <input type="text" class="form-control dpd2 form-control-inline input-medium default-date-picker" name="date_to" value="<?php
+                                                                                                                                                                if (!empty($date_to)) {
+                                                                                                                                                                    echo date('m/d/Y', $date_to);
+                                                                                                                                                                }
+                                                                                                                                                                ?>" placeholder="<?php echo lang('date_to'); ?>" readonly="">
                                         <input type="hidden" class="form-control dpd2" name="patient" value="<?php echo $patient->id; ?>">
                                     </div>
                                     <div class="row"></div>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="col-md-6 no-print">
-                                    <button type="submit" name="submit" class="btn btn-info range_submit"><?php echo lang('submit'); ?></button>
+                                    <button type="submit" name="submit" class="btn btn-info range_submit"><?php echo 'Buscar' ?></button>
                                 </div>
                             </div>
                         </form>
                     </section>
 
                     <header class="panel-heading col-md-12 row">
-                        <?php echo lang('all_bills'); ?> & <?php echo lang('deposits'); ?>
+                        <?php echo 'Listado de Facturas' ?> & <?php echo 'Abonos' ?>
                     </header>
                     <div class="space15"></div>
                     <table class="table table-striped table-hover table-bordered" id="editable-samples">
@@ -456,7 +457,7 @@
                                                                                                                     ?>onClick="stripePay(event);" <?php }
                                                                                                                                                     ?><?php if ($settings->payment_gateway == '2Checkout' && $twocheckout->status == 'live') {
                                                                                                                                                         ?>onClick="twoCheckoutPay(event);" <?php }
-                                                                                                    ?>> <?php echo lang('submit'); ?></button>
+                                                                                                                                                                                            ?>> <?php echo lang('submit'); ?></button>
                     </div>
                 </form>
             </div>
@@ -474,7 +475,7 @@
             </div>
             <div class="modal-body">
                 <form role="form" id="editDepositform" action="finance/deposit" class="clearfix" method="post" enctype="multipart/form-data">
-                    <div class=payment_label">
+                    <div class="payment_label">
                         <label for="exampleInputEmail1"><?php echo lang('invoice'); ?></label>
                         <select class="form-control m-bot15 js-example-basic-single" id="" name="payment_id" value=''>
                             <option value="">Select .....</option>

@@ -9,36 +9,35 @@
 
 
         <style>
-
-            th{
+            th {
                 text-align: center;
             }
 
-            td{
+            td {
                 text-align: center;
             }
 
-            tr.total{
+            tr.total {
                 color: green;
             }
 
 
 
-            .control-label{
+            .control-label {
                 width: 100px;
             }
 
 
 
-            h1{
+            h1 {
                 margin-top: 5px;
             }
 
 
-            .print_width{
+            .print_width {
                 width: 50%;
                 float: left;
-            } 
+            }
 
             ul.amounts li {
                 padding: 0px !important;
@@ -51,7 +50,7 @@
 
 
 
-            .panel{
+            .panel {
                 background: #fff !important;
                 padding: 50px;
                 height: 100%;
@@ -63,43 +62,43 @@
 
 
 
-            .table.main{
+            .table.main {
                 margin-top: -50px;
             }
 
 
-            .panel{
+            .panel {
                 border: 0px solid #802f00;
             }
 
 
 
-            .control-label{
+            .control-label {
                 margin-bottom: 0px;
                 font-size: 10px;
             }
 
 
-            tr.total td{
+            tr.total td {
                 color: green !important;
             }
 
-            .theadd th{
+            .theadd th {
                 background: #edfafa !important;
             }
 
-            td{
+            td {
                 font-size: 12px;
                 padding: 5px;
                 font-weight: bold;
             }
 
-            .details{
+            .details {
                 font-weight: bold;
                 font-size: 8px;
             }
 
-            hr{
+            hr {
                 border-bottom: 2px solid green !important;
             }
 
@@ -126,18 +125,18 @@
 
             @media print {
 
-                h1{
+                h1 {
                     margin-top: 5px;
                 }
 
-                #main-content{
+                #main-content {
                     padding-top: 0px;
                 }
 
-                .print_width{
+                .print_width {
                     width: 50%;
                     float: left;
-                } 
+                }
 
                 ul.amounts li {
                     padding: 0px !important;
@@ -147,22 +146,22 @@
                     margin-bottom: 90px;
                 }
 
-                .wrapper{
+                .wrapper {
                     margin-top: 0px;
                 }
 
-                .wrapper{
+                .wrapper {
                     padding: 0px 0px !important;
 
                 }
 
 
 
-                .wrapper{
+                .wrapper {
                     border: 2px solid #802f00;
                 }
 
-                .panel{
+                .panel {
                     border: 0px solid #802f00;
                     background: #fff !important;
                     padding: 0px 0px;
@@ -175,7 +174,7 @@
 
 
 
-                .table.main{
+                .table.main {
                     margin-top: -50px;
                     width: 70%;
                 }
@@ -184,31 +183,31 @@
 
 
 
-                .control-label{
+                .control-label {
                     margin-bottom: 0px;
                     font-size: 10px;
                 }
 
-                tr.total td{
+                tr.total td {
                     color: green !important;
                 }
 
-                .theadd th{
+                .theadd th {
                     background: #edfafa !important;
                 }
 
-                td{
+                td {
                     font-size: 12px;
                     padding: 5px;
                     font-weight: bold;
                 }
 
-                .details{
+                .details {
                     font-weight: bold;
                     font-size: 10px;
                 }
 
-                hr{
+                hr {
                     border-bottom: 2px solid green !important;
                 }
 
@@ -224,7 +223,6 @@
 
 
             }
-
         </style>
 
 
@@ -242,7 +240,7 @@
 
         <section class="">
             <header class="panel-heading no-print">
-                 <?php echo lang('prescription'); ?>
+                <?php echo  'Recetas' ?>
             </header>
             <div class="panel-body col-md-8 panel-primary">
                 <!--<div class="panel-heading navyblue"> INVOICE</div>-->
@@ -269,21 +267,24 @@
                         </div>
 
                         <style>
-
                             .panel-body {
                                 padding: 15px;
                                 background: #f1f1f1;
                             }
 
-                            table{
+                            table {
                                 box-shadow: none;
                             }
 
-                            .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+                            .table thead>tr>th,
+                            .table tbody>tr>th,
+                            .table tfoot>tr>th,
+                            .table thead>tr>td,
+                            .table tbody>tr>td,
+                            .table tfoot>tr>td {
                                 padding: 10px;
                                 height: 100px;
                             }
-
                         </style>
 
                         <?php $patient = $this->patient_model->getPatientById($prescription->patient); ?>
@@ -296,7 +297,7 @@
                                     <p>
                                         <?php $patient_info = $this->db->get_where('patient', array('id' => $prescription->patient))->row(); ?>
                                         <label class="control-label"><?php echo lang('patient'); ?> <?php echo lang('name'); ?> </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($patient_info)) {
                                                 echo $patient_info->name . ' <br>';
@@ -307,8 +308,8 @@
                                 </div>
                                 <div class="col-md-12 row details" style="">
                                     <p>
-                                        <label class="control-label"><?php echo lang('patient_id'); ?>  </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <label class="control-label"><?php echo lang('patient_id'); ?> </label>
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($patient_info)) {
                                                 echo $patient_info->id . ' <br>';
@@ -319,8 +320,8 @@
                                 </div>
                                 <div class="col-md-12 row details" style="">
                                     <p>
-                                        <label class="control-label"><?php echo lang('patient'); ?> <?php echo lang('age'); ?>  </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <label class="control-label"><?php echo lang('patient'); ?> <?php echo lang('age'); ?> </label>
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             $birthDate = strtotime($patient_info->birthdate);
                                             $birthDate = date('m/d/Y', $birthDate);
@@ -334,7 +335,7 @@
                                 <div class="col-md-12 row details" style="">
                                     <p>
                                         <label class="control-label"> <?php echo lang('address'); ?> </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($patient_info)) {
                                                 echo $patient_info->address . ' <br>';
@@ -345,8 +346,8 @@
                                 </div>
                                 <div class="col-md-12 row details" style="">
                                     <p>
-                                        <label class="control-label"><?php echo lang('phone'); ?>  </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <label class="control-label"><?php echo lang('phone'); ?> </label>
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($patient_info)) {
                                                 echo $patient_info->phone . ' <br>';
@@ -363,20 +364,20 @@
                                 <div class="col-md-12 row details" style="">
                                     <p>
                                         <label class="control-label"><?php echo lang('doctor'); ?> <?php echo lang('name'); ?> </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($prescription->doctor)) {
                                                 $doctor = $this->doctor_model->getDoctorById($prescription->doctor);
                                                 echo $doctor->name;
                                             }
                                             ?>
-                                        </span> 
+                                        </span>
                                     </p>
                                 </div>
                                 <div class="col-md-12 row details" style="">
                                     <p>
-                                        <label class="control-label"><?php echo lang('profile'); ?>  </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <label class="control-label"><?php echo lang('profile'); ?> </label>
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($doctor->profile)) {
                                                 echo $doctor->profile . ' <br>';
@@ -387,8 +388,8 @@
                                 </div>
                                 <div class="col-md-12 row details" style="">
                                     <p>
-                                        <label class="control-label"><?php echo lang('phone'); ?>  </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <label class="control-label"><?php echo lang('phone'); ?> </label>
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($doctor->phone)) {
                                                 echo $doctor->phone . ' <br>';
@@ -403,8 +404,8 @@
 
                                 <div class="col-md-12 row details" style="">
                                     <p>
-                                        <label class="control-label"> <?php echo lang('prescription'); ?> <?php echo lang('id'); ?>  </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <label class="control-label"> <?php echo  'Recetas' ?> <?php echo lang('id'); ?> </label>
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($prescription->id)) {
                                                 echo $prescription->id;
@@ -417,8 +418,8 @@
 
                                 <div class="col-md-12 row details">
                                     <p>
-                                        <label class="control-label"><?php echo lang('date'); ?>  </label>
-                                        <span style="text-transform: uppercase;"> : 
+                                        <label class="control-label"><?php echo lang('date'); ?> </label>
+                                        <span style="text-transform: uppercase;"> :
                                             <?php
                                             if (!empty($prescription->date)) {
                                                 echo date('d-m-Y', $prescription->date) . ' <br>';
@@ -460,18 +461,18 @@
                         </div>
 
                         <div class="col-md-8">
-                            <table class="table table-striped table-hover">                      
-                                <thead>       
-                                <th><?php echo lang('medicine'); ?></th>
-                                <th><?php echo lang('instruction'); ?></th>
-                                <th><?php echo lang('frequency'); ?></th>    
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <th><?php echo lang('medicine'); ?></th>
+                                    <th><?php echo lang('instruction'); ?></th>
+                                    <th><?php echo lang('frequency'); ?></th>
                                 </thead>
                                 <tbody>
                                     <?php
                                     $medicine = $prescription->medicine;
                                     $medicine = explode('###', $medicine);
                                     foreach ($medicine as $key => $value) {
-                                        ?>
+                                    ?>
                                         <tr>
                                             <?php $single_medicine = explode('***', $value); ?>
 
@@ -479,7 +480,7 @@
                                             <td class=""><?php echo $single_medicine[3] . ' - ' . $single_medicine[4]; ?> </td>
                                             <td class=""><?php echo $single_medicine[2] ?> </td>
                                         </tr>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </tbody>
@@ -501,4 +502,3 @@
 </section>
 <!--main content end-->
 <!--footer start-->
-

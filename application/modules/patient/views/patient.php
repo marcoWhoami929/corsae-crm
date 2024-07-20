@@ -108,20 +108,20 @@
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
                         <select class="form-control m-bot15" name="sex" value=''>
 
-                            <option value="Male" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Male') {
-                                                            echo 'selected';
+                            <option value="Masculino" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Masculino') {
+                                                                echo 'selected';
+                                                            }
                                                         }
-                                                    }
-                                                    ?>> Masculino </option>
-                            <option value="Female" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Female') {
-                                                            echo 'selected';
+                                                        ?>> Masculino </option>
+                            <option value="Femenino" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Femenino') {
+                                                                echo 'selected';
+                                                            }
                                                         }
-                                                    }
-                                                    ?>> Femenino </option>
+                                                        ?>> Femenino </option>
                             <option value="Others" <?php
                                                     if (!empty($patient->sex)) {
                                                         if ($patient->sex == 'Others') {
@@ -137,21 +137,6 @@
                         <input class="form-control form-control-inline input-medium default-date-picker" type="text" name="birthdate" value="" placeholder="" readonly="">
                     </div>
 
-
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('blood_group'); ?></label>
-                        <select class="form-control m-bot15" name="bloodgroup" value=''>
-                            <?php foreach ($groups as $group) { ?>
-                                <option value="<?php echo $group->group; ?>" <?php
-                                                                                if (!empty($patient->bloodgroup)) {
-                                                                                    if ($group->group == $patient->bloodgroup) {
-                                                                                        echo 'selected';
-                                                                                    }
-                                                                                }
-                                                                                ?>> <?php echo $group->group; ?> </option>
-                            <?php } ?>
-                        </select>
-                    </div>
 
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('doctor'); ?></label>
@@ -201,7 +186,7 @@
 
 
                     <section class="col-md-12">
-                        <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo lang('submit'); ?></button>
+                        <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo 'Guardar Paciente' ?></button>
                     </section>
                 </form>
 
@@ -257,20 +242,20 @@
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
                         <select class="form-control m-bot15" name="sex" value=''>
 
-                            <option value="Male" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Male') {
-                                                            echo 'selected';
+                            <option value="Masculino" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Masculino') {
+                                                                echo 'selected';
+                                                            }
                                                         }
-                                                    }
-                                                    ?>> Masculino </option>
-                            <option value="Female" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Female') {
-                                                            echo 'selected';
+                                                        ?>> Masculino </option>
+                            <option value="Femenino" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Femenino') {
+                                                                echo 'selected';
+                                                            }
                                                         }
-                                                    }
-                                                    ?>> Femenino </option>
+                                                        ?>> Femenino </option>
                             <option value="Others" <?php
                                                     if (!empty($patient->sex)) {
                                                         if ($patient->sex == 'Others') {
@@ -284,22 +269,6 @@
                     <div class="form-group col-md-6">
                         <label><?php echo lang('birth_date'); ?></label>
                         <input class="form-control form-control-inline input-medium default-date-picker" type="text" name="birthdate" value="" placeholder="" readonly="">
-                    </div>
-
-
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('blood_group'); ?></label>
-                        <select class="form-control m-bot15" name="bloodgroup" value=''>
-                            <?php foreach ($groups as $group) { ?>
-                                <option value="<?php echo $group->group; ?>" <?php
-                                                                                if (!empty($patient->bloodgroup)) {
-                                                                                    if ($group->group == $patient->bloodgroup) {
-                                                                                        echo 'selected';
-                                                                                    }
-                                                                                }
-                                                                                ?>> <?php echo $group->group; ?> </option>
-                            <?php } ?>
-                        </select>
                     </div>
 
                     <div class="form-group col-md-6">
@@ -369,7 +338,7 @@
 
 
                     <section class="col-md-12">
-                        <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo lang('submit'); ?></button>
+                        <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo 'Actualizar Paciente' ?></button>
                     </section>
 
                 </form>
@@ -396,7 +365,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"> <?php echo lang('patient'); ?> <?php echo lang('info'); ?></h4>
+                <h4 class="modal-title"> <?php echo 'Información del Paciente' ?></h4>
             </div>
             <div class="modal-body row">
                 <form role="form" id="editPatientForm" action="patient/addNew" class="clearfix" method="post" enctype="multipart/form-data">
@@ -446,10 +415,7 @@
                         <div class="phoneClass"></div>
                     </div>
 
-                    <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1"><?php echo lang('blood_group'); ?></label>
-                        <div class="bloodgroupClass"></div>
-                    </div>
+
 
                     <div class="form-group col-md-4">
                         <label><?php echo lang('birth_date'); ?></label>

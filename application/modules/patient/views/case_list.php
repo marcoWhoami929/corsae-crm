@@ -5,10 +5,10 @@
         <!-- page start-->
         <section class="col-md-5">
             <header class="panel-heading">
-                <?php echo lang('add'); ?> <?php echo lang('case'); ?> 
-            </header> 
+                <?php echo lang('add'); ?> <?php echo lang('case'); ?>
+            </header>
 
-            <div class=""> 
+            <div class="">
                 <form role="form" action="patient/addMedicalHistory" class="clearfix" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('date'); ?></label>
@@ -30,7 +30,7 @@
                     </div>
                     <input type="hidden" name="redirect" value='patient/caseList'>
                     <section class="col-md-12">
-                        <button type="submit" name="submit" class="btn btn-info submit_button pull-right"><?php echo lang('submit'); ?></button>
+                        <button type="submit" name="submit" class="btn btn-info submit_button pull-right"><?php echo 'Guardar' ?></button>
                     </section>
                 </form>
             </div>
@@ -40,9 +40,9 @@
 
         <section class="col-md-7">
             <header class="panel-heading">
-                <?php echo lang('all'); ?> <?php echo lang('case'); ?>
-            </header> 
-            <div class="panel-body"> 
+                <?php 'Lista de Casos' ?>
+            </header>
+            <div class="panel-body">
 
                 <div class="adv-table editable-table">
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
@@ -85,8 +85,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">  <?php echo lang('add_medical_history'); ?></h4>
-            </div> 
+                <h4 class="modal-title"> <?php echo lang('add_medical_history'); ?></h4>
+            </div>
             <div class="modal-body row">
                 <form role="form" action="patient/addMedicalHistory" class="clearfix" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-6">
@@ -97,8 +97,8 @@
                         <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
                         <select class="form-control m-bot15 js-example-basic-single" name="patient_id" value=''>
                             <?php foreach ($patients as $patient) { ?>
-                                <option value="<?php echo $patient->id; ?>"> <?php echo $patient->name; ?> </option> 
-                            <?php } ?> 
+                                <option value="<?php echo $patient->id; ?>"> <?php echo $patient->name; ?> </option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group col-md-12">
@@ -127,7 +127,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">  <?php echo lang('edit_medical_history'); ?></h4>
+                <h4 class="modal-title"> <?php echo lang('edit_medical_history'); ?></h4>
             </div>
             <div class="modal-body row">
                 <form role="form" id="medical_historyEditForm" class="clearfix" action="patient/addMedicalHistory" method="post" enctype="multipart/form-data">
@@ -172,7 +172,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close no-print" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">  <?php echo lang('case'); ?> <?php echo lang('details'); ?></h4>
+                <h4 class="modal-title"> <?php echo lang('case'); ?> <?php echo lang('details'); ?></h4>
             </div>
             <div class="modal-body row">
                 <form role="form" id="medical_historyEditForm" class="clearfix" action="patient/addMedicalHistory" method="post" enctype="multipart/form-data">
@@ -185,7 +185,7 @@
                             <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
                             <div class="case_patient"></div>
                             <div class="case_patient_id"></div>
-                        </div> 
+                        </div>
                         <div>
                             <hr>
                         </div>
@@ -223,32 +223,28 @@
 
 
 <style>
-
     @media print {
 
-        .modal-content{
+        .modal-content {
             width: 100%;
         }
 
 
-        .modal{
+        .modal {
             overflow: hidden;
         }
 
-        .case_date_block{
+        .case_date_block {
             width: 50%;
             float: left;
         }
 
-        .case_patient_block{
+        .case_patient_block {
             width: 50%;
             float: left;
         }
 
     }
-
-
-
 </style>
 
 
@@ -265,37 +261,37 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 <script src="common/js/codearistos.min.js"></script>
 <script type="text/javascript">
-                            $(".table").on("click", ".editbutton", function () {
-                                // Get the record's ID via attribute  
-                                var iid = $(this).attr('data-id');
+    $(".table").on("click", ".editbutton", function() {
+        // Get the record's ID via attribute  
+        var iid = $(this).attr('data-id');
 
-                                $.ajax({
-                                    url: 'patient/editMedicalHistoryByJason?id=' + iid,
-                                    method: 'GET',
-                                    data: '',
-                                    dataType: 'json',
-                                }).success(function (response) {
-                                    // Populate the form fields with the data returned from server
-                                    var de = response.medical_history.date * 1000;
-                                    var d = new Date(de);
-                                    var da = d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear();
-                                    $('#medical_historyEditForm').find('[name="id"]').val(response.medical_history.id).end()
-                                    $('#medical_historyEditForm').find('[name="date"]').val(da).end()
-                                    //   $('#medical_historyEditForm').find('[name="patient"]').val(response.medical_history.patient_id).end()
-                                    $('#medical_historyEditForm').find('[name="title"]').val(response.medical_history.title).end()
-                                    CKEDITOR.instances['editor'].setData(response.medical_history.description)
-                                    var option = new Option(response.patient.name + '-' + response.patient.id, response.patient.id, true, true);
-                                    $('#medical_historyEditForm').find('[name="patient_id"]').append(option).trigger('change');
-                                    //   $('.js-example-basic-single.patient').val(response.medical_history.patient_id).trigger('change');
+        $.ajax({
+            url: 'patient/editMedicalHistoryByJason?id=' + iid,
+            method: 'GET',
+            data: '',
+            dataType: 'json',
+        }).success(function(response) {
+            // Populate the form fields with the data returned from server
+            var de = response.medical_history.date * 1000;
+            var d = new Date(de);
+            var da = d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear();
+            $('#medical_historyEditForm').find('[name="id"]').val(response.medical_history.id).end()
+            $('#medical_historyEditForm').find('[name="date"]').val(da).end()
+            //   $('#medical_historyEditForm').find('[name="patient"]').val(response.medical_history.patient_id).end()
+            $('#medical_historyEditForm').find('[name="title"]').val(response.medical_history.title).end()
+            CKEDITOR.instances['editor'].setData(response.medical_history.description)
+            var option = new Option(response.patient.name + '-' + response.patient.id, response.patient.id, true, true);
+            $('#medical_historyEditForm').find('[name="patient_id"]').append(option).trigger('change');
+            //   $('.js-example-basic-single.patient').val(response.medical_history.patient_id).trigger('change');
 
-                                    $('#myModal2').modal('show');
+            $('#myModal2').modal('show');
 
-                                });
-                            });
+        });
+    });
 </script>
 
 <script type="text/javascript">
-    $(".table").on("click", ".case", function () {
+    $(".table").on("click", ".case", function() {
         // Get the record's ID via attribute  
         var iid = $(this).attr('data-id');
 
@@ -309,7 +305,7 @@ if ($this->ion_auth->in_group('Doctor')) {
             method: 'GET',
             data: '',
             dataType: 'json',
-        }).success(function (response) {
+        }).success(function(response) {
             // Populate the form fields with the data returned from server
             var de = response.case.date * 1000;
             var d = new Date(de);
@@ -348,9 +344,7 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 
 <script>
-
-
-    $(document).ready(function () {
+    $(document).ready(function() {
         var table = $('#editable-sample').DataTable({
             responsive: true,
             //   dom: 'lfrBtip',
@@ -366,22 +360,48 @@ if ($this->ion_auth->in_group('Doctor')) {
                 loadingIndicator: true
             },
             dom: "<'row'<'col-sm-3'l><'col-sm-5 text-center'B><'col-sm-4'f>>" +
-                    "<'row'<'col-sm-12'tr>>" +
-                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
-         
-             buttons: [
-                {extend: 'copyHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'excelHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'csvHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'pdfHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'print', exportOptions: {columns: [0, 1, 2], }},
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+
+            buttons: [{
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'csvHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'pdfHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
             ],
             aLengthMenu: [
                 [10, 25, 50, 100, -1],
                 [10, 25, 50, 100, "All"]
             ],
             iDisplayLength: 100,
-            "order": [[0, "desc"]],
+            "order": [
+                [0, "desc"]
+            ],
             "language": {
                 "lengthMenu": "_MENU_",
                 search: "_INPUT_",
@@ -390,12 +410,11 @@ if ($this->ion_auth->in_group('Doctor')) {
         });
 
         table.buttons().container()
-                .appendTo('.custom_buttons');
+            .appendTo('.custom_buttons');
     });
-
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $("#patientchoose").select2({
             placeholder: '<?php echo lang('select_patient'); ?>',
             allowClear: true,
@@ -404,12 +423,12 @@ if ($this->ion_auth->in_group('Doctor')) {
                 type: "post",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term // search term
                     };
                 },
-                processResults: function (response) {
+                processResults: function(response) {
                     return {
                         results: response
                     };
@@ -426,12 +445,12 @@ if ($this->ion_auth->in_group('Doctor')) {
                 type: "post",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term // search term
                     };
                 },
-                processResults: function (response) {
+                processResults: function(response) {
                     return {
                         results: response
                     };
@@ -445,7 +464,7 @@ if ($this->ion_auth->in_group('Doctor')) {
     });
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $(".flashmessage").delay(3000).fadeOut(100);
     });
 </script>

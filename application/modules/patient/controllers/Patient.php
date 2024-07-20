@@ -33,7 +33,7 @@ class Patient extends MX_Controller
             redirect('home/permission');
         }
         $data['doctors'] = $this->doctor_model->getDoctor();
-        $data['groups'] = $this->donor_model->getBloodBank();
+        //$data['groups'] = $this->donor_model->getBloodBank();
         $data['settings'] = $this->settings_model->getSettings();
         $this->load->view('home/dashboard'); // just the header file
         $this->load->view('patient', $data);
@@ -55,7 +55,7 @@ class Patient extends MX_Controller
         }
         $data = array();
         $data['doctors'] = $this->doctor_model->getDoctor();
-        $data['groups'] = $this->donor_model->getBloodBank();
+
         $this->load->view('home/dashboard'); // just the header file
         $this->load->view('add_new', $data);
         $this->load->view('home/footer'); // just the header file
@@ -81,7 +81,6 @@ class Patient extends MX_Controller
         $phone = $this->input->post('phone');
         $sex = $this->input->post('sex');
         $birthdate = $this->input->post('birthdate');
-        $bloodgroup = $this->input->post('bloodgroup');
         $patient_id = $this->input->post('p_id');
         if (empty($patient_id)) {
             $patient_id = rand(10000, 1000000);
@@ -123,8 +122,7 @@ class Patient extends MX_Controller
         $this->form_validation->set_rules('sex', 'Sex', 'trim|min_length[2]|max_length[100]|xss_clean');
         // Validating Address Field   
         $this->form_validation->set_rules('birthdate', 'Birth Date', 'trim|min_length[2]|max_length[500]|xss_clean');
-        // Validating Phone Field           
-        $this->form_validation->set_rules('bloodgroup', 'Blood Group', 'trim|min_length[1]|max_length[10]|xss_clean');
+
 
 
         if ($this->form_validation->run() == FALSE) {
@@ -135,7 +133,7 @@ class Patient extends MX_Controller
                 $data = array();
                 $data['setval'] = 'setval';
                 $data['doctors'] = $this->doctor_model->getDoctor();
-                $data['groups'] = $this->donor_model->getBloodBank();
+
                 $this->load->view('home/dashboard'); // just the header file
                 $this->load->view('add_new', $data);
                 $this->load->view('home/footer'); // just the header file
@@ -180,7 +178,6 @@ class Patient extends MX_Controller
                     'phone' => $phone,
                     'sex' => $sex,
                     'birthdate' => $birthdate,
-                    'bloodgroup' => $bloodgroup,
                     'add_date' => $add_date,
                     'registration_time' => $registration_time
                 );
@@ -196,7 +193,6 @@ class Patient extends MX_Controller
                     'phone' => $phone,
                     'sex' => $sex,
                     'birthdate' => $birthdate,
-                    'bloodgroup' => $bloodgroup,
                     'add_date' => $add_date,
                     'registration_time' => $registration_time
                 );
@@ -316,7 +312,7 @@ class Patient extends MX_Controller
         $id = $this->input->get('id');
         $data['patient'] = $this->patient_model->getPatientById($id);
         $data['doctors'] = $this->doctor_model->getDoctor();
-        $data['groups'] = $this->donor_model->getBloodBank();
+
         $this->load->view('home/dashboard'); // just the header file
         $this->load->view('add_new', $data);
         $this->load->view('home/footer'); // just the footer file
@@ -343,7 +339,7 @@ class Patient extends MX_Controller
             $birthDate = date('m/d/Y', $birthDate);
             $birthDate = explode("/", $birthDate);
             $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md") ? ((date("Y") - $birthDate[2]) - 1) : (date("Y") - $birthDate[2]));
-            $data['age'] = $age . ' Year(s)';
+            $data['age'] = $age . ' Años(s)';
         }
 
         echo json_encode($data);
@@ -417,7 +413,7 @@ class Patient extends MX_Controller
 
     function patientPayments()
     {
-        $data['groups'] = $this->donor_model->getBloodBank();
+
         $data['settings'] = $this->settings_model->getSettings();
         $this->load->view('home/dashboard'); // just the header file
         $this->load->view('patient_payments', $data);

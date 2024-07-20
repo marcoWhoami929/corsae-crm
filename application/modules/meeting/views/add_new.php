@@ -99,27 +99,27 @@
                             <div class="col-md-9">
                                 <select class="form-control m-bot15" name="p_gender" value=''>
 
-                                    <option value="Male" <?php
-                                                            if (!empty($patient->sex)) {
-                                                                if ($patient->sex == 'Male') {
-                                                                    echo 'selected';
+                                    <option value="Masculino" <?php
+                                                                if (!empty($patient->sex)) {
+                                                                    if ($patient->sex == 'Masculino') {
+                                                                        echo 'selected';
+                                                                    }
                                                                 }
-                                                            }
-                                                            ?>> Male </option>
-                                    <option value="Female" <?php
-                                                            if (!empty($patient->sex)) {
-                                                                if ($patient->sex == 'Female') {
-                                                                    echo 'selected';
+                                                                ?>> Masculino </option>
+                                    <option value="Femenino" <?php
+                                                                if (!empty($patient->sex)) {
+                                                                    if ($patient->sex == 'Femenino') {
+                                                                        echo 'selected';
+                                                                    }
                                                                 }
-                                                            }
-                                                            ?>> Female </option>
+                                                                ?>> Femenino </option>
                                     <option value="Others" <?php
                                                             if (!empty($patient->sex)) {
                                                                 if ($patient->sex == 'Others') {
                                                                     echo 'selected';
                                                                 }
                                                             }
-                                                            ?>> Others </option>
+                                                            ?>> Otro </option>
                                 </select>
                             </div>
                         </div>

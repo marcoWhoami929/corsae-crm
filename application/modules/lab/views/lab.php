@@ -1,4 +1,3 @@
-
 <!--sidebar end-->
 <!--main content start-->
 <section id="main-content">
@@ -19,28 +18,29 @@
             <div class="no-print">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
-                        <style> 
-                            .lab{
+                        <style>
+                            .lab {
                                 padding-top: 10px;
                                 padding-bottom: 20px;
                                 border: none;
 
                             }
-                            .pad_bot{
-                                padding-bottom: 5px;
-                            }  
 
-                            form{
+                            .pad_bot {
+                                padding-bottom: 5px;
+                            }
+
+                            form {
                                 background: #ffffff;
                                 padding: 20px 0px;
                             }
 
-                            .modal-body form{
+                            .modal-body form {
                                 background: #fff;
                                 padding: 21px;
                             }
 
-                            .remove{
+                            .remove {
                                 float: right;
                                 margin-top: -45px;
                                 margin-right: 42%;
@@ -49,11 +49,10 @@
                                 height: 29px;
                             }
 
-                            .remove1 span{
+                            .remove1 span {
                                 width: 33%;
                                 height: 50px !important;
                                 padding: 10px
-
                             }
 
                             .qfloww {
@@ -70,7 +69,7 @@
                             }
 
 
-                            .span2{
+                            .span2 {
                                 padding: 6px 12px;
                                 font-size: 14px;
                                 font-weight: 400;
@@ -80,7 +79,6 @@
                                 background-color: #eee;
                                 border: 1px solid #ccc
                             }
-
                         </style>
 
                         <form role="form" id="editLabForm" class="clearfix" action="lab/addLab" method="post" enctype="multipart/form-data">
@@ -89,113 +87,113 @@
                                 <div class="col-md-6 lab pad_bot">
                                     <label for="exampleInputEmail1"><?php echo lang('date'); ?></label>
                                     <input type="text" class="form-control pay_in default-date-picker" name="date" value='<?php
-                                    if (!empty($lab_single->date)) {
-                                        echo date('d-m-Y', $lab_single->date);
-                                    } else {
-                                        echo date('d-m-Y');
-                                    }
-                                    ?>' placeholder="">
+                                                                                                                            if (!empty($lab_single->date)) {
+                                                                                                                                echo date('d-m-Y', $lab_single->date);
+                                                                                                                            } else {
+                                                                                                                                echo date('d-m-Y');
+                                                                                                                            }
+                                                                                                                            ?>' placeholder="">
                                 </div>
 
                                 <div class="col-md-6 lab pad_bot">
                                     <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
-                                    <select class="form-control m-bot15 pos_select" id="pos_select" name="patient" value=''> 
+                                    <select class="form-control m-bot15 pos_select" id="pos_select" name="patient" value=''>
                                         <?php if (!empty($lab_single->patient)) { ?>
-                                            <option value="<?php echo $patients->id; ?>" selected="selected"><?php echo $patients->name; ?> - <?php echo $patients->id; ?></option>  
+                                            <option value="<?php echo $patients->id; ?>" selected="selected"><?php echo $patients->name; ?> - <?php echo $patients->id; ?></option>
                                         <?php } ?>
                                     </select>
-                                </div> 
+                                </div>
 
-                                <div class="col-md-8 panel"> 
+                                <div class="col-md-8 panel">
                                 </div>
 
                                 <div class="pos_client">
                                     <div class="col-md-8 lab pad_bot">
-                                        <div class="col-md-3 lab_label"> 
+                                        <div class="col-md-3 lab_label">
                                             <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('name'); ?></label>
                                         </div>
-                                        <div class="col-md-9"> 
+                                        <div class="col-md-9">
                                             <input type="text" class="form-control pay_in" name="p_name" value='<?php
-                                            if (!empty($lab_single->p_name)) {
-                                                echo $lab_single->p_name;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                if (!empty($lab_single->p_name)) {
+                                                                                                                    echo $lab_single->p_name;
+                                                                                                                }
+                                                                                                                ?>' placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-8 lab pad_bot">
-                                        <div class="col-md-3 lab_label"> 
+                                        <div class="col-md-3 lab_label">
                                             <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('email'); ?></label>
                                         </div>
-                                        <div class="col-md-9"> 
+                                        <div class="col-md-9">
                                             <input type="text" class="form-control pay_in" name="p_email" value='<?php
-                                            if (!empty($lab_single->p_email)) {
-                                                echo $lab_single->p_email;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                    if (!empty($lab_single->p_email)) {
+                                                                                                                        echo $lab_single->p_email;
+                                                                                                                    }
+                                                                                                                    ?>' placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-8 lab pad_bot">
-                                        <div class="col-md-3 lab_label"> 
+                                        <div class="col-md-3 lab_label">
                                             <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('phone'); ?></label>
                                         </div>
-                                        <div class="col-md-9"> 
+                                        <div class="col-md-9">
                                             <input type="text" class="form-control pay_in" name="p_phone" value='<?php
-                                            if (!empty($lab_single->p_phone)) {
-                                                echo $lab_single->p_phone;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                    if (!empty($lab_single->p_phone)) {
+                                                                                                                        echo $lab_single->p_phone;
+                                                                                                                    }
+                                                                                                                    ?>' placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-8 lab pad_bot">
-                                        <div class="col-md-3 lab_label"> 
+                                        <div class="col-md-3 lab_label">
                                             <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('age'); ?></label>
                                         </div>
-                                        <div class="col-md-9"> 
+                                        <div class="col-md-9">
                                             <input type="text" class="form-control pay_in" name="p_age" value='<?php
-                                            if (!empty($lab_single->p_age)) {
-                                                echo $lab_single->p_age;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                if (!empty($lab_single->p_age)) {
+                                                                                                                    echo $lab_single->p_age;
+                                                                                                                }
+                                                                                                                ?>' placeholder="">
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="col-md-8 lab pad_bot">
-                                        <div class="col-md-3 lab_label"> 
+                                        <div class="col-md-3 lab_label">
                                             <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('gender'); ?></label>
                                         </div>
-                                        <div class="col-md-9"> 
+                                        <div class="col-md-9">
                                             <select class="form-control m-bot15" name="p_gender" value=''>
 
-                                                <option value="Male" <?php
-                                                if (!empty($patient->sex)) {
-                                                    if ($patient->sex == 'Male') {
-                                                        echo 'selected';
-                                                    }
-                                                }
-                                                ?> > Male </option>   
-                                                <option value="Female" <?php
-                                                if (!empty($patient->sex)) {
-                                                    if ($patient->sex == 'Female') {
-                                                        echo 'selected';
-                                                    }
-                                                }
-                                                ?> > Female </option>
+                                                <option value="Masculino" <?php
+                                                                            if (!empty($patient->sex)) {
+                                                                                if ($patient->sex == 'Masculino') {
+                                                                                    echo 'selected';
+                                                                                }
+                                                                            }
+                                                                            ?>> Masculino </option>
+                                                <option value="Femenino" <?php
+                                                                            if (!empty($patient->sex)) {
+                                                                                if ($patient->sex == 'Femenino') {
+                                                                                    echo 'selected';
+                                                                                }
+                                                                            }
+                                                                            ?>> Femenino </option>
                                                 <option value="Others" <?php
-                                                if (!empty($patient->sex)) {
-                                                    if ($patient->sex == 'Others') {
-                                                        echo 'selected';
-                                                    }
-                                                }
-                                                ?> > Others </option>
+                                                                        if (!empty($patient->sex)) {
+                                                                            if ($patient->sex == 'Others') {
+                                                                                echo 'selected';
+                                                                            }
+                                                                        }
+                                                                        ?>> Otro </option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 lab pad_bot">
-                                    <label for="exampleInputEmail1"> <?php echo lang('refd_by_doctor'); ?></label> 
-                                    <select class="form-control m-bot15  add_doctor" id="add_doctor" name="doctor" value=''>  
+                                    <label for="exampleInputEmail1"> <?php echo lang('refd_by_doctor'); ?></label>
+                                    <select class="form-control m-bot15  add_doctor" id="add_doctor" name="doctor" value=''>
                                         <?php if (!empty($lab_single->doctor)) { ?>
-                                            <option value="<?php echo $doctors->id; ?>" selected="selected"><?php echo $doctors->name; ?> - <?php echo $doctors->id; ?></option>  
+                                            <option value="<?php echo $doctors->id; ?>" selected="selected"><?php echo $doctors->name; ?> - <?php echo $doctors->id; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -204,7 +202,7 @@
                                     <label for="exampleInputEmail1">
                                         <?php echo lang('template'); ?>
                                     </label>
-                                    <select class="form-control m-bot15 js-example-basic-multiple template" id="template" name="template" value=''> 
+                                    <select class="form-control m-bot15 js-example-basic-multiple template" id="template" name="template" value=''>
                                         <option value="">Select .....</option>
                                         <?php foreach ($templates as $template) { ?>
                                             <option value="<?php echo $template->id; ?>"><?php echo $template->name; ?> </option>
@@ -214,39 +212,39 @@
 
                                 <div class="pos_doctor">
                                     <div class="col-md-8 lab pad_bot">
-                                        <div class="col-md-3 lab_label"> 
+                                        <div class="col-md-3 lab_label">
                                             <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?> <?php echo lang('name'); ?></label>
                                         </div>
-                                        <div class="col-md-9"> 
+                                        <div class="col-md-9">
                                             <input type="text" class="form-control pay_in" name="d_name" value='<?php
-                                            if (!empty($lab_single->p_name)) {
-                                                echo $lab_single->p_name;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                if (!empty($lab_single->p_name)) {
+                                                                                                                    echo $lab_single->p_name;
+                                                                                                                }
+                                                                                                                ?>' placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-8 lab pad_bot">
-                                        <div class="col-md-3 lab_label"> 
+                                        <div class="col-md-3 lab_label">
                                             <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?> <?php echo lang('email'); ?></label>
                                         </div>
-                                        <div class="col-md-9"> 
+                                        <div class="col-md-9">
                                             <input type="text" class="form-control pay_in" name="d_email" value='<?php
-                                            if (!empty($lab_single->p_email)) {
-                                                echo $lab_single->p_email;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                    if (!empty($lab_single->p_email)) {
+                                                                                                                        echo $lab_single->p_email;
+                                                                                                                    }
+                                                                                                                    ?>' placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-8 lab pad_bot">
-                                        <div class="col-md-3 lab_label"> 
+                                        <div class="col-md-3 lab_label">
                                             <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?> <?php echo lang('phone'); ?></label>
                                         </div>
-                                        <div class="col-md-9"> 
+                                        <div class="col-md-9">
                                             <input type="text" class="form-control pay_in" name="d_phone" value='<?php
-                                            if (!empty($lab_single->p_phone)) {
-                                                echo $lab_single->p_phone;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                    if (!empty($lab_single->p_phone)) {
+                                                                                                                        echo $lab_single->p_phone;
+                                                                                                                    }
+                                                                                                                    ?>' placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -269,32 +267,32 @@
                             <div class="col-md-12 lab pad_bot">
                                 <label for="exampleInputEmail1"> <?php echo lang('report'); ?></label>
                                 <textarea class="ckeditor form-control" id="editor" name="report" value="" rows="10"><?php
-                                    if (!empty($setval)) {
-                                        echo set_value('report');
-                                    }
-                                    if (!empty($lab_single->report)) {
-                                        echo $lab_single->report;
-                                    }
-                                    ?>
+                                                                                                                        if (!empty($setval)) {
+                                                                                                                            echo set_value('report');
+                                                                                                                        }
+                                                                                                                        if (!empty($lab_single->report)) {
+                                                                                                                            echo $lab_single->report;
+                                                                                                                        }
+                                                                                                                        ?>
                                 </textarea>
                             </div>
 
                             <input type="hidden" name="redirect" value="<?php
-                            if (!empty($lab_single)) {
-                                echo 'lab?id=' . $lab_single->id;
-                            } else {
-                                echo 'lab';
-                            }
-                            ?>">
+                                                                        if (!empty($lab_single)) {
+                                                                            echo 'lab?id=' . $lab_single->id;
+                                                                        } else {
+                                                                            echo 'lab';
+                                                                        }
+                                                                        ?>">
 
                             <input type="hidden" name="id" value='<?php
-                            if (!empty($lab_single->id)) {
-                                echo $lab_single->id;
-                            }
-                            ?>'>
+                                                                    if (!empty($lab_single->id)) {
+                                                                        echo $lab_single->id;
+                                                                    }
+                                                                    ?>'>
 
 
-                            <div class="col-md-12 lab"> 
+                            <div class="col-md-12 lab">
                                 <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo lang('submit'); ?></button>
                             </div>
 
@@ -318,7 +316,7 @@
         <section class="col-md-7">
             <header class="panel-heading">
                 <?php echo lang('lab_report'); ?>
-                <div class="col-md-4 no-print pull-right"> 
+                <div class="col-md-4 no-print pull-right">
                     <a href="lab/addLabView">
                         <div class="btn-group pull-right">
                             <button id="" class="btn green btn-xs">
@@ -342,20 +340,19 @@
                         </thead>
                         <tbody>
 
-                        <style>
+                            <style>
+                                .img_url {
+                                    height: 20px;
+                                    width: 20px;
+                                    background-size: contain;
+                                    max-height: 20px;
+                                    border-radius: 100px;
+                                }
 
-                            .img_url{
-                                height:20px;
-                                width:20px;
-                                background-size: contain; 
-                                max-height:20px;
-                                border-radius: 100px;
-                            }
-                            .option_th{
-                                width:18%;
-                            }
-
-                        </style>
+                                .option_th {
+                                    width: 18%;
+                                }
+                            </style>
 
                         </tbody>
                     </table>
@@ -372,14 +369,14 @@
 
 <script src="common/js/codearistos.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $(".flashmessage").delay(3000).fadeOut(100);
     });
 </script>
 
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         var table = $('#editable-sample').DataTable({
             responsive: true,
 
@@ -395,22 +392,48 @@
             },
 
             dom: "<'row'<'col-sm-3'l><'col-sm-5 text-center'B><'col-sm-4'f>>" +
-                    "<'row'<'col-sm-12'tr>>" +
-                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
 
-            buttons: [
-                {extend: 'copyHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'excelHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'csvHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'pdfHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'print', exportOptions: {columns: [0, 1, 2], }},
+            buttons: [{
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'csvHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'pdfHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
             ],
             aLengthMenu: [
                 [10, 25, 50, 100, -1],
                 [10, 25, 50, 100, "All"]
             ],
             iDisplayLength: 100,
-            "order": [[0, "desc"]],
+            "order": [
+                [0, "desc"]
+            ],
 
             "language": {
                 "lengthMenu": "_MENU_",
@@ -427,9 +450,9 @@
 
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.pos_client').hide();
-        $(document.body).on('change', '#pos_select', function () {
+        $(document.body).on('change', '#pos_select', function() {
 
             var v = $("select.pos_select option:selected").val()
             if (v == 'add_new') {
@@ -440,14 +463,12 @@
         });
 
     });
-
-
 </script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.pos_doctor').hide();
-        $(document.body).on('change', '#add_doctor', function () {
+        $(document.body).on('change', '#add_doctor', function() {
 
             var v = $("select.add_doctor option:selected").val()
             if (v == 'add_new') {
@@ -458,22 +479,20 @@
         });
 
     });
-
-
 </script>
 
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $(document.body).on('change', '#template', function () {
+    $(document).ready(function() {
+        $(document.body).on('change', '#template', function() {
             var iid = $("select.template option:selected").val();
             $.ajax({
                 url: 'lab/getTemplateByIdByJason?id=' + iid,
                 method: 'GET',
                 data: '',
                 dataType: 'json',
-            }).success(function (response) {
+            }).success(function(response) {
                 var data = CKEDITOR.instances.editor.getData();
                 if (response.template.template != null) {
                     var data1 = data + response.template.template;
@@ -486,7 +505,7 @@
     });
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $("#pos_select").select2({
             placeholder: '<?php echo lang('select_patient'); ?>',
             allowClear: true,
@@ -495,12 +514,12 @@
                 type: "post",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term // search term
                     };
                 },
-                processResults: function (response) {
+                processResults: function(response) {
                     return {
                         results: response
                     };
@@ -518,12 +537,12 @@
                 type: "post",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term // search term
                     };
                 },
-                processResults: function (response) {
+                processResults: function(response) {
                     return {
                         results: response
                     };

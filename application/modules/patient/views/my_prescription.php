@@ -5,12 +5,12 @@
         <!-- page start-->
         <section class="panel">
             <header class="panel-heading">
-                <?php echo lang('prescription'); ?>
+                <?php echo  'Recetas' ?>
             </header>
             <?php if ($this->ion_auth->in_group('Doctor')) { ?>
                 <div class="panel-body">
                     <a class="btn btn-info btn_width" data-toggle="modal" href="#myModa3">
-                        <i class="fa fa-plus-circle"> </i> <?php echo lang('add_new'); ?> 
+                        <i class="fa fa-plus-circle"> </i> <?php echo lang('add_new'); ?>
                     </a>
                 </div>
             <?php } ?>
@@ -28,45 +28,43 @@
                         </thead>
                         <tbody>
 
-                        <style>
+                            <style>
+                                .img_url {
+                                    height: 20px;
+                                    width: 20px;
+                                    background-size: contain;
+                                    max-height: 20px;
+                                    border-radius: 100px;
+                                }
+                            </style>
 
-                            .img_url{
-                                height:20px;
-                                width:20px;
-                                background-size: contain; 
-                                max-height:20px;
-                                border-radius: 100px;
-                            }
+                            <?php foreach ($prescriptions as $prescription) { ?>
+                                <tr class="">
+                                    <td><?php echo date('d-m-Y', $prescription->date); ?></td>
+                                    <td> <?php echo $this->patient_model->getPatientById($prescription->patient)->name; ?></td>
+                                    <td>
 
-                        </style>
+                                        <?php
+                                        if (!empty($prescription->medicine)) {
+                                            $medicine = explode('###', $prescription->medicine);
 
-                        <?php foreach ($prescriptions as $prescription) { ?>
-                            <tr class="">
-                                <td><?php echo date('d-m-Y', $prescription->date); ?></td>
-                                <td> <?php echo $this->patient_model->getPatientById($prescription->patient)->name; ?></td>
-                                <td>
-
-                                    <?php
-                                    if (!empty($prescription->medicine)) {
-                                        $medicine = explode('###', $prescription->medicine);
-
-                                        foreach ($medicine as $key => $value) {
-                                            $medicine_id = explode('***', $value);
-                                            $medicine_name_with_dosage = $this->medicine_model->getMedicineById($medicine_id[0])->name . ' -' . $medicine_id[1];
-                                            $medicine_name_with_dosage = $medicine_name_with_dosage . ' | ' . $medicine_id[3] . ' Days<br>';
-                                            rtrim($medicine_name_with_dosage, ',');
-                                            echo '<p>' . $medicine_name_with_dosage . '</p>';
+                                            foreach ($medicine as $key => $value) {
+                                                $medicine_id = explode('***', $value);
+                                                $medicine_name_with_dosage = $this->medicine_model->getMedicineById($medicine_id[0])->name . ' -' . $medicine_id[1];
+                                                $medicine_name_with_dosage = $medicine_name_with_dosage . ' | ' . $medicine_id[3] . ' Days<br>';
+                                                rtrim($medicine_name_with_dosage, ',');
+                                                echo '<p>' . $medicine_name_with_dosage . '</p>';
+                                            }
                                         }
-                                    }
-                                    ?>
+                                        ?>
 
 
-                                </td>
-                                <td>
-                                    <a class="btn btn-info btn-xs btn_width" href="prescription/viewPrescription?id=<?php echo $prescription->id; ?>"><i class="fa fa-eye"> <?php echo lang('view'); ?> <?php echo lang('prescription'); ?> </i></a>   
-                                </td>
-                            </tr>
-                        <?php } ?>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-info btn-xs btn_width" href="prescription/viewPrescription?id=<?php echo $prescription->id; ?>"><i class="fa fa-eye"> <?php echo lang('view'); ?> <?php echo  'Recetas' ?> </i></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -90,19 +88,19 @@ if ($this->ion_auth->in_group('Doctor')) {
 <!-- Add Prescription Modal-->
 <div class="modal fade" id="myModa3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">  
+        <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title"><i class="fa fa-plus-circle"></i> <?php echo lang('add_prescription'); ?></h4>
-            </div> 
+            </div>
             <div class="modal-body">
                 <form role="form" action="prescription/addNewPrescription" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-12">
                         <input type="hidden" class="form-control form-control-inline input-medium default-date-picker" name="doctor" id="exampleInputEmail1" value='<?php
-                        if (!empty($doctor_id)) {
-                            echo $doctor_id;
-                        }
-                        ?>' placeholder="">
+                                                                                                                                                                    if (!empty($doctor_id)) {
+                                                                                                                                                                        echo $doctor_id;
+                                                                                                                                                                    }
+                                                                                                                                                                    ?>' placeholder="">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('date'); ?></label>
@@ -110,17 +108,17 @@ if ($this->ion_auth->in_group('Doctor')) {
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
-                        <select class="form-control m-bot15 js-example-basic-single" name="patient" value=''> 
+                        <select class="form-control m-bot15 js-example-basic-single" name="patient" value=''>
                             <option value="">Select .....</option>
                             <?php foreach ($patients as $patientss) { ?>
                                 <option value="<?php echo $patientss->id; ?>" <?php
-                                if (!empty($prescription->patient)) {
-                                    if ($prescription->patient == $patientss->id) {
-                                        echo 'selected';
-                                    }
-                                }
-                                ?> ><?php echo $patientss->name; ?> </option>
-                                    <?php } ?>
+                                                                                if (!empty($prescription->patient)) {
+                                                                                    if ($prescription->patient == $patientss->id) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                }
+                                                                                ?>><?php echo $patientss->name; ?> </option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -160,11 +158,11 @@ if ($this->ion_auth->in_group('Doctor')) {
 <!-- Edit Prescription Modal-->
 <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">  
+        <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title"><i class="fa fa-plus-circle"></i> <?php echo lang('edit_prescription'); ?></h4>
-            </div> 
+            </div>
             <div class="modal-body">
                 <form role="form" id="prescriptionEditForm" action="prescription/addNewPrescription" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-12">
@@ -176,17 +174,17 @@ if ($this->ion_auth->in_group('Doctor')) {
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
-                        <select class="form-control m-bot15" name="patient" value=''> 
+                        <select class="form-control m-bot15" name="patient" value=''>
                             <option value="">Select .....</option>
                             <?php foreach ($patients as $patientss) { ?>
                                 <option value="<?php echo $patientss->id; ?>" <?php
-                                if (!empty($prescription->patient)) {
-                                    if ($prescription->patient == $patientss->id) {
-                                        echo 'selected';
-                                    }
-                                }
-                                ?> ><?php echo $patientss->name; ?> </option>
-                                    <?php } ?>
+                                                                                if (!empty($prescription->patient)) {
+                                                                                    if ($prescription->patient == $patientss->id) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                }
+                                                                                ?>><?php echo $patientss->name; ?> </option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -226,8 +224,8 @@ if ($this->ion_auth->in_group('Doctor')) {
 <script src="common/js/codearistos.min.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $(".editPrescription").click(function (e) {
+    $(document).ready(function() {
+        $(".editPrescription").click(function(e) {
             e.preventDefault(e);
             // Get the record's ID via attribute  
             var iid = $(this).attr('data-id');
@@ -237,7 +235,7 @@ if ($this->ion_auth->in_group('Doctor')) {
                 method: 'GET',
                 data: '',
                 dataType: 'json',
-            }).success(function (response) {
+            }).success(function(response) {
                 var de = response.prescription.date * 1000;
                 var d = new Date(de);
                 var da = (d.getDate() + 1) + '-' + (d.getMonth() + 1) + '-' + d.getFullYear();
@@ -258,27 +256,53 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         var table = $('#editable-sample').DataTable({
             responsive: true,
 
             dom: "<'row'<'col-sm-3'l><'col-sm-5 text-center'B><'col-sm-4'f>>" +
-                    "<'row'<'col-sm-12'tr>>" +
-                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
 
-            buttons: [
-                {extend: 'copyHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'excelHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'csvHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'pdfHtml5', exportOptions: {columns: [0, 1, 2], }},
-                {extend: 'print', exportOptions: {columns: [0, 1, 2], }},
+            buttons: [{
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'csvHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'pdfHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [0, 1, 2],
+                    }
+                },
             ],
             aLengthMenu: [
                 [10, 25, 50, 100, -1],
                 [10, 25, 50, 100, "All"]
             ],
             iDisplayLength: -1,
-            "order": [[0, "desc"]],
+            "order": [
+                [0, "desc"]
+            ],
 
             "language": {
                 "lengthMenu": "_MENU_",
@@ -289,14 +313,13 @@ if ($this->ion_auth->in_group('Doctor')) {
         });
 
         table.buttons().container()
-                .appendTo('.custom_buttons');
+            .appendTo('.custom_buttons');
     });
 </script>
 
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $(".flashmessage").delay(3000).fadeOut(100);
     });
 </script>
-

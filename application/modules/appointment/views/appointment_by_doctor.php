@@ -217,7 +217,7 @@
                     <input type="hidden" name="id" value=''>
 
 
-                    <button type="submit" name="submit" class="btn btn-info"> <?php echo lang('submit'); ?></button>
+                    <button type="submit" name="submit" class="btn btn-info"> <?php echo 'Actualizar' ?></button>
                 </form>
 
             </div>

@@ -64,10 +64,10 @@
                             <a data-toggle="tab" href="#appointments"><?php echo lang('appointments'); ?></a>
                         </li>
                         <li class="">
-                            <a data-toggle="tab" href="#home"><?php echo lang('case_history'); ?></a>
+                            <a data-toggle="tab" href="#home"><?php echo 'Historial' ?></a>
                         </li>
                         <li class="">
-                            <a data-toggle="tab" href="#about"><?php echo lang('prescription'); ?></a>
+                            <a data-toggle="tab" href="#about"><?php echo  'Recetas' ?></a>
                         </li>
                         <li class="">
                             <a data-toggle="tab" href="#lab"><?php echo lang('lab'); ?></a>
@@ -512,7 +512,7 @@
                     <input type="hidden" name="patient" value='<?php echo $patient->id; ?>'>
 
                     <div class="form-group col-md-12">
-                        <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo lang('submit'); ?></button>
+                        <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo 'Guardar' ?></button>
                     </div>
                 </form>
 
@@ -606,87 +606,87 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 <!-- Add Appointment Modal-->
 <div class="modal fade" id="addAppointmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-lg"">
+    <div class="modal-dialog modal-lg">
         <div class=" modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title"> <?php echo lang('add_appointment'); ?></h4>
-        </div>
-        <div class="modal-body">
-            <form role="form" action="appointment/addNew" class="clearfix row" method="post" enctype="multipart/form-data">
-                <div class="col-md-4 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('patient'); ?></label>
-                    <select class="form-control m-bot15 js-example-basic-single pos_select" id="pos_select" name="patient" value=''>
-                        <option value="">Select .....</option>
-                        <option value="<?php echo $patient->id; ?>"><?php echo $patient->name; ?> </option>
-                    </select>
-                </div>
-                <div class="col-md-4 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?></label>
-                    <select class="form-control m-bot15" id="adoctors" name="doctor" value=''>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"> <?php echo lang('add_appointment'); ?></h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" action="appointment/addNew" class="clearfix row" method="post" enctype="multipart/form-data">
+                    <div class="col-md-4 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('patient'); ?></label>
+                        <select class="form-control m-bot15 js-example-basic-single pos_select" id="pos_select" name="patient" value=''>
+                            <option value="">Select .....</option>
+                            <option value="<?php echo $patient->id; ?>"><?php echo $patient->name; ?> </option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?></label>
+                        <select class="form-control m-bot15" id="adoctors" name="doctor" value=''>
 
-                    </select>
-                </div>
-
-
-                <div class="col-md-4 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('date'); ?></label>
-                    <input type="text" class="form-control default-date-picker" id="date" readonly="" name="date" id="exampleInputEmail1" value='' placeholder="">
-                </div>
-
-                <div class="col-md-6 panel">
-                    <label class=""><?php echo lang('available_slots'); ?></label>
-                    <select class="form-control m-bot15" name="time_slot" id="aslots" value=''>
-
-                    </select>
-                </div>
-
-                <div class="col-md-6 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('appointment'); ?> <?php echo lang('status'); ?></label>
-                    <select class="form-control m-bot15" name="status" value=''>
-
-                        <?php if (!$this->ion_auth->in_group('Patient')) { ?>
-                            <option value="Pending Confirmation" <?php ?>> <?php echo lang('pending_confirmation'); ?> </option>
-                            <option value="Confirmed" <?php
-                                                        ?>> <?php echo lang('confirmed'); ?> </option>
-                            <option value="Treated" <?php
-                                                    ?>> <?php echo lang('treated'); ?> </option>
-                            <option value="Cancelled" <?php ?>> <?php echo lang('cancelled'); ?> </option>
-                        <?php } else { ?>
-                            <option value="Requested" <?php ?>> <?php echo lang('requested'); ?> </option>
-                        <?php } ?>
-                    </select>
-                </div>
-
-                <div class="col-md-8 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('remarks'); ?></label>
-                    <input type="text" class="form-control" name="remarks" id="exampleInputEmail1" value='' placeholder="">
-                </div>
+                        </select>
+                    </div>
 
 
+                    <div class="col-md-4 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('date'); ?></label>
+                        <input type="text" class="form-control default-date-picker" id="date" readonly="" name="date" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
+
+                    <div class="col-md-6 panel">
+                        <label class=""><?php echo lang('available_slots'); ?></label>
+                        <select class="form-control m-bot15" name="time_slot" id="aslots" value=''>
+
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('appointment'); ?> <?php echo lang('status'); ?></label>
+                        <select class="form-control m-bot15" name="status" value=''>
+
+                            <?php if (!$this->ion_auth->in_group('Patient')) { ?>
+                                <option value="Pending Confirmation" <?php ?>> <?php echo lang('pending_confirmation'); ?> </option>
+                                <option value="Confirmed" <?php
+                                                            ?>> <?php echo lang('confirmed'); ?> </option>
+                                <option value="Treated" <?php
+                                                        ?>> <?php echo lang('treated'); ?> </option>
+                                <option value="Cancelled" <?php ?>> <?php echo lang('cancelled'); ?> </option>
+                            <?php } else { ?>
+                                <option value="Requested" <?php ?>> <?php echo lang('requested'); ?> </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="col-md-8 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('remarks'); ?></label>
+                        <input type="text" class="form-control" name="remarks" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
 
 
-                <div class="col-md-5 panel">
-                    <input type="checkbox" name="sms" value="sms"> <?php echo lang('send_sms') ?><br>
-                </div>
 
-                <input type="hidden" name="redirect" value='patient/medicalHistory?id=<?php echo $patient->id; ?>'>
 
-                <input type="hidden" name="request" value='<?php
-                                                            if ($this->ion_auth->in_group(array('Patient'))) {
-                                                                echo 'Yes';
-                                                            }
-                                                            ?>'>
+                    <div class="col-md-5 panel">
+                        <input type="checkbox" name="sms" value="sms"> <?php echo lang('send_sms') ?><br>
+                    </div>
 
-                <div class="col-md-12 panel">
-                    <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo lang('submit'); ?></button>
-                </div>
+                    <input type="hidden" name="redirect" value='patient/medicalHistory?id=<?php echo $patient->id; ?>'>
 
-            </form>
+                    <input type="hidden" name="request" value='<?php
+                                                                if ($this->ion_auth->in_group(array('Patient'))) {
+                                                                    echo 'Yes';
+                                                                }
+                                                                ?>'>
 
-        </div>
-    </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
+                    <div class="col-md-12 panel">
+                        <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo  'Guardar' ?></button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div>
 <!-- Add Appointment Modal-->
 
@@ -764,11 +764,11 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 
 
-                <input type="hidden" name="redirect" value='patient/medicalHistory?id=<?php echo $patient->id; ?>'>>
+                <input type="hidden" name="redirect" value='patient/medicalHistory?id=<?php echo $patient->id; ?>'>
                 <input type="hidden" name="id" id="appointment_id" value=''>
 
                 <div class="col-md-12 panel">
-                    <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo lang('submit'); ?></button>
+                    <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo 'Actualizar' ?></button>
                 </div>
 
             </form>
@@ -788,7 +788,7 @@ if ($this->ion_auth->in_group('Doctor')) {
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"> <?php echo lang('edit_patient'); ?></h4>
+                <h4 class="modal-title"> <?php echo 'Editar Paciente' ?></h4>
             </div>
             <div class="modal-body row">
                 <form role="form" id="editPatientForm" action="patient/addNew" class="clearfix" method="post" enctype="multipart/form-data">
@@ -822,27 +822,27 @@ if ($this->ion_auth->in_group('Doctor')) {
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
                         <select class="form-control m-bot15" name="sex" value=''>
 
-                            <option value="Male" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Male') {
-                                                            echo 'selected';
+                            <option value="Masculino" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Masculino') {
+                                                                echo 'selected';
+                                                            }
                                                         }
-                                                    }
-                                                    ?>> Male </option>
-                            <option value="Female" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Female') {
-                                                            echo 'selected';
+                                                        ?>> Masculino </option>
+                            <option value="Femenino" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Femenino') {
+                                                                echo 'selected';
+                                                            }
                                                         }
-                                                    }
-                                                    ?>> Female </option>
+                                                        ?>> Femenino </option>
                             <option value="Others" <?php
                                                     if (!empty($patient->sex)) {
                                                         if ($patient->sex == 'Others') {
                                                             echo 'selected';
                                                         }
                                                     }
-                                                    ?>> Others </option>
+                                                    ?>> Otro </option>
                         </select>
                     </div>
 
@@ -852,20 +852,6 @@ if ($this->ion_auth->in_group('Doctor')) {
                     </div>
 
 
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('blood_group'); ?></label>
-                        <select class="form-control m-bot15" name="bloodgroup" value=''>
-                            <?php foreach ($groups as $group) { ?>
-                                <option value="<?php echo $group->group; ?>" <?php
-                                                                                if (!empty($patient->bloodgroup)) {
-                                                                                    if ($group->group == $patient->bloodgroup) {
-                                                                                        echo 'selected';
-                                                                                    }
-                                                                                }
-                                                                                ?>> <?php echo $group->group; ?> </option>
-                            <?php } ?>
-                        </select>
-                    </div>
 
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('doctor'); ?></label>
@@ -925,7 +911,7 @@ if ($this->ion_auth->in_group('Doctor')) {
                         <input type="checkbox" name="sms" value="sms"> <?php echo lang('send_sms') ?><br>
                     </div>
 
-                    <input type="hidden" name="redirect" value='patient/medicalHistory?id=<?php echo $patient->id; ?>'>>
+                    <input type="hidden" name="redirect" value='patient/medicalHistory?id=<?php echo $patient->id; ?>'>
 
                     <input type="hidden" name="id" value=''>
                     <input type="hidden" name="p_id" value='<?php
@@ -941,7 +927,7 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 
                     <section class="col-md-12">
-                        <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo lang('submit'); ?></button>
+                        <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo 'Actualizar' ?></button>
                     </section>
 
                 </form>

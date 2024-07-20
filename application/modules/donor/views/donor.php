@@ -1,14 +1,13 @@
-
 <!--sidebar end-->
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper site-min-height">
         <!-- page start-->
         <section class="panel">
-            <header class="panel-heading"> 
-                <?php echo lang('donor'); ?> 
+            <header class="panel-heading">
+                <?php echo lang('donor'); ?>
                 <?php if (!$this->ion_auth->in_group(array('Patient'))) { ?>
-                    <div class="col-md-4 no-print pull-right"> 
+                    <div class="col-md-4 no-print pull-right">
                         <a data-toggle="modal" href="#myModal">
                             <div class="btn-group pull-right">
                                 <button id="" class="btn green btn-xs">
@@ -39,35 +38,33 @@
                         </thead>
                         <tbody>
 
-                        <style>
+                            <style>
+                                .img_url {
+                                    height: 20px;
+                                    width: 20px;
+                                    background-size: contain;
+                                    max-height: 20px;
+                                    border-radius: 100px;
+                                }
+                            </style>
 
-                            .img_url{
-                                height:20px;
-                                width:20px;
-                                background-size: contain; 
-                                max-height:20px;
-                                border-radius: 100px;
-                            }
-
-                        </style>
-
-                        <?php foreach ($donors as $donor) { ?>
-                            <tr class="">
-                                <td><?php echo $donor->name; ?></td>
-                                <td> <?php echo $donor->group; ?></td>
-                                <td><?php echo $donor->age; ?></td>
-                                <td class="center"><?php echo $donor->sex; ?></td>
-                                <td><?php echo $donor->ldd; ?></td>
-                                <td><?php echo $donor->phone; ?></td>
-                                <td><?php echo $donor->email; ?></td>
-                                <?php if ($this->ion_auth->in_group(array('admin', 'Nurse', 'Laboratorist', 'Doctor'))) { ?>
-                                    <td class="no-print">
-                                        <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $donor->id; ?>"><i class="fa fa-edit"> </i></button>   
-                                        <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="donor/delete?id=<?php echo $donor->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash"> </i></a>
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                        <?php } ?>
+                            <?php foreach ($donors as $donor) { ?>
+                                <tr class="">
+                                    <td><?php echo $donor->name; ?></td>
+                                    <td> <?php echo $donor->group; ?></td>
+                                    <td><?php echo $donor->age; ?></td>
+                                    <td class="center"><?php echo $donor->sex; ?></td>
+                                    <td><?php echo $donor->ldd; ?></td>
+                                    <td><?php echo $donor->phone; ?></td>
+                                    <td><?php echo $donor->email; ?></td>
+                                    <?php if ($this->ion_auth->in_group(array('admin', 'Nurse', 'Laboratorist', 'Doctor'))) { ?>
+                                        <td class="no-print">
+                                            <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $donor->id; ?>"><i class="fa fa-edit"> </i></button>
+                                            <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="donor/delete?id=<?php echo $donor->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash"> </i></a>
+                                        </td>
+                                    <?php } ?>
+                                </tr>
+                            <?php } ?>
 
                         </tbody>
                     </table>
@@ -105,13 +102,13 @@
                         <select class="form-control m-bot15" name="group" value=''>
                             <?php foreach ($groups as $group) { ?>
                                 <option value="<?php echo $group->group; ?>" <?php
-                                if (!empty($donor->group)) {
-                                    if ($group->group == $donor->group) {
-                                        echo 'selected';
-                                    }
-                                }
-                                ?> > <?php echo $group->group; ?> </option>
-                                    <?php } ?> 
+                                                                                if (!empty($donor->group)) {
+                                                                                    if ($group->group == $donor->group) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                }
+                                                                                ?>> <?php echo $group->group; ?> </option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group col-md-3">
@@ -129,27 +126,27 @@
                     <div class="form-group col-md-3">
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
                         <select class="form-control m-bot15" name="sex" value=''>
-                            <option value="Male" <?php
-                            if (!empty($donor->sex)) {
-                                if ($donor->sex == 'Male') {
-                                    echo 'selected';
-                                }
-                            }
-                            ?> > Male </option>
-                            <option value="Female" <?php
-                            if (!empty($donor->sex)) {
-                                if ($donor->sex == 'Female') {
-                                    echo 'selected';
-                                }
-                            }
-                            ?> > Female </option>
+                            <option value="Masculino" <?php
+                                                        if (!empty($donor->sex)) {
+                                                            if ($donor->sex == 'Masculino') {
+                                                                echo 'selected';
+                                                            }
+                                                        }
+                                                        ?>> Masculino </option>
+                            <option value="Femenino" <?php
+                                                        if (!empty($donor->sex)) {
+                                                            if ($donor->sex == 'Femenino') {
+                                                                echo 'selected';
+                                                            }
+                                                        }
+                                                        ?>> Femenino </option>
                             <option value="Others" <?php
-                            if (!empty($donor->sex)) {
-                                if ($donor->sex == 'Others') {
-                                    echo 'selected';
-                                }
-                            }
-                            ?> > Others </option>
+                                                    if (!empty($donor->sex)) {
+                                                        if ($donor->sex == 'Others') {
+                                                            echo 'selected';
+                                                        }
+                                                    }
+                                                    ?>> Otro </option>
                         </select>
                     </div>
 
@@ -183,7 +180,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">  <?php echo lang('edit_donor'); ?></h4>
+                <h4 class="modal-title"> <?php echo lang('edit_donor'); ?></h4>
             </div>
             <div class="modal-body row">
                 <form role="form" id="editDonorForm" class="clearfix" action="donor/addDonor" method="post" enctype="multipart/form-data">
@@ -196,13 +193,13 @@
                         <select class="form-control m-bot15" name="group" value=''>
                             <?php foreach ($groups as $group) { ?>
                                 <option value="<?php echo $group->group; ?>" <?php
-                                if (!empty($donor->group)) {
-                                    if ($group->group == $donor->group) {
-                                        echo 'selected';
-                                    }
-                                }
-                                ?> > <?php echo $group->group; ?> </option>
-                                    <?php } ?> 
+                                                                                if (!empty($donor->group)) {
+                                                                                    if ($group->group == $donor->group) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                }
+                                                                                ?>> <?php echo $group->group; ?> </option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group col-md-3">
@@ -220,27 +217,27 @@
                     <div class="form-group col-md-3">
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
                         <select class="form-control m-bot15" name="sex" value=''>
-                            <option value="Male" <?php
-                            if (!empty($donor->sex)) {
-                                if ($donor->sex == 'Male') {
-                                    echo 'selected';
-                                }
-                            }
-                            ?> > Male </option>
-                            <option value="Female" <?php
-                            if (!empty($donor->sex)) {
-                                if ($donor->sex == 'Female') {
-                                    echo 'selected';
-                                }
-                            }
-                            ?> > Female </option>
+                            <option value="Masculino" <?php
+                                                        if (!empty($donor->sex)) {
+                                                            if ($donor->sex == 'Masculino') {
+                                                                echo 'selected';
+                                                            }
+                                                        }
+                                                        ?>> Masculino </option>
+                            <option value="Femenino" <?php
+                                                        if (!empty($donor->sex)) {
+                                                            if ($donor->sex == 'Femenino') {
+                                                                echo 'selected';
+                                                            }
+                                                        }
+                                                        ?>> Femenino </option>
                             <option value="Others" <?php
-                            if (!empty($donor->sex)) {
-                                if ($donor->sex == 'Others') {
-                                    echo 'selected';
-                                }
-                            }
-                            ?> > Others </option>
+                                                    if (!empty($donor->sex)) {
+                                                        if ($donor->sex == 'Others') {
+                                                            echo 'selected';
+                                                        }
+                                                    }
+                                                    ?>> Otro </option>
                         </select>
                     </div>
 
@@ -267,54 +264,80 @@
 
 <script src="common/js/codearistos.min.js"></script>
 <script type="text/javascript">
-                                    $(document).ready(function () {
-                                        $(".editbutton").click(function (e) {
-                                            e.preventDefault(e);
-                                            // Get the record's ID via attribute  
-                                            var iid = $(this).attr('data-id');
-                                            $('#editDonorForm').trigger("reset");
-                                            $('#myModal2').modal('show');
-                                            $.ajax({
-                                                url: 'donor/editDonorByJason?id=' + iid,
-                                                method: 'GET',
-                                                data: '',
-                                                dataType: 'json',
-                                            }).success(function (response) {
-                                                // Populate the form fields with the data returned from server
-                                                $('#editDonorForm').find('[name="id"]').val(response.donor.id).end()
-                                                $('#editDonorForm').find('[name="name"]').val(response.donor.name).end()
-                                                $('#editDonorForm').find('[name="group"]').val(response.donor.group).end()
-                                                $('#editDonorForm').find('[name="age"]').val(response.donor.age).end()
-                                                $('#editDonorForm').find('[name="sex"]').val(response.donor.sex).end()
-                                                $('#editDonorForm').find('[name="ldd"]').val(response.donor.ldd).end()
-                                                $('#editDonorForm').find('[name="phone"]').val(response.donor.phone).end()
-                                                $('#editDonorForm').find('[name="email"]').val(response.donor.email).end()
-                                            });
-                                        });
-                                    });
+    $(document).ready(function() {
+        $(".editbutton").click(function(e) {
+            e.preventDefault(e);
+            // Get the record's ID via attribute  
+            var iid = $(this).attr('data-id');
+            $('#editDonorForm').trigger("reset");
+            $('#myModal2').modal('show');
+            $.ajax({
+                url: 'donor/editDonorByJason?id=' + iid,
+                method: 'GET',
+                data: '',
+                dataType: 'json',
+            }).success(function(response) {
+                // Populate the form fields with the data returned from server
+                $('#editDonorForm').find('[name="id"]').val(response.donor.id).end()
+                $('#editDonorForm').find('[name="name"]').val(response.donor.name).end()
+                $('#editDonorForm').find('[name="group"]').val(response.donor.group).end()
+                $('#editDonorForm').find('[name="age"]').val(response.donor.age).end()
+                $('#editDonorForm').find('[name="sex"]').val(response.donor.sex).end()
+                $('#editDonorForm').find('[name="ldd"]').val(response.donor.ldd).end()
+                $('#editDonorForm').find('[name="phone"]').val(response.donor.phone).end()
+                $('#editDonorForm').find('[name="email"]').val(response.donor.email).end()
+            });
+        });
+    });
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         var table = $('#editable-sample').DataTable({
             responsive: true,
 
             dom: "<'row'<'col-sm-3'l><'col-sm-5 text-center'B><'col-sm-4'f>>" +
-                    "<'row'<'col-sm-12'tr>>" +
-                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
 
-            buttons: [
-                {extend: 'copyHtml5', exportOptions: {columns: [0, 1, 2, 3, 4, 5, 6], }},
-                {extend: 'excelHtml5', exportOptions: {columns: [0, 1, 2, 3, 4, 5, 6], }},
-                {extend: 'csvHtml5', exportOptions: {columns: [0, 1, 2, 3, 4, 5, 6], }},
-                {extend: 'pdfHtml5', exportOptions: {columns: [0, 1, 2, 3, 4, 5, 6], }},
-                {extend: 'print', exportOptions: {columns: [0, 1, 2, 3, 4, 5, 6], }},
+            buttons: [{
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6],
+                    }
+                },
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6],
+                    }
+                },
+                {
+                    extend: 'csvHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6],
+                    }
+                },
+                {
+                    extend: 'pdfHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6],
+                    }
+                },
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6],
+                    }
+                },
             ],
             aLengthMenu: [
                 [10, 25, 50, 100, -1],
                 [10, 25, 50, 100, "All"]
             ],
             iDisplayLength: -1,
-            "order": [[0, "desc"]],
+            "order": [
+                [0, "desc"]
+            ],
 
             "language": {
                 "lengthMenu": "_MENU_",
@@ -326,7 +349,7 @@
     });
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $(".flashmessage").delay(3000).fadeOut(100);
     });
 </script>

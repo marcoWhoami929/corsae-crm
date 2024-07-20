@@ -56,109 +56,109 @@
 
 <!-- Add Appointment Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-lg"">
+    <div class="modal-dialog modal-lg">
         <div class=" modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title"> <?php echo lang('add_appointment'); ?></h4>
-        </div>
-        <div class="modal-body row">
-            <form role="form" action="appointment/addNew" method="post" class="clearfix" enctype="multipart/form-data">
-                <div class="col-md-6 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('patient'); ?></label>
-                    <select class="form-control m-bot15 pos_select" id="pos_select" name="patient" value=''>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"> <?php echo lang('add_appointment'); ?></h4>
+            </div>
+            <div class="modal-body row">
+                <form role="form" action="appointment/addNew" method="post" class="clearfix" enctype="multipart/form-data">
+                    <div class="col-md-6 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('patient'); ?></label>
+                        <select class="form-control m-bot15 pos_select" id="pos_select" name="patient" value=''>
 
-                    </select>
-                </div>
-                <div class="pos_client clearfix col-md-6">
-                    <div class="payment pad_bot pull-right">
-                        <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('name'); ?></label>
-                        <input type="text" class="form-control pay_in" name="p_name" value='' placeholder="">
-                    </div>
-                    <div class="payment pad_bot pull-right">
-                        <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('email'); ?></label>
-                        <input type="text" class="form-control pay_in" name="p_email" value='' placeholder="">
-                    </div>
-                    <div class="payment pad_bot pull-right">
-                        <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('phone'); ?></label>
-                        <input type="text" class="form-control pay_in" name="p_phone" value='' placeholder="">
-                    </div>
-                    <div class="payment pad_bot pull-right">
-                        <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('age'); ?></label>
-                        <input type="text" class="form-control pay_in" name="p_age" value='' placeholder="">
-                    </div>
-                    <div class="payment pad_bot">
-                        <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('gender'); ?></label>
-                        <select class="form-control" name="p_gender" value=''>
-
-                            <option value="Male" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Male') {
-                                                            echo 'selected';
-                                                        }
-                                                    }
-                                                    ?>> Male </option>
-                            <option value="Female" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Female') {
-                                                            echo 'selected';
-                                                        }
-                                                    }
-                                                    ?>> Female </option>
-                            <option value="Others" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Others') {
-                                                            echo 'selected';
-                                                        }
-                                                    }
-                                                    ?>> Others </option>
                         </select>
                     </div>
-                </div>
-                <div class="col-md-6 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?></label>
-                    <select class="form-control m-bot15 " id="adoctors" name="doctor" value=''>
+                    <div class="pos_client clearfix col-md-6">
+                        <div class="payment pad_bot pull-right">
+                            <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('name'); ?></label>
+                            <input type="text" class="form-control pay_in" name="p_name" value='' placeholder="">
+                        </div>
+                        <div class="payment pad_bot pull-right">
+                            <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('email'); ?></label>
+                            <input type="text" class="form-control pay_in" name="p_email" value='' placeholder="">
+                        </div>
+                        <div class="payment pad_bot pull-right">
+                            <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('phone'); ?></label>
+                            <input type="text" class="form-control pay_in" name="p_phone" value='' placeholder="">
+                        </div>
+                        <div class="payment pad_bot pull-right">
+                            <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('age'); ?></label>
+                            <input type="text" class="form-control pay_in" name="p_age" value='' placeholder="">
+                        </div>
+                        <div class="payment pad_bot">
+                            <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('gender'); ?></label>
+                            <select class="form-control" name="p_gender" value=''>
 
-                    </select>
-                </div>
-                <div class="col-md-6 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('date'); ?></label>
-                    <input type="text" class="form-control default-date-picker" id="date" readonly="" name="date" id="exampleInputEmail1" value='' placeholder="">
-                </div>
-                <div class="col-md-6 panel">
-                    <label for="exampleInputEmail1">Available Slots</label>
-                    <select class="form-control m-bot15" name="time_slot" id="aslots" value=''>
+                                <option value="Masculino" <?php
+                                                            if (!empty($patient->sex)) {
+                                                                if ($patient->sex == 'Masculino') {
+                                                                    echo 'selected';
+                                                                }
+                                                            }
+                                                            ?>> Masculino </option>
+                                <option value="Femenino" <?php
+                                                            if (!empty($patient->sex)) {
+                                                                if ($patient->sex == 'Femenino') {
+                                                                    echo 'selected';
+                                                                }
+                                                            }
+                                                            ?>> Femenino </option>
+                                <option value="Others" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Others') {
+                                                                echo 'selected';
+                                                            }
+                                                        }
+                                                        ?>> Otro </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?></label>
+                        <select class="form-control m-bot15 " id="adoctors" name="doctor" value=''>
 
-                    </select>
-                </div>
-                <div class="col-md-6 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('appointment'); ?> <?php echo lang('status'); ?></label>
-                    <select class="form-control m-bot15" name="status" value=''>
-                        <option value="Pending Confirmation" <?php
-                                                                ?>> <?php echo lang('pending_confirmation'); ?> </option>
-                        <option value="Confirmed" <?php
-                                                    ?>> <?php echo lang('confirmed'); ?> </option>
-                        <option value="Treated" <?php
-                                                ?>> <?php echo lang('treated'); ?> </option>
-                        <option value="Cancelled" <?php
-                                                    ?>> <?php echo lang('cancelled'); ?> </option>
-                    </select>
-                </div>
-                <div class="col-md-6 panel">
-                    <label for="exampleInputEmail1"> <?php echo lang('remarks'); ?></label>
-                    <input type="text" class="form-control" name="remarks" id="exampleInputEmail1" value='' placeholder="">
-                </div>
-                <!--     <div class="col-md-6 panel">
+                        </select>
+                    </div>
+                    <div class="col-md-6 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('date'); ?></label>
+                        <input type="text" class="form-control default-date-picker" id="date" readonly="" name="date" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
+                    <div class="col-md-6 panel">
+                        <label for="exampleInputEmail1">Available Slots</label>
+                        <select class="form-control m-bot15" name="time_slot" id="aslots" value=''>
+
+                        </select>
+                    </div>
+                    <div class="col-md-6 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('appointment'); ?> <?php echo lang('status'); ?></label>
+                        <select class="form-control m-bot15" name="status" value=''>
+                            <option value="Pending Confirmation" <?php
+                                                                    ?>> <?php echo lang('pending_confirmation'); ?> </option>
+                            <option value="Confirmed" <?php
+                                                        ?>> <?php echo lang('confirmed'); ?> </option>
+                            <option value="Treated" <?php
+                                                    ?>> <?php echo lang('treated'); ?> </option>
+                            <option value="Cancelled" <?php
+                                                        ?>> <?php echo lang('cancelled'); ?> </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 panel">
+                        <label for="exampleInputEmail1"> <?php echo lang('remarks'); ?></label>
+                        <input type="text" class="form-control" name="remarks" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
+                    <!--     <div class="col-md-6 panel">
                          <label> <?php echo lang('send_sms'); ?>  </label> <br>
                          <input type="checkbox" name="sms" class="" value="sms">  <?php echo lang('yes'); ?>
                      </div> -->
-                <div class="col-md-12 panel">
-                    <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo lang('submit'); ?></button>
-                </div>
-            </form>
-        </div>
-    </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
+                    <div class="col-md-12 panel">
+                        <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo 'Guardar' ?></button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div>
 <!-- Add Appointment Modal-->
 
@@ -228,27 +228,27 @@
                         <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('gender'); ?></label>
                         <select class="form-control" name="p_gender" value=''>
 
-                            <option value="Male" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Male') {
-                                                            echo 'selected';
+                            <option value="Masculino" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Masculino') {
+                                                                echo 'selected';
+                                                            }
                                                         }
-                                                    }
-                                                    ?>> Male </option>
-                            <option value="Female" <?php
-                                                    if (!empty($patient->sex)) {
-                                                        if ($patient->sex == 'Female') {
-                                                            echo 'selected';
+                                                        ?>> Masculino </option>
+                            <option value="Femenino" <?php
+                                                        if (!empty($patient->sex)) {
+                                                            if ($patient->sex == 'Femenino') {
+                                                                echo 'selected';
+                                                            }
                                                         }
-                                                    }
-                                                    ?>> Female </option>
+                                                        ?>> Femenino </option>
                             <option value="Others" <?php
                                                     if (!empty($patient->sex)) {
                                                         if ($patient->sex == 'Others') {
                                                             echo 'selected';
                                                         }
                                                     }
-                                                    ?>> Others </option>
+                                                    ?>> Otro </option>
                         </select>
                     </div>
                 </div>

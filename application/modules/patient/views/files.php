@@ -6,17 +6,17 @@
         <section class="panel">
             <header class="panel-heading">
                 <?php echo lang('medical_history'); ?> | <?php echo $patient->name; ?> | <?php echo $patient->phone; ?>
-            </header> 
+            </header>
             <div class="col-md-6">
                 <div class="panel-body">
                     <div class="panel-body">
                         <a class="btn btn-info btn_width" data-toggle="modal" href="#myModal">
-                            <i class="fa fa-plus-circle"> </i> <?php echo lang('add_new'); ?> 
+                            <i class="fa fa-plus-circle"> </i> <?php echo lang('add_new'); ?>
                         </a>
                     </div>
                     <header class="panel-heading">
-                        <?php echo lang('patient'); ?>  <?php echo lang('history'); ?> 
-                    </header> 
+                        <?php echo lang('patient'); ?> <?php echo lang('history'); ?>
+                    </header>
 
                     <div class="adv-table editable-table panel-body">
                         <table class="table table-striped table-hover table-bordered" id="">
@@ -34,7 +34,7 @@
                                         <td><?php echo $medical_history->date; ?></td>
                                         <td><?php echo $medical_history->description; ?></td>
                                         <td class="no-print">
-                                            <button type="button" class="btn btn-info btn-xs btn_width editbutton" data-toggle="modal" data-id="<?php echo $medical_history->id; ?>"><i class="fa fa-edit"></i> <?php echo lang('edit'); ?></button>   
+                                            <button type="button" class="btn btn-info btn-xs btn_width editbutton" data-toggle="modal" data-id="<?php echo $medical_history->id; ?>"><i class="fa fa-edit"></i> <?php echo lang('edit'); ?></button>
                                             <a class="btn btn-info btn-xs btn_width delete_button" href="medical_history/delete?id=<?php echo $medical_history->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?></a>
                                         </td>
                                     </tr>
@@ -47,13 +47,13 @@
                     <?php if ($this->ion_auth->in_group(array('Doctor'))) { ?>
                         <div class="panel-body">
                             <a class="btn btn-info btn_width" data-toggle="modal" href="#myModa3">
-                                <i class="fa fa-plus-circle"> </i> <?php echo lang('add_new'); ?> 
+                                <i class="fa fa-plus-circle"> </i> <?php echo lang('add_new'); ?>
                             </a>
                         </div>
                     <?php } ?>
                     <header class="panel-heading">
-                        <?php echo lang('prescription'); ?> 
-                    </header> 
+                        <?php echo  'Recetas' ?>
+                    </header>
 
                     <div class="adv-table editable-table panel-body">
                         <table class="table table-striped table-hover table-bordered" id="">
@@ -71,9 +71,9 @@
                                         <td><?php echo date('m/d/Y', $prescription->date); ?></td>
                                         <td><?php echo $this->doctor_model->getDoctorById($prescription->doctor)->name; ?></td>
                                         <td class="no-print">
-                                              <a class="btn btn-info btn-xs btn_width" href="prescription/viewPrescription?id=<?php echo $prescription->id; ?>"><i class="fa fa-eye"> <?php echo lang('view'); ?> </i></a> 
+                                            <a class="btn btn-info btn-xs btn_width" href="prescription/viewPrescription?id=<?php echo $prescription->id; ?>"><i class="fa fa-eye"> <?php echo lang('view'); ?> </i></a>
                                             <?php if ($this->ion_auth->in_group('Doctor')) { ?>
-                                                <button type="button" class="btn btn-info btn-xs btn_width editPrescription" data-toggle="modal" data-id="<?php echo $prescription->id; ?>"><i class="fa fa-edit"></i> <?php echo lang('edit'); ?></button>   
+                                                <button type="button" class="btn btn-info btn-xs btn_width editPrescription" data-toggle="modal" data-id="<?php echo $prescription->id; ?>"><i class="fa fa-edit"></i> <?php echo lang('edit'); ?></button>
                                                 <a class="btn btn-info btn-xs btn_width delete_button" href="prescription/delete?id=<?php echo $prescription->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?></a>
                                             <?php } ?>
                                         </td>
@@ -84,15 +84,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6"> 
+            <div class="col-md-6">
                 <div class="panel-body">
                     <div class="panel-body">
                         <a class="btn btn-info btn_width" data-toggle="modal" href="#myModal1">
-                            <i class="fa fa-plus-circle"> </i> <?php echo lang('add_new'); ?> 
+                            <i class="fa fa-plus-circle"> </i> <?php echo lang('add_new'); ?>
                         </a>
                     </div>
                     <header class="panel-heading">
-                        <?php echo lang('patient'); ?>  <?php echo lang('files'); ?> 
+                        <?php echo lang('patient'); ?> <?php echo lang('files'); ?>
                     </header>
                     <div class="adv-table editable-table ">
 
@@ -100,8 +100,8 @@
 
                         <div class="panel-body">
                             <?php foreach ($patient_materials as $patient_material) { ?>
-                                <div class="panel col-md-3"  style="height: 200px; margin-right: 5px;">
-                                    <a class="btn btn-info btn-xs btn_width" href="patient/deletePatientMaterial?id=<?php echo $patient_material->id; ?>"onclick="return confirm('Are you sure you want to delete this item?');"> X </a>
+                                <div class="panel col-md-3" style="height: 200px; margin-right: 5px;">
+                                    <a class="btn btn-info btn-xs btn_width" href="patient/deletePatientMaterial?id=<?php echo $patient_material->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"> X </a>
                                     <div class="post-info">
                                         <img src="<?php echo $patient_material->url; ?>" width="100%">
                                     </div>
@@ -138,7 +138,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"><i class="fa fa-plus-circle"></i>  <?php echo lang('add'); ?> <?php echo lang('files'); ?></h4>
+                <h4 class="modal-title"><i class="fa fa-plus-circle"></i> <?php echo lang('add'); ?> <?php echo lang('files'); ?></h4>
             </div>
             <div class="modal-body">
                 <form role="form" action="patient/addPatientMaterial" method="post" enctype="multipart/form-data">
@@ -172,7 +172,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title"><i class="fa fa-plus-circle"></i> <?php echo lang('add_medical_history'); ?></h4>
-            </div> 
+            </div>
             <div class="modal-body">
                 <form role="form" action="patient/addMedicalHistory" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -239,19 +239,19 @@ if ($this->ion_auth->in_group('Doctor')) {
 <!-- Add Prescription Modal-->
 <div class="modal fade" id="myModa3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
-        <div class="modal-content">  
+        <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title"><i class="fa fa-plus-circle"></i> <?php echo lang('add_prescription'); ?></h4>
-            </div> 
+            </div>
             <div class="modal-body">
                 <form role="form" action="prescription/addNewPrescription" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-12">
                         <input type="hidden" class="form-control form-control-inline input-medium default-date-picker" name="doctor" id="exampleInputEmail1" value='<?php
-                        if (!empty($doctor_id)) {
-                            echo $doctor_id;
-                        }
-                        ?>' placeholder="">
+                                                                                                                                                                    if (!empty($doctor_id)) {
+                                                                                                                                                                        echo $doctor_id;
+                                                                                                                                                                    }
+                                                                                                                                                                    ?>' placeholder="">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('date'); ?></label>
@@ -259,17 +259,17 @@ if ($this->ion_auth->in_group('Doctor')) {
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
-                        <select class="form-control m-bot15" name="patient" value=''> 
+                        <select class="form-control m-bot15" name="patient" value=''>
                             <option value="">Select .....</option>
                             <?php foreach ($patients as $patientss) { ?>
                                 <option value="<?php echo $patientss->id; ?>" <?php
-                                if (!empty($prescription->patient)) {
-                                    if ($prescription->patient == $patientss->id) {
-                                        echo 'selected';
-                                    }
-                                }
-                                ?> ><?php echo $patientss->name; ?> </option>
-                                    <?php } ?>
+                                                                                if (!empty($prescription->patient)) {
+                                                                                    if ($prescription->patient == $patientss->id) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                }
+                                                                                ?>><?php echo $patientss->name; ?> </option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -310,11 +310,11 @@ if ($this->ion_auth->in_group('Doctor')) {
 <!-- Edit Prescription Modal-->
 <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
-        <div class="modal-content">  
+        <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title"><i class="fa fa-plus-circle"></i> <?php echo lang('add_prescription'); ?></h4>
-            </div> 
+            </div>
             <div class="modal-body">
                 <form role="form" id="prescriptionEditForm" action="prescription/addNewPrescription" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-12">
@@ -326,17 +326,17 @@ if ($this->ion_auth->in_group('Doctor')) {
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
-                        <select class="form-control m-bot15" name="patient" value=''> 
+                        <select class="form-control m-bot15" name="patient" value=''>
                             <option value="">Select .....</option>
                             <?php foreach ($patients as $patientss) { ?>
                                 <option value="<?php echo $patientss->id; ?>" <?php
-                                if (!empty($prescription->patient)) {
-                                    if ($prescription->patient == $patientss->id) {
-                                        echo 'selected';
-                                    }
-                                }
-                                ?> ><?php echo $patientss->name; ?> </option>
-                                    <?php } ?>
+                                                                                if (!empty($prescription->patient)) {
+                                                                                    if ($prescription->patient == $patientss->id) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                }
+                                                                                ?>><?php echo $patientss->name; ?> </option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -360,7 +360,7 @@ if ($this->ion_auth->in_group('Doctor')) {
                         </div>
                     </div>
 
-                    
+
                     <input type="hidden" name="id" value=''>
                     <section class="">
                         <button type="submit" name="submit" class="btn btn-info submit_button"><?php echo lang('submit'); ?></button>
@@ -376,56 +376,56 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 <script src="common/js/codearistos.min.js"></script>
 <script type="text/javascript">
-                                        $(document).ready(function () {
-                                            $(".editbutton").click(function (e) {
-                                                e.preventDefault(e);
-                                                // Get the record's ID via attribute  
-                                                var iid = $(this).attr('data-id');
-                                                $('#myModal2').modal('show');
-                                                $.ajax({
-                                                    url: 'patient/editMedicalHistoryByJason?id=' + iid,
-                                                    method: 'GET',
-                                                    data: '',
-                                                    dataType: 'json',
-                                                }).success(function (response) {
-                                                    // Populate the form fields with the data returned from server
-                                                    $('#medical_historyEditForm').find('[name="id"]').val(response.medical_history.id).end()
-                                                    $('#medical_historyEditForm').find('[name="date"]').val(response.medical_history.date).end()
-                                                    CKEDITOR.instances['editor'].setData(response.medical_history.description)
-                                                });
-                                            });
-                                        });
+    $(document).ready(function() {
+        $(".editbutton").click(function(e) {
+            e.preventDefault(e);
+            // Get the record's ID via attribute  
+            var iid = $(this).attr('data-id');
+            $('#myModal2').modal('show');
+            $.ajax({
+                url: 'patient/editMedicalHistoryByJason?id=' + iid,
+                method: 'GET',
+                data: '',
+                dataType: 'json',
+            }).success(function(response) {
+                // Populate the form fields with the data returned from server
+                $('#medical_historyEditForm').find('[name="id"]').val(response.medical_history.id).end()
+                $('#medical_historyEditForm').find('[name="date"]').val(response.medical_history.date).end()
+                CKEDITOR.instances['editor'].setData(response.medical_history.description)
+            });
+        });
+    });
 </script>
 
 
 <script type="text/javascript">
-                                        $(document).ready(function () {
-                                            $(".editPrescription").click(function (e) {
-                                                e.preventDefault(e);
-                                                // Get the record's ID via attribute  
-                                                var iid = $(this).attr('data-id');
-                                                $('#myModal5').modal('show');
-                                                $.ajax({
-                                                    url: 'prescription/editPrescriptionByJason?id=' + iid,
-                                                    method: 'GET',
-                                                    data: '',
-                                                    dataType: 'json',
-                                                }).success(function (response) {
-                                                    // Populate the form fields with the data returned from server
-                                                    $('#prescriptionEditForm').find('[name="id"]').val(response.prescription.id).end()
-                                                    $('#prescriptionEditForm').find('[name="patient"]').val(response.prescription.patient).end()
-                                                     $('#prescriptionEditForm').find('[name="doctor"]').val(response.prescription.doctor).end()
-                                                     
-                                                    CKEDITOR.instances['editor1'].setData(response.prescription.symptom)
-                                                    CKEDITOR.instances['editor2'].setData(response.prescription.medicine)
-                                                    CKEDITOR.instances['editor3'].setData(response.prescription.note)
-                                                });
-                                            });
-                                        });
+    $(document).ready(function() {
+        $(".editPrescription").click(function(e) {
+            e.preventDefault(e);
+            // Get the record's ID via attribute  
+            var iid = $(this).attr('data-id');
+            $('#myModal5').modal('show');
+            $.ajax({
+                url: 'prescription/editPrescriptionByJason?id=' + iid,
+                method: 'GET',
+                data: '',
+                dataType: 'json',
+            }).success(function(response) {
+                // Populate the form fields with the data returned from server
+                $('#prescriptionEditForm').find('[name="id"]').val(response.prescription.id).end()
+                $('#prescriptionEditForm').find('[name="patient"]').val(response.prescription.patient).end()
+                $('#prescriptionEditForm').find('[name="doctor"]').val(response.prescription.doctor).end()
+
+                CKEDITOR.instances['editor1'].setData(response.prescription.symptom)
+                CKEDITOR.instances['editor2'].setData(response.prescription.medicine)
+                CKEDITOR.instances['editor3'].setData(response.prescription.note)
+            });
+        });
+    });
 </script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $(".flashmessage").delay(3000).fadeOut(100);
     });
 </script>

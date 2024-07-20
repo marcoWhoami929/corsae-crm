@@ -29,6 +29,10 @@
 
                                         }
 
+                                        .payment_label {
+                                            text-align: left;
+                                        }
+
                                         .pad_bot {
                                             padding-bottom: 5px;
                                         }
@@ -148,27 +152,27 @@
                                                     <label for="exampleInputEmail1"> <?php echo lang('patient'); ?> <?php echo lang('gender'); ?></label>
                                                     <select class="form-control m-bot15" name="p_gender" value=''>
 
-                                                        <option value="Male" <?php
-                                                                                if (!empty($patient->sex)) {
-                                                                                    if ($patient->sex == 'Male') {
-                                                                                        echo 'selected';
+                                                        <option value="Masculino" <?php
+                                                                                    if (!empty($patient->sex)) {
+                                                                                        if ($patient->sex == 'Masculino') {
+                                                                                            echo 'selected';
+                                                                                        }
                                                                                     }
-                                                                                }
-                                                                                ?>> Male </option>
-                                                        <option value="Female" <?php
-                                                                                if (!empty($patient->sex)) {
-                                                                                    if ($patient->sex == 'Female') {
-                                                                                        echo 'selected';
+                                                                                    ?>> Masculino </option>
+                                                        <option value="Femenino" <?php
+                                                                                    if (!empty($patient->sex)) {
+                                                                                        if ($patient->sex == 'Femenino') {
+                                                                                            echo 'selected';
+                                                                                        }
                                                                                     }
-                                                                                }
-                                                                                ?>> Female </option>
+                                                                                    ?>> Femenino </option>
                                                         <option value="Others" <?php
                                                                                 if (!empty($patient->sex)) {
                                                                                     if ($patient->sex == 'Others') {
                                                                                         echo 'selected';
                                                                                     }
                                                                                 }
-                                                                                ?>> Others </option>
+                                                                                ?>> Otro </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -226,17 +230,17 @@
                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                             ?> <?php
-                                                                        if (!empty($payment->category_name)) {
-                                                                            $category_name = $payment->category_name;
-                                                                            $category_name1 = explode(',', $category_name);
-                                                                            foreach ($category_name1 as $category_name2) {
-                                                                                $category_name3 = explode('*', $category_name2);
-                                                                                if ($category_name3[0] == $category->id) {
-                                                                                    echo 'selected';
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                        ?>><?php echo $category->category; ?></option>
+                                                                                                                                                                                                                                                                                if (!empty($payment->category_name)) {
+                                                                                                                                                                                                                                                                                    $category_name = $payment->category_name;
+                                                                                                                                                                                                                                                                                    $category_name1 = explode(',', $category_name);
+                                                                                                                                                                                                                                                                                    foreach ($category_name1 as $category_name2) {
+                                                                                                                                                                                                                                                                                        $category_name3 = explode('*', $category_name2);
+                                                                                                                                                                                                                                                                                        if ($category_name3[0] == $category->id) {
+                                                                                                                                                                                                                                                                                            echo 'selected';
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                ?>><?php echo $category->category; ?></option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -273,7 +277,7 @@
 
                                                                                                                                             echo $payment->amount;
                                                                                                                                         }
-                                                                                                                                        ?>' placeholder=" " disabled>
+                                                                                                                                        ?>' placeholder="" disabled>
                                                 </div>
 
                                             </div>
@@ -349,12 +353,12 @@
                                                                                                                                                             echo $payment->amount_received;
                                                                                                                                                         }
                                                                                                                                                         ?>' placeholder=" " <?php
-                                                                        if (!empty($payment->deposit_type)) {
-                                                                            if ($payment->deposit_type == 'Card') {
-                                                                                echo 'readonly';
-                                                                            }
-                                                                        }
-                                                                        ?>>
+                                                                                                                                                                            if (!empty($payment->deposit_type)) {
+                                                                                                                                                                                if ($payment->deposit_type == 'Card') {
+                                                                                                                                                                                    echo 'readonly';
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            ?>>
                                                 </div>
 
                                             </div>
@@ -482,9 +486,9 @@
                                                 <?php $twocheckout = $this->db->get_where('paymentGateway', array('name =' => '2Checkout'))->row(); ?>
                                                 <button type="submit" name="pay_now" id="submit-btn" class="btn btn-info row pull-right" <?php if ($settings->payment_gateway == 'Stripe') {
                                                                                                                                             ?>onClick="stripePay(event);" <?php }
-                                                                                    ?><?php if ($settings->payment_gateway == '2Checkout' && $twocheckout->status == 'live') {
-                                                    ?>onClick="twoCheckoutPay(event);" <?php }
-                                                                                        ?>> <?php echo lang('submit'); ?></button>
+                                                                                                                                                                            ?><?php if ($settings->payment_gateway == '2Checkout' && $twocheckout->status == 'live') {
+                                                                                                                                                                                ?>onClick="twoCheckoutPay(event);" <?php }
+                                                                                                                                                                                                                    ?>> <?php echo lang('submit'); ?></button>
                                             </div>
 
                                         </div>

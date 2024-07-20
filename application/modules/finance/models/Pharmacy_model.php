@@ -3,24 +3,29 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Pharmacy_model extends CI_model {
+class Pharmacy_model extends CI_model
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->load->database();
     }
 
-    function insertPayment($data) {
+    function insertPayment($data)
+    {
         $this->db->insert('pharmacy_payment', $data);
     }
 
-    function getPayment() {
+    function getPayment()
+    {
         $this->db->order_by('id', 'desc');
         $query = $this->db->get('pharmacy_payment');
         return $query->result();
     }
 
-    function getPaymentWithoutSearch($order, $dir) {
+    function getPaymentWithoutSearch($order, $dir)
+    {
         if ($order != null) {
             $this->db->order_by($order, $dir);
         } else {
@@ -30,13 +35,15 @@ class Pharmacy_model extends CI_model {
         return $query->result();
     }
 
-    function getPaymentById($id) {
+    function getPaymentById($id)
+    {
         $this->db->where('id', $id);
         $query = $this->db->get('pharmacy_payment');
         return $query->row();
     }
 
-    function getPaymentByKey($page_number, $key) {
+    function getPaymentByKey($page_number, $key)
+    {
         $data_range_1 = 50 * $page_number;
         $this->db->like('id', $key);
         $this->db->order_by('id', 'asc');
@@ -44,87 +51,103 @@ class Pharmacy_model extends CI_model {
         return $query->result();
     }
 
-    function getPaymentByPatientId($id) {
+    function getPaymentByPatientId($id)
+    {
         $this->db->order_by('id', 'desc');
         $this->db->where('patient', $id);
         $query = $this->db->get('pharmacy_payment');
         return $query->result();
     }
 
-    function getPaymentByPageNumber($page_number) {
+    function getPaymentByPageNumber($page_number)
+    {
         $data_range_1 = 50 * $page_number;
         $this->db->order_by('id', 'desc');
         $query = $this->db->get('pharmacy_payment', 50, $data_range_1);
         return $query->result();
     }
 
-    function updatePayment($id, $data) {
+    function updatePayment($id, $data)
+    {
         $this->db->where('id', $id);
         $this->db->update('pharmacy_payment', $data);
     }
 
-    function deletePayment($id) {
+    function deletePayment($id)
+    {
         $this->db->where('id', $id);
         $this->db->delete('pharmacy_payment');
     }
 
-    function insertExpense($data) {
+    function insertExpense($data)
+    {
         $this->db->insert('pharmacy_expense', $data);
     }
 
-    function getExpense() {
+    function getExpense()
+    {
         $this->db->order_by('id', 'desc');
         $query = $this->db->get('pharmacy_expense');
         return $query->result();
     }
 
-    function getExpenseById($id) {
+    function getExpenseById($id)
+    {
         $this->db->where('id', $id);
         $query = $this->db->get('pharmacy_expense');
         return $query->row();
     }
 
-    function updateExpense($id, $data) {
+    function updateExpense($id, $data)
+    {
         $this->db->where('id', $id);
         $this->db->update('pharmacy_expense', $data);
     }
 
-    function insertExpenseCategory($data) {
+    function insertExpenseCategory($data)
+    {
         $this->db->insert('pharmacy_expense_category', $data);
     }
 
-    function getExpenseCategory() {
+    function getExpenseCategory()
+    {
         $query = $this->db->get('pharmacy_expense_category');
         return $query->result();
     }
 
-    function getExpenseCategoryById($id) {
+    function getExpenseCategoryById($id)
+    {
         $this->db->where('id', $id);
         $query = $this->db->get('pharmacy_expense_category');
         return $query->row();
     }
 
-    function updateExpenseCategory($id, $data) {
+    function updateExpenseCategory($id, $data)
+    {
         $this->db->where('id', $id);
         $this->db->update('pharmacy_expense_category', $data);
     }
 
-    function deleteExpense($id) {
+    function deleteExpense($id)
+    {
         $this->db->where('id', $id);
         $this->db->delete('pharmacy_expense');
     }
 
-    function deleteExpenseCategory($id) {
+    function deleteExpenseCategory($id)
+    {
         $this->db->where('id', $id);
         $this->db->delete('pharmacy_expense_category');
     }
 
-    function getDiscountType() {
+    function getDiscountType()
+    {
         $query = $this->db->get('settings');
         return $query->row()->discount;
     }
 
-    function getPaymentByDate($date_from, $date_to) {
+    function getPaymentByDate($date_from, $date_to)
+    {
         $this->db->select('*');
         $this->db->from('pharmacy_payment');
         $this->db->where('date >=', $date_from);
@@ -133,7 +156,8 @@ class Pharmacy_model extends CI_model {
         return $query->result();
     }
 
-    function getExpenseByDate($date_from, $date_to) {
+    function getExpenseByDate($date_from, $date_to)
+    {
         $this->db->select('*');
         $this->db->from('pharmacy_expense');
         $this->db->where('date >=', $date_from);
@@ -142,12 +166,14 @@ class Pharmacy_model extends CI_model {
         return $query->result();
     }
 
-    function amountReceived($id, $data) {
+    function amountReceived($id, $data)
+    {
         $this->db->where('id', $id);
         $query = $this->db->update('pharmacy_payment', $data);
     }
 
-    function todaySalesAmount() {
+    function todaySalesAmount()
+    {
         if (!$this->ion_auth->logged_in()) {
             redirect('auth/login', 'refresh');
         }
@@ -167,7 +193,8 @@ class Pharmacy_model extends CI_model {
         }
     }
 
-    function todayExpensesAmount() {
+    function todayExpensesAmount()
+    {
         if (!$this->ion_auth->logged_in()) {
             redirect('auth/login', 'refresh');
         }
@@ -186,7 +213,8 @@ class Pharmacy_model extends CI_model {
         }
     }
 
-    function getPaymentBySearch($search, $order, $dir) {
+    function getPaymentBySearch($search, $order, $dir)
+    {
         if ($order != null) {
             $this->db->order_by($order, $dir);
         } else {
@@ -197,7 +225,8 @@ class Pharmacy_model extends CI_model {
         return $query->result();
     }
 
-    function getPaymentByLimit($limit, $start, $order, $dir) {
+    function getPaymentByLimit($limit, $start, $order, $dir)
+    {
         if ($order != null) {
             $this->db->order_by($order, $dir);
         } else {
@@ -208,7 +237,8 @@ class Pharmacy_model extends CI_model {
         return $query->result();
     }
 
-    function getPaymentByLimitBySearch($limit, $start, $search, $order, $dir) {
+    function getPaymentByLimitBySearch($limit, $start, $search, $order, $dir)
+    {
         if ($order != null) {
             $this->db->order_by($order, $dir);
         } else {
@@ -220,37 +250,42 @@ class Pharmacy_model extends CI_model {
         return $query->result();
     }
 
-    function getFirstRowPaymentById() {
+    function getFirstRowPaymentById()
+    {
 
         $last = $this->db->order_by('id', "asc")
-                ->limit(1)
-                ->get('pharmacy_payment')
-                ->row();
+            ->limit(1)
+            ->get('pharmacy_payment')
+            ->row();
         return $last;
     }
 
-    function getLastRowPaymentById() {
+    function getLastRowPaymentById()
+    {
 
         $last = $this->db->order_by('id', "desc")
-                ->limit(1)
-                ->get('pharmacy_payment')
-                ->row();
+            ->limit(1)
+            ->get('pharmacy_payment')
+            ->row();
         return $last;
     }
 
-    function getPreviousPaymentById($id) {
+    function getPreviousPaymentById($id)
+    {
         $this->db->where('id', $id);
         $query = $this->db->get('pharmacy_payment');
         return $query->previous_row();
     }
 
-    function getNextPaymentById($id) {
+    function getNextPaymentById($id)
+    {
         $this->db->where('id', $id);
         $query = $this->db->get('pharmacy_payment');
         return $query->row();
     }
 
-    function thisMonthPayment() {
+    function thisMonthPayment()
+    {
         $query = $this->db->get('pharmacy_payment')->result();
         $total = array();
         foreach ($query as $q) {
@@ -265,7 +300,8 @@ class Pharmacy_model extends CI_model {
         }
     }
 
-    function thisMonthExpense() {
+    function thisMonthExpense()
+    {
         $query = $this->db->get('pharmacy_expense')->result();
         $total = array();
         foreach ($query as $q) {
@@ -280,7 +316,8 @@ class Pharmacy_model extends CI_model {
         }
     }
 
-    function thisDayPayment() {
+    function thisDayPayment()
+    {
         $query = $this->db->get('pharmacy_payment')->result();
         $total = array();
         foreach ($query as $q) {
@@ -295,7 +332,8 @@ class Pharmacy_model extends CI_model {
         }
     }
 
-    function thisDayExpense() {
+    function thisDayExpense()
+    {
         $query = $this->db->get('pharmacy_expense')->result();
         $total = array();
         foreach ($query as $q) {
@@ -310,7 +348,8 @@ class Pharmacy_model extends CI_model {
         }
     }
 
-    function thisYearPayment() {
+    function thisYearPayment()
+    {
         $query = $this->db->get('pharmacy_payment')->result();
         $total = array();
         foreach ($query as $q) {
@@ -325,7 +364,8 @@ class Pharmacy_model extends CI_model {
         }
     }
 
-    function thisYearExpense() {
+    function thisYearExpense()
+    {
         $query = $this->db->get('pharmacy_expense')->result();
         $total = array();
         foreach ($query as $q) {
@@ -340,7 +380,8 @@ class Pharmacy_model extends CI_model {
         }
     }
 
-    function getPaymentPerMonthThisYear() {
+    function getPaymentPerMonthThisYear()
+    {
         $query = $this->db->get('pharmacy_payment')->result();
         $total = array();
         foreach ($query as $q) {
@@ -449,7 +490,8 @@ class Pharmacy_model extends CI_model {
         return $total;
     }
 
-    function getExpensePerMonthThisYear() {
+    function getExpensePerMonthThisYear()
+    {
         $query = $this->db->get('pharmacy_expense')->result();
         $total = array();
         foreach ($query as $q) {
@@ -557,5 +599,4 @@ class Pharmacy_model extends CI_model {
 
         return $total;
     }
-
 }

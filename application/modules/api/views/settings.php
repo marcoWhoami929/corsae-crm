@@ -10,13 +10,12 @@
 
 
             <style>
-
                 form {
-                    border: 0px solid #ccc; 
+                    border: 0px solid #ccc;
                     padding: 0px;
                 }
 
-                .panel-default > .panel-heading {
+                .panel-default>.panel-heading {
                     background-color: #f1f1f1 !important;
                 }
 
@@ -24,7 +23,6 @@
                     border-top-color: #ddd;
                     background: #f9f9f9;
                 }
-
             </style>
 
 
@@ -56,67 +54,67 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('title'); ?></label>
                                                         <input type="text" class="form-control" name="title" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->title)) {
-                                                            echo $settings->title;
-                                                        }
-                                                        ?>' placeholder="system name">
+                                                                                                                                            if (!empty($settings->title)) {
+                                                                                                                                                echo $settings->title;
+                                                                                                                                            }
+                                                                                                                                            ?>' placeholder="system name">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('logo'); ?></label>
                                                         <input type="file" class="form-control" name="img_url" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->invoice_logo)) {
-                                                            echo $settings->invoice_logo;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                if (!empty($settings->invoice_logo)) {
+                                                                                                                                                    echo $settings->invoice_logo;
+                                                                                                                                                }
+                                                                                                                                                ?>' placeholder="">
                                                         <span class="help-block">Recommended Size: 200x100</span>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('address'); ?></label>
                                                         <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->address)) {
-                                                            echo $settings->address;
-                                                        }
-                                                        ?>' placeholder="address">
+                                                                                                                                                if (!empty($settings->address)) {
+                                                                                                                                                    echo $settings->address;
+                                                                                                                                                }
+                                                                                                                                                ?>' placeholder="address">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
                                                         <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->phone)) {
-                                                            echo $settings->phone;
-                                                        }
-                                                        ?>' placeholder="phone">
+                                                                                                                                            if (!empty($settings->phone)) {
+                                                                                                                                                echo $settings->phone;
+                                                                                                                                            }
+                                                                                                                                            ?>' placeholder="phone">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('emergency'); ?></label>
                                                         <input type="text" class="form-control" name="emergency" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->emergency)) {
-                                                            echo $settings->emergency;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                if (!empty($settings->emergency)) {
+                                                                                                                                                    echo $settings->emergency;
+                                                                                                                                                }
+                                                                                                                                                ?>' placeholder="">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('support_number'); ?></label>
                                                         <input type="text" class="form-control" name="support" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->support)) {
-                                                            echo $settings->support;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                if (!empty($settings->support)) {
+                                                                                                                                                    echo $settings->support;
+                                                                                                                                                }
+                                                                                                                                                ?>' placeholder="">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('hospital_email'); ?></label>
                                                         <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->email)) {
-                                                            echo $settings->email;
-                                                        }
-                                                        ?>' placeholder="email">
+                                                                                                                                            if (!empty($settings->email)) {
+                                                                                                                                                echo $settings->email;
+                                                                                                                                            }
+                                                                                                                                            ?>' placeholder="email">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('currency'); ?></label>
                                                         <input type="text" class="form-control" name="currency" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->currency)) {
-                                                            echo $settings->currency;
-                                                        }
-                                                        ?>' placeholder="currency">
+                                                                                                                                                if (!empty($settings->currency)) {
+                                                                                                                                                    echo $settings->currency;
+                                                                                                                                                }
+                                                                                                                                                ?>' placeholder="currency">
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,7 +125,7 @@
                                                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false">
                                                         <div class="form-group col-md-6">
                                                             <h4>Block Text Settings</h4>
-                                                        </div> 
+                                                        </div>
                                                     </a>
                                                 </h4>
                                             </div>
@@ -136,28 +134,28 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('block_1_text_under_title'); ?></label>
                                                         <input type="text" class="form-control" name="block_1_text_under_title" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->block_1_text_under_title)) {
-                                                            echo $settings->block_1_text_under_title;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                                if (!empty($settings->block_1_text_under_title)) {
+                                                                                                                                                                    echo $settings->block_1_text_under_title;
+                                                                                                                                                                }
+                                                                                                                                                                ?>' placeholder="">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('service_block__text_under_title'); ?></label>
                                                         <input type="text" class="form-control" name="service_block__text_under_title" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->service_block__text_under_title)) {
-                                                            echo $settings->service_block__text_under_title;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                                        if (!empty($settings->service_block__text_under_title)) {
+                                                                                                                                                                            echo $settings->service_block__text_under_title;
+                                                                                                                                                                        }
+                                                                                                                                                                        ?>' placeholder="">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('doctor_block__text_under_title'); ?></label>
                                                         <input type="text" class="form-control" name="doctor_block__text_under_title" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->doctor_block__text_under_title)) {
-                                                            echo $settings->doctor_block__text_under_title;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                                        if (!empty($settings->doctor_block__text_under_title)) {
+                                                                                                                                                                            echo $settings->doctor_block__text_under_title;
+                                                                                                                                                                        }
+                                                                                                                                                                        ?>' placeholder="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,7 +166,7 @@
                                                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false">
                                                         <div class="form-group col-md-6">
                                                             <h4>Social Settings</h4>
-                                                        </div> 
+                                                        </div>
                                                     </a>
                                                 </h4>
                                             </div>
@@ -179,54 +177,54 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('facebook_id'); ?></label>
                                                         <input type="text" class="form-control" name="facebook_id" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->facebook_id)) {
-                                                            echo $settings->facebook_id;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                    if (!empty($settings->facebook_id)) {
+                                                                                                                                                        echo $settings->facebook_id;
+                                                                                                                                                    }
+                                                                                                                                                    ?>' placeholder="">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('twitter_id'); ?></label>
                                                         <input type="text" class="form-control" name="twitter_id" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->twitter_id)) {
-                                                            echo $settings->twitter_id;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                    if (!empty($settings->twitter_id)) {
+                                                                                                                                                        echo $settings->twitter_id;
+                                                                                                                                                    }
+                                                                                                                                                    ?>' placeholder="">
                                                     </div>
-                                                      <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('twitter_username'); ?></label>
                                                         <input type="text" class="form-control" name="twitter_username" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->twitter_username)) {
-                                                            echo $settings->twitter_username;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                        if (!empty($settings->twitter_username)) {
+                                                                                                                                                            echo $settings->twitter_username;
+                                                                                                                                                        }
+                                                                                                                                                        ?>' placeholder="">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('google_id'); ?></label>
                                                         <input type="text" class="form-control" name="google_id" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->google_id)) {
-                                                            echo $settings->google_id;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                if (!empty($settings->google_id)) {
+                                                                                                                                                    echo $settings->google_id;
+                                                                                                                                                }
+                                                                                                                                                ?>' placeholder="">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('youtube_id'); ?></label>
                                                         <input type="text" class="form-control" name="youtube_id" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->youtube_id)) {
-                                                            echo $settings->youtube_id;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                    if (!empty($settings->youtube_id)) {
+                                                                                                                                                        echo $settings->youtube_id;
+                                                                                                                                                    }
+                                                                                                                                                    ?>' placeholder="">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputEmail1"><?php echo lang('skype_id'); ?></label>
                                                         <input type="text" class="form-control" name="skype_id" id="exampleInputEmail1" value='<?php
-                                                        if (!empty($settings->skype_id)) {
-                                                            echo $settings->skype_id;
-                                                        }
-                                                        ?>' placeholder="">
+                                                                                                                                                if (!empty($settings->skype_id)) {
+                                                                                                                                                    echo $settings->skype_id;
+                                                                                                                                                }
+                                                                                                                                                ?>' placeholder="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -257,11 +255,11 @@
 
 
                                     <input type="hidden" name="id" value='<?php
-                                    if (!empty($settings->id)) {
-                                        echo $settings->id;
-                                    }
-                                    ?>'>
-                                    <button type="submit" name="submit" class="btn btn-info"><?php echo lang('submit'); ?></button>
+                                                                            if (!empty($settings->id)) {
+                                                                                echo $settings->id;
+                                                                            }
+                                                                            ?>'>
+                                    <button type="submit" name="submit" class="btn btn-info"><?php echo 'Actualizar' ?></button>
                                 </form>
                             </div>
                         </section>
@@ -277,7 +275,7 @@
 
 <script src="common/js/codearistos.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $(".flashmessage").delay(3000).fadeOut(100);
     });
 </script>
