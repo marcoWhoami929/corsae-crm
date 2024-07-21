@@ -529,7 +529,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"> <?php echo lang('add_case'); ?></h4>
+                <h4 class="modal-title"> <?php echo 'Añadir Caso' ?></h4>
             </div>
             <div class="modal-body">
                 <form role="form" action="patient/addMedicalHistory" class="clearfix row" method="post" enctype="multipart/form-data">
@@ -551,7 +551,7 @@
                     <input type="hidden" name="patient_id" value='<?php echo $patient->id; ?>'>
                     <input type="hidden" name="id" value=''>
                     <div class="form-group col-md-12">
-                        <button type="submit" name="submit" class="btn btn-info submit_button pull-right">Submit</button>
+                        <button type="submit" name="submit" class="btn btn-info submit_button pull-right">Guardar</button>
                     </div>
                 </form>
             </div>

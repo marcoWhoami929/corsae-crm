@@ -32,64 +32,64 @@ if ($this->ion_auth->in_group('Doctor')) {
                                 <div class="form-group col-md-4">
                                     <label for="exampleInputEmail1"> <?php echo lang('date'); ?></label>
                                     <input type="text" class="form-control default-date-picker" name="date" id="exampleInputEmail1" value='<?php
-                                    if (!empty($setval)) {
-                                        echo set_value('date');
-                                    }
-                                    if (!empty($prescription->date)) {
-                                        echo date('d-m-Y', $prescription->date);
-                                    }
-                                    ?>' placeholder="" readonly="">
+                                                                                                                                            if (!empty($setval)) {
+                                                                                                                                                echo set_value('date');
+                                                                                                                                            }
+                                                                                                                                            if (!empty($prescription->date)) {
+                                                                                                                                                echo date('d-m-Y', $prescription->date);
+                                                                                                                                            }
+                                                                                                                                            ?>' placeholder="" readonly="">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="exampleInputEmail1"> <?php echo lang('patient'); ?></label>
                                     <select class="form-control m-bot15" id="patientchoose" name="patient" value=''>
                                         <?php if (!empty($prescription->patient)) { ?>
-                                            <option value="<?php echo $patients->id; ?>" selected="selected"><?php echo $patients->name; ?> - (<?php echo lang('id'); ?> : <?php echo $patients->id; ?>)</option>  
+                                            <option value="<?php echo $patients->id; ?>" selected="selected"><?php echo $patients->name; ?> - (<?php echo lang('id'); ?> : <?php echo $patients->id; ?>)</option>
                                         <?php } ?>
                                         <?php
                                         if (!empty($setval)) {
                                             $patientdetails = $this->db->get_where('patient', array('id' => set_value('patient')))->row();
-                                            ?>
+                                        ?>
                                             <option value="<?php echo $patientdetails->id; ?>" selected="selected"><?php echo $patientdetails->name; ?> - (<?php echo lang('id'); ?> : <?php echo $patientdetails->id; ?>)</option>
                                         <?php }
                                         ?>
                                     </select>
                                 </div>
                                 <?php if (!$this->ion_auth->in_group('Doctor')) { ?>
-                                    <div class="form-group col-md-4"> 
+                                    <div class="form-group col-md-4">
                                         <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?></label>
                                         <select class="form-control m-bot15" id="doctorchoose" name="doctor" value=''>
                                             <?php if (!empty($prescription->doctor)) { ?>
-                                                <option value="<?php echo $doctors->id; ?>" selected="selected"><?php echo $doctors->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctors->id; ?>)</option>  
+                                                <option value="<?php echo $doctors->id; ?>" selected="selected"><?php echo $doctors->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctors->id; ?>)</option>
                                             <?php } ?>
                                             <?php
                                             if (!empty($setval)) {
                                                 $doctordetails1 = $this->db->get_where('doctor', array('id' => set_value('doctor')))->row();
-                                                ?>
+                                            ?>
                                                 <option value="<?php echo $doctordetails1->id; ?>" selected="selected"><?php echo $doctordetails1->name; ?> -(<?php echo lang('id'); ?> : <?php echo $doctordetails1->id; ?>)</option>
                                             <?php }
                                             ?>
                                         </select>
                                     </div>
                                 <?php } else { ?>
-                                    <div class="form-group col-md-4"> 
+                                    <div class="form-group col-md-4">
                                         <label for="exampleInputEmail1"> <?php echo lang('doctor'); ?></label>
                                         <?php if (!empty($prescription->doctor)) { ?>
                                             <select class="form-control m-bot15" name="doctor" value=''>
-                                                <option value="<?php echo $doctors->id; ?>" selected="selected"><?php echo $doctors->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctors->id; ?>)</option>  
+                                                <option value="<?php echo $doctors->id; ?>" selected="selected"><?php echo $doctors->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctors->id; ?>)</option>
                                             </select>
                                         <?php } else { ?>
                                             <select class="form-control m-bot15" id="doctorchoose1" name="doctor" value=''>
                                                 <?php if (!empty($prescription->doctor)) { ?>
-                                                    <option value="<?php echo $doctors->id; ?>" selected="selected"><?php echo $doctors->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctors->id; ?>)</option>  
+                                                    <option value="<?php echo $doctors->id; ?>" selected="selected"><?php echo $doctors->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctors->id; ?>)</option>
                                                 <?php } ?>
                                                 <?php if (!empty($doctordetails)) { ?>
-                                                    <option value="<?php echo $doctordetails->id; ?>" selected="selected"><?php echo $doctordetails->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctordetails->id; ?>)</option>  
+                                                    <option value="<?php echo $doctordetails->id; ?>" selected="selected"><?php echo $doctordetails->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctordetails->id; ?>)</option>
                                                 <?php } ?>
                                                 <?php
                                                 if (!empty($setval)) {
                                                     $doctordetails1 = $this->db->get_where('doctor', array('id' => set_value('doctor')))->row();
-                                                    ?>
+                                                ?>
                                                     <option value="<?php echo $doctordetails1->id; ?>" selected="selected"><?php echo $doctordetails1->name; ?> - (<?php echo lang('id'); ?> : <?php echo $doctordetails->id; ?>)</option>
                                                 <?php }
                                                 ?>
@@ -104,13 +104,13 @@ if ($this->ion_auth->in_group('Doctor')) {
                                 <div class="form-group col-md-6">
                                     <label class="control-label"><?php echo lang('history'); ?></label>
                                     <textarea class="form-control ckeditor" id="editor1" name="symptom" value="" rows="50" cols="20"><?php
-                                        if (!empty($setval)) {
-                                            echo set_value('symptom');
-                                        }
-                                        if (!empty($prescription->symptom)) {
-                                            echo $prescription->symptom;
-                                        }
-                                        ?></textarea>
+                                                                                                                                        if (!empty($setval)) {
+                                                                                                                                            echo set_value('symptom');
+                                                                                                                                        }
+                                                                                                                                        if (!empty($prescription->symptom)) {
+                                                                                                                                            echo $prescription->symptom;
+                                                                                                                                        }
+                                                                                                                                        ?></textarea>
                                 </div>
 
 
@@ -118,24 +118,24 @@ if ($this->ion_auth->in_group('Doctor')) {
                                 <div class="form-group col-md-6">
                                     <label class="control-label"><?php echo lang('note'); ?></label>
                                     <textarea class="form-control ckeditor" id="editor3" name="note" value="" rows="30" cols="20"><?php
-                                        if (!empty($setval)) {
-                                            echo set_value('note');
-                                        }
-                                        if (!empty($prescription->note)) {
-                                            echo $prescription->note;
-                                        }
-                                        ?></textarea>
+                                                                                                                                    if (!empty($setval)) {
+                                                                                                                                        echo set_value('note');
+                                                                                                                                    }
+                                                                                                                                    if (!empty($prescription->note)) {
+                                                                                                                                        echo $prescription->note;
+                                                                                                                                    }
+                                                                                                                                    ?></textarea>
                                 </div>
 
                                 <div class="form-group col-md-12 medicine_block">
                                     <label class="control-label col-md-3"> <?php echo lang('medicine'); ?></label>
                                     <div class="col-md-9">
                                         <?php if (empty($prescription->medicine)) { ?>
-                                            <select class="form-control m-bot15 medicinee"  id="my_select1_disabled" name="category" value=''>
+                                            <select class="form-control m-bot15 medicinee" id="my_select1_disabled" name="category" value=''>
 
                                             </select>
                                         <?php } else { ?>
-                                            <select name="category"  class="form-control m-bot15 medicinee"  multiple="multiple" id="my_select1_disabled" >
+                                            <select name="category" class="form-control m-bot15 medicinee" multiple="multiple" id="my_select1_disabled">
                                                 <?php
                                                 if (!empty($prescription->medicine)) {
 
@@ -144,12 +144,12 @@ if ($this->ion_auth->in_group('Doctor')) {
                                                     foreach ($prescription_medicine as $key => $value) {
                                                         $prescription_medicine_extended = explode('***', $value);
                                                         $medicine = $this->medicine_model->getMedicineById($prescription_medicine_extended[0]);
-                                                        ?>
-                                                        <option value="<?php echo $medicine->id . '*' . $medicine->name; ?>"  <?php echo 'data-dosage="' . $prescription_medicine_extended[1] . '"' . 'data-frequency="' . $prescription_medicine_extended[2] . '"data-days="' . $prescription_medicine_extended[3] . '"data-instruction="' . $prescription_medicine_extended[4] . '"'; ?> selected="selected">
+                                                ?>
+                                                        <option value="<?php echo $medicine->id . '*' . $medicine->name; ?>" <?php echo 'data-dosage="' . $prescription_medicine_extended[1] . '"' . 'data-frequency="' . $prescription_medicine_extended[2] . '"data-days="' . $prescription_medicine_extended[3] . '"data-instruction="' . $prescription_medicine_extended[4] . '"'; ?> selected="selected">
                                                             <?php echo $medicine->name; ?>
-                                                        </option>                
+                                                        </option>
 
-                                                        <?php
+                                                <?php
                                                     }
                                                 }
                                                 ?>
@@ -171,13 +171,13 @@ if ($this->ion_auth->in_group('Doctor')) {
                                 <div class="form-group col-md-12">
                                     <label class="control-label"><?php echo lang('advice'); ?></label>
                                     <textarea class="form-control ckeditor" id="editor3" name="advice" value="" rows="30" cols="20"><?php
-                                        if (!empty($setval)) {
-                                            echo set_value('advice');
-                                        }
-                                        if (!empty($prescription->advice)) {
-                                            echo $prescription->advice;
-                                        }
-                                        ?>
+                                                                                                                                    if (!empty($setval)) {
+                                                                                                                                        echo set_value('advice');
+                                                                                                                                    }
+                                                                                                                                    if (!empty($prescription->advice)) {
+                                                                                                                                        echo $prescription->advice;
+                                                                                                                                    }
+                                                                                                                                    ?>
                                     </textarea>
                                 </div>
 
@@ -186,10 +186,10 @@ if ($this->ion_auth->in_group('Doctor')) {
                                 <input type="hidden" name="admin" value='admin'>
 
                                 <input type="hidden" name="id" value='<?php
-                                if (!empty($prescription->id)) {
-                                    echo $prescription->id;
-                                }
-                                ?>'>
+                                                                        if (!empty($prescription->id)) {
+                                                                            echo $prescription->id;
+                                                                        }
+                                                                        ?>'>
 
                                 <div class="form-group">
                                     <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo lang('submit'); ?></button>
@@ -216,12 +216,11 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 
 <style>
-
-    form{
+    form {
         border: 0px;
     }
 
-    .med_selected{
+    .med_selected {
         background: #fff;
         padding: 10px 0px;
         margin: 5px;
@@ -239,20 +238,18 @@ if ($this->ion_auth->in_group('Doctor')) {
         font-weight: bold;
     }
 
-    .medicine_block{
+    .medicine_block {
         background: #f1f2f7;
         padding: 50px !important;
     }
-    
-    form input{
+
+    form input {
         text-align: left;
     }
-    
-    .medi_div{
+
+    .medi_div {
         float: left !important;
     }
-
-
 </style>
 
 
@@ -265,12 +262,12 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function() {
         //   $(".medicine").html("");
         var selected = $('#my_select1_disabled').find('option:selected');
         var unselected = $('#my_select1_disabled').find('option:not(:selected)');
         selected.attr('data-selected', '1');
-        $.each(unselected, function (index, value1) {
+        $.each(unselected, function(index, value1) {
             if ($(this).attr('data-selected') == '1') {
                 var value = $(this).val();
                 var res = value.split("*");
@@ -295,7 +292,7 @@ if ($this->ion_auth->in_group('Doctor')) {
 
 
         var count = 0;
-        $.each($('select.medicinee option:selected'), function () {
+        $.each($('select.medicinee option:selected'), function() {
             var value = $(this).val();
             var res = value.split("*");
             // var unit_price = res[1];
@@ -307,8 +304,7 @@ if ($this->ion_auth->in_group('Doctor')) {
             var frequency = $(this).data('frequency');
             var days = $(this).data('days');
             var instruction = $(this).data('instruction');
-            if ($('#med_id-' + id).length)
-            {
+            if ($('#med_id-' + id).length) {
 
             } else {
 
@@ -360,19 +356,16 @@ if ($this->ion_auth->in_group('Doctor')) {
 </section>');
             }
         });
-    }
-    );
-
-
-</script> 
+    });
+</script>
 
 
 
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('.medicinee').change(function () {
+    $(document).ready(function() {
+        $('.medicinee').change(function() {
             //   $(".medicine").html("");
             var count = 0;
 
@@ -380,7 +373,7 @@ if ($this->ion_auth->in_group('Doctor')) {
             var selected = $('#my_select1_disabled').find('option:selected');
             var unselected = $('#my_select1_disabled').find('option:not(:selected)');
             selected.attr('data-selected', '1');
-            $.each(unselected, function (index, value1) {
+            $.each(unselected, function(index, value1) {
                 if ($(this).attr('data-selected') == '1') {
                     var value = $(this).val();
                     var res = value.split("*");
@@ -393,7 +386,7 @@ if ($this->ion_auth->in_group('Doctor')) {
                 }
             });
 
-            $.each($('select.medicinee option:selected'), function () {
+            $.each($('select.medicinee option:selected'), function() {
                 var value = $(this).val();
                 var res = value.split("*");
                 // var unit_price = res[1];
@@ -403,8 +396,7 @@ if ($this->ion_auth->in_group('Doctor')) {
                 var med_name = res[1];
 
 
-                if ($('#med_id-' + id).length)
-                {
+                if ($('#med_id-' + id).length) {
 
                 } else {
 
@@ -459,11 +451,9 @@ if ($this->ion_auth->in_group('Doctor')) {
             });
         });
     });
-
-
-</script> 
+</script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         $("#patientchoose").select2({
             placeholder: '<?php echo lang('select_patient'); ?>',
@@ -473,12 +463,12 @@ if ($this->ion_auth->in_group('Doctor')) {
                 type: "post",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term // search term
                     };
                 },
-                processResults: function (response) {
+                processResults: function(response) {
                     return {
                         results: response
                     };
@@ -495,12 +485,12 @@ if ($this->ion_auth->in_group('Doctor')) {
                 type: "post",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term // search term
                     };
                 },
-                processResults: function (response) {
+                processResults: function(response) {
                     return {
                         results: response
                     };
@@ -517,12 +507,12 @@ if ($this->ion_auth->in_group('Doctor')) {
                 type: "post",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term // search term
                     };
                 },
-                processResults: function (response) {
+                processResults: function(response) {
                     return {
                         results: response
                     };
@@ -538,7 +528,7 @@ if ($this->ion_auth->in_group('Doctor')) {
 </script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         // $(".flashmessage").delay(3000).fadeOut(100);
         // $("#my_select10").select2();
         $('#my_select1').select2({
@@ -551,13 +541,13 @@ if ($this->ion_auth->in_group('Doctor')) {
                 dataType: 'json',
                 type: "post",
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term, // search term
                         page: params.page
                     };
                 },
-                processResults: function (data, params) {
+                processResults: function(data, params) {
                     // parse the results into the format expected by Select2
                     // since we are using custom formatting functions we do not need to
                     // alter the remote JSON data, except to indicate that infinite
@@ -578,7 +568,7 @@ if ($this->ion_auth->in_group('Doctor')) {
     });
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $("#my_select1_disabled").select2({
             placeholder: '<?php echo lang('medicine'); ?>',
             multiple: true,
@@ -588,12 +578,12 @@ if ($this->ion_auth->in_group('Doctor')) {
                 type: "post",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         searchTerm: params.term // search term
                     };
                 },
-                processResults: function (response) {
+                processResults: function(response) {
                     return {
                         results: response
                     };
@@ -602,4 +592,5 @@ if ($this->ion_auth->in_group('Doctor')) {
             }
 
         });
-    });</script>
+    });
+</script>
