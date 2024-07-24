@@ -185,7 +185,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1"> <?php echo 'Existencia' ?></label>
-                        <input type="text" class="form-control" name="quantity" id="exampleInputEmail1" value='' placeholder="">
+                        <input type="text" class="form-control" name="quantity" id="exampleInputEmail1" value='' placeholder="" readonly>
                     </div>
 
                     <div class="form-group col-md-6">
@@ -235,10 +235,11 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1"> <?php echo 'Cantidad' ?></label>
                         <input type="text" class="form-control" name="qty" id="exampleInputEmail1" value='' placeholder="Cantidad a ingresar">
+
                     </div>
 
                     <input type="hidden" name="id" value=''>
-
+                    <input type="hidden" name="box" value='1'>
                     <div class="form-group">
                         <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo 'Agregar Existencia' ?></button>
                     </div>

@@ -17,106 +17,86 @@
                     <div class="clearfix">
                         <div class="col-md-12">
                             <section class="panel row">
-                                <div class = "panel-body">
+                                <div class="panel-body">
                                     <?php echo validation_errors(); ?>
                                     <form role="form" action="medicine/addNewMedicine" class="clearfix" method="post" enctype="multipart/form-data">
                                         <div class="form-group col-md-6">
                                             <label for="exampleInputEmail1"> <?php echo lang('name'); ?></label>
                                             <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->name)) {
-                                                echo $medicine->name;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                                if (!empty($medicine->name)) {
+                                                                                                                                    echo $medicine->name;
+                                                                                                                                }
+                                                                                                                                ?>' placeholder="Nombre del producto">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="exampleInputEmail1"> <?php echo lang('category'); ?></label>
                                             <select class="form-control m-bot15" name="category" value=''>
                                                 <?php foreach ($categories as $category) { ?>
                                                     <option value="<?php echo $category->category; ?>" <?php
-                                                    if (!empty($medicine->category)) {
-                                                        if ($category->category == $medicine->category) {
-                                                            echo 'selected';
-                                                        }
-                                                    }
-                                                    ?> > <?php echo $category->category; ?> </option>
-                                                        <?php } ?> 
+                                                                                                        if (!empty($medicine->category)) {
+                                                                                                            if ($category->category == $medicine->category) {
+                                                                                                                echo 'selected';
+                                                                                                            }
+                                                                                                        }
+                                                                                                        ?>> <?php echo $category->category; ?> </option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="exampleInputEmail1"> <?php echo lang('p_price'); ?></label>
                                             <input type="text" class="form-control" name="price" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->price)) {
-                                                echo $medicine->price;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                                if (!empty($medicine->price)) {
+                                                                                                                                    echo $medicine->price;
+                                                                                                                                }
+                                                                                                                                ?>' placeholder="Precio de Compra">
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="exampleInputEmail1"> <?php echo lang('s_price'); ?></label>
                                             <input type="text" class="form-control" name="s_price" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->s_price)) {
-                                                echo $medicine->s_price;
-                                            }
-                                            ?>' placeholder="">
+                                                                                                                                    if (!empty($medicine->s_price)) {
+                                                                                                                                        echo $medicine->s_price;
+                                                                                                                                    }
+                                                                                                                                    ?>' placeholder="Precio de venta">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="exampleInputEmail1"> <?php echo lang('quantity'); ?></label>
+                                            <input type="text" class="form-control" name="quantity" id="exampleInputEmail1" value='<?php
+                                                                                                                                    if (!empty($medicine->quantity)) {
+                                                                                                                                        echo $medicine->quantity;
+                                                                                                                                    }
+                                                                                                                                    ?>' placeholder="Cantidad inicial">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="exampleInputEmail1"> <?php echo lang('company'); ?></label>
+                                            <input type="text" class="form-control" name="company" id="exampleInputEmail1" value='<?php
+                                                                                                                                    if (!empty($medicine->company)) {
+                                                                                                                                        echo $medicine->company;
+                                                                                                                                    }
+                                                                                                                                    ?>' placeholder="Empresa de compra">
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="exampleInputEmail1"> <?php echo lang('store_box'); ?></label>
                                             <input type="text" class="form-control" name="box" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->box)) {
-                                                echo $medicine->box;
-                                            }
-                                            ?>' placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="exampleInputEmail1"> <?php echo lang('quantity'); ?></label>
-                                            <input type="text" class="form-control" name="quantity" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->quantity)) {
-                                                echo $medicine->quantity;
-                                            }
-                                            ?>' placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="exampleInputEmail1"> <?php echo lang('generic_name'); ?></label>
-                                            <input type="text" class="form-control" name="generic" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->generic)) {
-                                                echo $medicine->generic;
-                                            }
-                                            ?>' placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="exampleInputEmail1"> <?php echo lang('company'); ?></label>
-                                            <input type="text" class="form-control" name="company" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->company)) {
-                                                echo $medicine->company;
-                                            }
-                                            ?>' placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="exampleInputEmail1"> <?php echo lang('effects'); ?></label>
-                                            <input type="text" class="form-control" name="effects" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->effects)) {
-                                                echo $medicine->effects;
-                                            }
-                                            ?>' placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="exampleInputEmail1"> <?php echo lang('expiry_date'); ?></label>
-                                            <input type="text" class="form-control default-date-picker" name="e_date" id="exampleInputEmail1" value='<?php
-                                            if (!empty($medicine->e_date)) {
-                                                echo $medicine->e_date;
-                                            }
-                                            ?>' placeholder="" readonly="">
+                                                                                                                                if (!empty($medicine->box)) {
+                                                                                                                                    echo $medicine->box;
+                                                                                                                                } else {
+                                                                                                                                    echo '1';
+                                                                                                                                }
+                                                                                                                                ?>' placeholder="" readonly>
                                         </div>
 
                                         <input type="hidden" name="id" value='<?php
-                                        if (!empty($medicine->id)) {
-                                            echo $medicine->id;
-                                        }
-                                        ?>'>
+                                                                                if (!empty($medicine->id)) {
+                                                                                    echo $medicine->id;
+                                                                                }
+                                                                                ?>'>
                                         <div class="form-group col-md-12">
-                                            <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo lang('submit'); ?></button>
+                                            <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo 'Guardar Producto' ?></button>
                                         </div>
                                     </form>
-                                    </div>
+                                </div>
 
                             </section>
                         </div>
@@ -133,7 +113,7 @@
 
 
 <style>
-    .wrapper{
+    .wrapper {
         padding: 24px 30px;
     }
 </style>

@@ -340,7 +340,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1"> <?php echo lang('quantity'); ?></label>
-                        <input type="text" class="form-control" name="quantity" id="exampleInputEmail1" value='' placeholder="Cantidad de inicial">
+                        <input type="text" class="form-control" name="quantity" id="exampleInputEmail1" value='' placeholder="Cantidad de inicial" readonly>
                     </div>
 
                     <div class="form-group col-md-6">

@@ -185,6 +185,7 @@ class Medicine extends MX_Controller
                 'product_id' => 0,
                 'box_id' => $box,
                 'operation' => 'initial',
+                'quantity' => $quantity,
             );
             $dataInventory = array(
                 'box_id' => $box,
@@ -200,7 +201,7 @@ class Medicine extends MX_Controller
                 $this->medicine_model->updateMedicine($id, $data);
                 $this->session->set_flashdata('feedback', lang('updated'));
             }
-            //redirect('medicine');
+            redirect('medicine');
         }
     }
 
@@ -218,14 +219,31 @@ class Medicine extends MX_Controller
 
     function load()
     {
+        $periodo = date("n");
         $id = $this->input->post('id');
         $qty = $this->input->post('qty');
+        $box = $this->input->post('box');
         $previous_qty = $this->db->get_where('medicine', array('id' => $id))->row()->quantity;
         $new_qty = $previous_qty + $qty;
         $data = array();
         $data = array('quantity' => $new_qty);
+        $dataOperations = array(
+            'product_id' => $id,
+            'box_id' => $box,
+            'operation' => 'load',
+            'quantity' => $qty,
+            'doc_id' => '',
+        );
+        $dataInventory = array(
+            'box_id' => $box,
+            'product_id' => $id,
+            'quantity' => $qty,
+            'period' => $periodo,
+        );
         $this->medicine_model->updateMedicine($id, $data);
-        $this->session->set_flashdata('feedback', lang('medicine_loaded'));
+        $this->medicine_model->insertOperations($dataOperations);
+        $this->medicine_model->updateInventory($dataInventory);
+        $this->session->set_flashdata('feedback', 'Producto Actualizado');
         redirect('medicine');
     }
 

@@ -123,8 +123,21 @@ class Medicine_model extends CI_model
 
     function updateMedicine($id, $data)
     {
+
         $this->db->where('id', $id);
         $this->db->update('medicine', $data);
+    }
+    function insertOperations($data)
+    {
+        $this->db->insert('operations', $data);
+    }
+    function updateInventory($data)
+    {
+
+        $this->db->set('ent_' . $data["period"] . '', 'ent_' . $data["period"] . '+' . $data["quantity"] . '', FALSE);
+        $this->db->where('box_id', $data["box_id"]);
+        $this->db->where('product_id', $data["product_id"]);
+        $this->db->update('inventory');
     }
 
     function insertMedicineCategory($data)
