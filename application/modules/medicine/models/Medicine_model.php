@@ -179,7 +179,15 @@ class Medicine_model extends CI_model
         $this->db->where('id', $id);
         $this->db->update('medicine_category', $data);
     }
+    function consultMovements($id)
+    {
+        //$this->db->select('COUNT(id) as movements');
+        $this->db->where('product_id', $id);
+        $this->db->where('operation', 'load');
+        $movements = $this->db->get('operations');
 
+        return $movements->num_rows();
+    }
     function deleteMedicine($id)
     {
         $this->db->where('id', $id);

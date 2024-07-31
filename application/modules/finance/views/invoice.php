@@ -523,13 +523,13 @@
                                             $type = ': ';
                                         }
                                         ?> <?php
-                                                $discount = explode('*', $payment->discount);
-                                                if (!empty($discount[1])) {
-                                                    $dis = $discount[0] . ' %  =  ' . $settings->currency . ' ' . $discount[1];
-                                                } else {
-                                                    $dis = $discount[0];
-                                                }
-                                                ?></li>
+                                            $discount = explode('*', $payment->discount);
+                                            if (!empty($discount[1])) {
+                                                $dis = $discount[0] . ' %  =  ' . $settings->currency . ' ' . $discount[1];
+                                            } else {
+                                                $dis = $discount[0];
+                                            }
+                                            ?></li>
                                         <tr class="lasttr">
                                             <td style="width: 30%;"></td>
                                             <td style="width: 20%;"></td>
@@ -609,13 +609,13 @@
                                                                                                             echo ': ' . $settings->currency;
                                                                                                         }
                                                                                                         ?> <?php
-                                                            $discount = explode('*', $payment->discount);
-                                                            if (!empty($discount[1])) {
-                                                                echo $discount[0] . ' %  =  ' . $settings->currency . ' ' . $discount[1];
-                                                            } else {
-                                                                echo $discount[0];
-                                                            }
-                                                            ?></li>
+                                                                                                            $discount = explode('*', $payment->discount);
+                                                                                                            if (!empty($discount[1])) {
+                                                                                                                echo $discount[0] . ' %  =  ' . $settings->currency . ' ' . $discount[1];
+                                                                                                            } else {
+                                                                                                                echo $discount[0];
+                                                                                                            }
+                                                                                                            ?></li>
                                             <?php } ?>
                                             <?php if (!empty($payment->vat)) { ?>
                                                 <li><strong>VAT :</strong> <?php

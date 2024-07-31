@@ -283,10 +283,7 @@
                 $('#editMedicineForm').find('[name="price"]').val(response.medicine.price).end()
                 $('#editMedicineForm').find('[name="s_price"]').val(response.medicine.s_price).end()
                 $('#editMedicineForm').find('[name="quantity"]').val(response.medicine.quantity).end()
-                $('#editMedicineForm').find('[name="generic"]').val(response.medicine.generic).end()
                 $('#editMedicineForm').find('[name="company"]').val(response.medicine.company).end()
-                $('#editMedicineForm').find('[name="effects"]').val(response.medicine.effects).end()
-                $('#editMedicineForm').find('[name="e_date"]').val(response.medicine.e_date).end()
             });
         });
     });

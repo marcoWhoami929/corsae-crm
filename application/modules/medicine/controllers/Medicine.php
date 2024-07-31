@@ -257,9 +257,17 @@ class Medicine extends MX_Controller
     function delete()
     {
         $id = $this->input->get('id');
-        $this->medicine_model->deleteMedicine($id);
-        $this->session->set_flashdata('feedback', lang('deleted'));
-        redirect('medicine');
+        $movements = $this->medicine_model->consultMovements($id);
+
+        if ($movements != 0) {
+
+            $this->session->set_flashdata('feedback', 'No se puede eliminar el producto porque tiene movimientos');
+            redirect('medicine');
+        } else {
+            $this->medicine_model->deleteMedicine($id);
+            $this->session->set_flashdata('feedback', 'Producto eliminado');
+            redirect('medicine');
+        }
     }
 
     public function medicineCategory()
@@ -387,7 +395,7 @@ class Medicine extends MX_Controller
             $load = '<button type="button" class="btn btn-info btn-xs btn_width load" data-toggle="modal" data-id="' . $medicine->id . '">' . lang('load') . '</button>';
             $option1 = '<button type="button" class="btn btn-info btn-xs btn_width editbutton" data-toggle="modal" data-id="' . $medicine->id . '"><i class="fa fa-edit"> </i> ' . lang('edit') . '</button>';
 
-            $option2 = '<a class="btn btn-info btn-xs btn_width delete_button" href="medicine/delete?id=' . $medicine->id . '" onclick="return confirm(\'Are you sure you want to delete this item?\');"><i class="fa fa-trash"> </i> ' . lang('delete') . '</a>';
+            $option2 = '<a class="btn btn-info btn-xs btn_width delete_button" href="medicine/delete?id=' . $medicine->id . '" onclick="return confirm(\'Desea eliminar este producto?\');"><i class="fa fa-trash"> </i> ' . lang('delete') . '</a>';
             $info[] = array(
                 $i,
                 $medicine->name,

@@ -393,7 +393,7 @@
                     </div>
 
                     <input type="hidden" name="id" value=''>
-
+                    <input type="hidden" name="box" value='1'>
                     <div class="form-group">
                         <button type="submit" name="submit" class="btn btn-info pull-right"> <?php echo 'Agregar Existencia' ?></button>
                     </div>
@@ -438,10 +438,7 @@
                 $('#editMedicineForm').find('[name="price"]').val(response.medicine.price).end()
                 $('#editMedicineForm').find('[name="s_price"]').val(response.medicine.s_price).end()
                 $('#editMedicineForm').find('[name="quantity"]').val(response.medicine.quantity).end()
-                $('#editMedicineForm').find('[name="generic"]').val(response.medicine.generic).end()
                 $('#editMedicineForm').find('[name="company"]').val(response.medicine.company).end()
-                $('#editMedicineForm').find('[name="effects"]').val(response.medicine.effects).end()
-                $('#editMedicineForm').find('[name="e_date"]').val(response.medicine.e_date).end()
             });
         });
     });
