@@ -402,8 +402,7 @@ class Prescription extends MX_Controller
                 $medicinelist = '';
                 foreach ($medicine as $key => $value) {
                     $medicine_id = explode('***', $value);
-                    $medicine_name_with_dosage = $this->medicine_model->getMedicineById($medicine_id[0])->name . ' -' . $medicine_id[1];
-                    $medicine_name_with_dosage = $medicine_name_with_dosage . ' | ' . $medicine_id[3] . '<br>';
+                    $medicine_name_with_dosage = $this->medicine_model->getMedicineById($medicine_id[0])->name . '<br>';
                     rtrim($medicine_name_with_dosage, ',');
                     $medicinelist .= '<p>' . $medicine_name_with_dosage . '</p>';
                 }
@@ -496,8 +495,7 @@ class Prescription extends MX_Controller
                 $medicinelist = '';
                 foreach ($medicine as $key => $value) {
                     $medicine_id = explode('***', $value);
-                    $medicine_name_with_dosage = $this->medicine_model->getMedicineById($medicine_id[0])->name . ' -' . $medicine_id[1];
-                    $medicine_name_with_dosage = $medicine_name_with_dosage . ' | ' . $medicine_id[3] . '<br>';
+                    $medicine_name_with_dosage = $this->medicine_model->getMedicineById($medicine_id[0])->name .  '<br>';
                     rtrim($medicine_name_with_dosage, ',');
                     $medicinelist .= '<p>' . $medicine_name_with_dosage . '</p>';
                 }

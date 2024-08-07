@@ -61,7 +61,7 @@
                                 $birthDate = date('m/d/Y', $birthDate);
                                 $birthDate = explode("/", $birthDate);
                                 $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md") ? ((date("Y") - $birthDate[2]) - 1) : (date("Y") - $birthDate[2]));
-                                echo $age . ' Year(s)';
+                                echo $age . ' Año(s)';
                             }
                             ?>
                         </h5>
@@ -119,8 +119,10 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <th><?php echo lang('medicine'); ?></th>
-                                        <th><?php echo lang('instruction'); ?></th>
-                                        <th class="text-right"><?php echo lang('frequency'); ?></th>
+                                        <th><?php echo 'OD' ?></th>
+                                        <th><?php echo 'OI' ?></th>
+                                        <th><?php echo 'Instruccion' ?></th>
+
                                     </thead>
                                     <tbody>
                                         <?php
@@ -131,9 +133,10 @@
                                             <tr>
                                                 <?php $single_medicine = explode('***', $value); ?>
 
-                                                <td class=""><?php echo $this->medicine_model->getMedicineById($single_medicine[0])->name . ' - ' . $single_medicine[1]; ?> </td>
-                                                <td class=""><?php echo $single_medicine[3] . ' - ' . $single_medicine[4]; ?> </td>
-                                                <td class="text-right"><?php echo $single_medicine[2] ?> </td>
+                                                <td class=""><?php echo $this->medicine_model->getMedicineById($single_medicine[0])->name; ?> </td>
+                                                <td class=""><?php echo $single_medicine[1] ?> </td>
+                                                <td><?php echo $single_medicine[2] ?> </td>
+                                                <td class="text-left"><?php echo $single_medicine[4] ?> </td>
                                             </tr>
                                         <?php
                                         }

@@ -2,8 +2,8 @@
 <section id="main-content">
     <section class="wrapper site-min-height">
         <!-- page start-->
-        <header class="panel-heading"> 
-            <?php echo lang('financial_report'); ?> 
+        <header class="panel-heading">
+            <?php echo lang('financial_report'); ?>
             <div class="col-md-1 pull-right">
                 <button class="btn btn-info green no-print pull-right" onclick="javascript:window.print();"><?php echo lang('print'); ?></button>
             </div>
@@ -17,19 +17,19 @@
                             <div class="col-md-6">
                                 <div class="input-group input-large" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
                                     <input type="text" class="form-control dpd1" name="date_from" value="<?php
-                                    if (!empty($from)) {
-                                        echo $from;
-                                    }
-                                    ?>" placeholder="<?php echo lang('date_from'); ?>" readonly="">
+                                                                                                            if (!empty($from)) {
+                                                                                                                echo $from;
+                                                                                                            }
+                                                                                                            ?>" placeholder="<?php echo lang('date_from'); ?>" readonly="">
                                     <span class="input-group-addon"><?php echo lang('to'); ?></span>
                                     <input type="text" class="form-control dpd2" name="date_to" value="<?php
-                                    if (!empty($to)) {
-                                        echo $to;
-                                    }
-                                    ?>" placeholder="<?php echo lang('date_to'); ?>" readonly="">
+                                                                                                        if (!empty($to)) {
+                                                                                                            echo $to;
+                                                                                                        }
+                                                                                                        ?>" placeholder="<?php echo lang('date_to'); ?>" readonly="">
                                 </div>
                                 <div class="row"></div>
-                                <span class="help-block"></span> 
+                                <span class="help-block"></span>
                             </div>
                             <div class="col-md-6 no-print">
                                 <button type="submit" name="submit" class="btn btn-info range_submit"><?php echo lang('submit'); ?></button>
@@ -52,7 +52,7 @@
             <div class="col-lg-7">
                 <section class="panel">
                     <header class="panel-heading">
-                        <?php echo lang('income'); ?> 
+                        <?php echo lang('income'); ?>
                     </header>
                     <table class="table table-striped table-advance table-hover">
                         <thead>
@@ -86,7 +86,7 @@
                                 //  $category_quantity =(array) null;
                                 $category_quantity = array();
                                 if (in_array($category->id, $category_id_for_reports)) {
-                                    ?>
+                            ?>
                                     <tr class="">
                                         <td><?php echo $category->category ?></td>
                                         <td>
@@ -108,35 +108,35 @@
                                             } else {
                                                 echo '0';
                                             }
-                                            ?> 
+                                            ?>
 
 
 
 
                                         </td>
                                         <td><?php echo $settings->currency; ?> <?php
-                                            foreach ($payments as $payment) {
-                                                $category_names_and_amounts = $payment->category_name;
-                                                $category_names_and_amounts = explode(',', $category_names_and_amounts);
-                                                foreach ($category_names_and_amounts as $category_name_and_amount) {
-                                                    $category_name = explode('*', $category_name_and_amount);
-                                                    if (($category->id == $category_name[0])) {
-                                                        $amount_per_category[] = $category_name[1] * $category_name[3];
-                                                    }
-                                                }
-                                            }
-                                            if (!empty($amount_per_category)) {
-                                                echo array_sum($amount_per_category); //*array_sum($category_quantity);
-                                                $total_payment_by_category[] = array_sum($amount_per_category); //*array_sum($category_quantity);
-                                            } else {
-                                                echo '0';
-                                            }
+                                                                                foreach ($payments as $payment) {
+                                                                                    $category_names_and_amounts = $payment->category_name;
+                                                                                    $category_names_and_amounts = explode(',', $category_names_and_amounts);
+                                                                                    foreach ($category_names_and_amounts as $category_name_and_amount) {
+                                                                                        $category_name = explode('*', $category_name_and_amount);
+                                                                                        if (($category->id == $category_name[0])) {
+                                                                                            $amount_per_category[] = $category_name[1] * $category_name[3];
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                if (!empty($amount_per_category)) {
+                                                                                    echo array_sum($amount_per_category); //*array_sum($category_quantity);
+                                                                                    $total_payment_by_category[] = array_sum($amount_per_category); //*array_sum($category_quantity);
+                                                                                } else {
+                                                                                    echo '0';
+                                                                                }
 
-                                            $amount_per_category = NULL;
-                                            ?>
+                                                                                $amount_per_category = NULL;
+                                                                                ?>
                                         </td>
                                     </tr>
-                                    <?php
+                            <?php
                                 }
                             }
                             ?>
@@ -144,7 +144,9 @@
                         </tbody>
                         <tbody>
                             <tr>
-                                <td><h3><?php echo lang('sub_total'); ?> </h3></td>
+                                <td>
+                                    <h3><?php echo lang('sub_total'); ?> </h3>
+                                </td>
                                 <td></td>
                                 <td>
                                     <?php echo $settings->currency; ?>
@@ -154,12 +156,14 @@
                                     } else {
                                         echo '0';
                                     }
-                                    ?> 
+                                    ?>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td><h5><?php echo lang('total'); ?> <?php echo lang('discount'); ?></h5></td>
+                                <td>
+                                    <h5><?php echo lang('total'); ?> <?php echo lang('discount'); ?></h5>
+                                </td>
                                 <td></td>
                                 <td>
                                     <?php echo $settings->currency; ?>
@@ -202,7 +206,9 @@
                             </tr>
                             -->
                             <tr>
-                                <td><h5><i class="fa fa-money-bill-alt"></i> <?php echo lang('gross_income'); ?></h5></td>
+                                <td>
+                                    <h5><i class="fa fa-money-bill-alt"></i> <?php echo lang('gross_income'); ?></h5>
+                                </td>
                                 <td></td>
                                 <td>
                                     <?php echo $settings->currency; ?>
@@ -220,8 +226,11 @@
                                     ?>
                                 </td>
                             </tr>
+
                             <tr>
-                                <td><h5><?php echo lang('total'); ?> <?php echo lang('hospital_amount'); ?></h5></td>
+                                <td>
+                                    <h5><?php echo lang('total'); ?> <?php echo lang('hospital_amount'); ?></h5>
+                                </td>
                                 <td></td>
                                 <td>
                                     <?php echo $settings->currency; ?>
@@ -242,8 +251,11 @@
                                     ?>
                                 </td>
                             </tr>
+
                             <tr>
-                                <td><h5><?php echo lang('total'); ?> <?php echo lang('doctors_amount'); ?></h5></td>
+                                <td>
+                                    <h5><?php echo lang('total'); ?> <?php echo 'Optometristas' ?></h5>
+                                </td>
                                 <td></td>
                                 <td>
                                     <?php echo $settings->currency; ?>
@@ -277,7 +289,7 @@
 
                 <section class="panel">
                     <header class="panel-heading">
-                        <?php echo lang('expense'); ?> 
+                        <?php echo lang('expense'); ?>
                     </header>
                     <table class="table table-striped table-advance table-hover">
                         <thead>
@@ -288,7 +300,7 @@
                         </thead>
                         <tbody>
                             <?php foreach ($expense_categories as $category) { ?>
-                                <tr class=""> 
+                                <tr class="">
                                     <td><?php echo $category->category ?></td>
                                     <td>
                                         <?php echo $settings->currency; ?>
@@ -321,11 +333,11 @@
 
 
             <style>
-                .billl{
+                .billl {
                     background: #39B24F !important;
                 }
 
-                .due{
+                .due {
                     background: #39B1D1 !important;
                 }
             </style>
@@ -399,7 +411,7 @@
                             <div class="row">
                                 <div class="col-xs-4">
                                     <i class="fa fa-money-bill-alt"></i>
-                                    <?php echo lang('gross_doctors_commission'); ?>
+                                    <?php echo 'Comisión Optometristas'; ?>
                                 </div>
                                 <div class="col-xs-8">
                                     <div class="degree">

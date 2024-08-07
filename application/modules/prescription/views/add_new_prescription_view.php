@@ -320,28 +320,18 @@ if ($this->ion_auth->in_group('Doctor')) {
  </div>\n\
 \n\
 <div class = "form-group medicine_sect col-md-2" ><div class=col-md-12>\n\
-<label><?php echo lang("dosage"); ?> </label>\n\
+<label><?php echo 'OI' ?> </label>\n\
 </div>\n\
 <div class=col-md-12><input class = "state medi_div" name = "dosage[]" value = "' + dosage + '" placeholder="100 mg" required>\n\
  </div>\n\
  </div>\n\
 \n\
 <div class = "form-group medicine_sect col-md-2"><div class=col-md-12>\n\
-<label><?php echo lang("frequency"); ?> </label>\n\
+<label><?php echo 'OD' ?> </label>\n\
 </div>\n\
 <div class=col-md-12><input class = "potency medi_div sale" id="salee' + count + '" name = "frequency[]" value = "' + frequency + '" placeholder="1 + 0 + 1" required>\n\
 </div>\n\
 </div>\n\
-\n\
-<div class = "form-group medicine_sect col-md-2"><div class=col-md-12>\n\
-<label>\n\
-<?php echo lang("days"); ?> \n\
-</label>\n\
-</div>\n\
-<div class=col-md-12><input class = "potency medi_div quantity" id="quantity' + count + '" name = "days[]" value = "' + days + '" placeholder="7 days" required>\n\
-</div>\n\
-</div>\n\
-\n\
 \n\<div class = "form-group medicine_sect col-md-2"><div class=col-md-12>\n\
 <label>\n\
 <?php echo lang("instruction"); ?> \n\
@@ -413,34 +403,25 @@ if ($this->ion_auth->in_group('Doctor')) {
  </div>\n\
 \n\
 <div class = "form-group medicine_sect col-md-2" ><div class=col-md-12>\n\
-<label><?php echo lang("dosage"); ?> </label>\n\
+<label><?php echo 'OI' ?> </label>\n\
 </div>\n\
-<div class=col-md-12><input class = "state medi_div" name = "dosage[]" value = "" placeholder="100 mg" required>\n\
+<div class=col-md-12><input class = "state medi_div" name = "dosage[]" value = "" placeholder="OI" required>\n\
  </div>\n\
  </div>\n\
 \n\
 <div class = "form-group medicine_sect col-md-2"><div class=col-md-12>\n\
-<label><?php echo lang("frequency"); ?> </label>\n\
+<label><?php echo  'OD' ?> </label>\n\
 </div>\n\
-<div class=col-md-12><input class = "potency medi_div sale" id="salee' + count + '" name = "frequency[]" value = "" placeholder="1 + 0 + 1" required>\n\
+<div class=col-md-12><input class = "potency medi_div sale" id="salee' + count + '" name = "frequency[]" value = "" placeholder="OD" required>\n\
 </div>\n\
 </div>\n\
 \n\
 <div class = "form-group medicine_sect col-md-2"><div class=col-md-12>\n\
-<label>\n\
-<?php echo lang("days"); ?> \n\
-</label>\n\
-</div>\n\
-<div class=col-md-12><input class = "potency medi_div quantity" id="quantity' + count + '" name = "days[]" value = "" placeholder="7 days" required>\n\
-</div>\n\
-</div>\n\
-\n\
-\n\<div class = "form-group medicine_sect col-md-2"><div class=col-md-12>\n\
 <label>\n\
 <?php echo lang("instruction"); ?> \n\
 </label>\n\
 </div>\n\
-<div class=col-md-12><input class = "potency medi_div quantity" id="quantity' + count + '" name = "instruction[]" value = "" placeholder="After Food" required>\n\
+<div class=col-md-12><input class = "potency medi_div quantity" id="quantity' + count + '" name = "instruction[]" value = "" placeholder="Instrucciones" required>\n\
 </div>\n\
 </div>\n\
 \n\

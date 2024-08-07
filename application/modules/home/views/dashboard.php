@@ -513,9 +513,9 @@
                                 <span><?php echo lang('human_resources'); ?></span>
                             </a>
                             <ul class="sub">
-                                <li><a href="nurse"><i class="fa fa-user"></i><?php echo lang('nurse'); ?></a></li>
+                                <!--<li><a href="nurse"><i class="fa fa-user"></i><?php echo lang('nurse'); ?></a></li>
                                 <li><a href="pharmacist"><i class="fa fa-user"></i><?php echo lang('pharmacist'); ?></a></li>
-                                <li><a href="laboratorist"><i class="fa fa-user"></i><?php echo lang('laboratorist'); ?></a></li>
+                                <li><a href="laboratorist"><i class="fa fa-user"></i><?php echo lang('laboratorist'); ?></a></li>-->
                                 <li><a href="accountant"><i class="fa fa-user"></i><?php echo lang('accountant'); ?></a></li>
                                 <li><a href="receptionist"><i class="fa fa-user"></i><?php echo lang('receptionist'); ?></a></li>
                             </ul>
@@ -722,10 +722,11 @@
 
 
                                 <?php } ?>
-
+                                <!--
                                 <li><a href="report/birth"><i class="fas fa-file-medical"></i><?php echo lang('birth_report'); ?></a></li>
                                 <li><a href="report/operation"><i class="fa fa-wheelchair"></i><?php echo lang('operation_report'); ?></a></li>
                                 <li><a href="report/expire"><i class="fas fa-file-medical"></i><?php echo lang('expire_report'); ?></a></li>
+                                -->
 
                             </ul>
                         </li>
@@ -769,22 +770,7 @@
                     <?php } ?>
                     <?php if ($this->ion_auth->in_group(array('admin'))) { ?>
 
-                        <li class="sub-menu">
-                            <a href="javascript:;">
-                                <i class="fas fa-globe"></i>
-                                <span><?php echo lang('website'); ?></span>
-                            </a>
-                            <ul class="sub">
-                                <li><a href="frontend" target="_blank"><i class="fa fa-globe"></i><?php echo lang('visit_site'); ?></a></li>
-                                <li><a href="frontend/settings"><i class="fa fa-cog"></i><?php echo lang('website_settings'); ?></a></li>
-                                <li><a href="review"><i class="fa fa-cog"></i><?php echo lang('reviews'); ?></a></li>
-                                <li><a href="gridsection"><i class="fa fa-cog"></i><?php echo lang('gridsections'); ?></a></li>
-                                <li><a href="gallery"><i class="fa fa-cog"></i><?php echo lang('gallery'); ?></a></li>
-                                <li><a href="slide"><i class="fa fa-wrench"></i><?php echo lang('slides'); ?></a></li>
-                                <li><a href="service"><i class="fab fa-servicestack"></i><?php echo lang('services'); ?></a></li>
-                                <li><a href="featured"><i class="fa fa-address-card"></i><?php echo lang('featured_doctors'); ?></a></li>
-                            </ul>
-                        </li>
+
 
                         <li class="sub-menu">
                             <a href="javascript:;">
@@ -793,9 +779,10 @@
                             </a>
                             <ul class="sub">
                                 <li><a href="settings"><i class="fa fa-cog"></i><?php echo lang('system_settings'); ?></a></li>
-
+                                <!--
                                 <li><a href="pgateway"><i class="fa fa-credit-card"></i><?php echo lang('payment_gateway'); ?></a></li>
                                 <li><a href="settings/language"><i class="fa fa-language"></i><?php echo lang('language'); ?></a></li>
+                    -->
                                 <?php if ($this->ion_auth->in_group(array('admin'))) { ?>
 
                                     <li><a href="import"><i class="fa fa-arrow-right"></i><?php echo lang('bulk'); ?> <?php echo lang('import'); ?></a></li>

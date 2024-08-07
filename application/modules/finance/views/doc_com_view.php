@@ -1,4 +1,3 @@
-
 <!--sidebar end-->
 <!--main content start-->
 <section id="main-content">
@@ -6,7 +5,7 @@
         <!-- page start-->
         <section class="panel">
             <header class="panel-heading">
-                  <?php echo lang('payments'); ?> || <?php echo lang('doctor'); ?> : <?php echo $this->doctor_model->getDoctorById($doctor)->name; ?>
+                <?php echo lang('payments'); ?> || <?php echo lang('doctor'); ?> : <?php echo $this->doctor_model->getDoctorById($doctor)->name; ?>
             </header>
             <div class="col-md-12">
                 <div class=" panel-body col-md-7">
@@ -18,24 +17,24 @@
                                 <div class="col-md-6">
                                     <div class="input-group input-large" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
                                         <input type="text" class="form-control dpd1" name="date_from" value="<?php
-                                        if (!empty($from)) {
-                                            echo $from;
-                                        }
-                                        ?>" placeholder="<?php echo lang('date_from'); ?>">
+                                                                                                                if (!empty($from)) {
+                                                                                                                    echo $from;
+                                                                                                                }
+                                                                                                                ?>" placeholder="<?php echo lang('date_from'); ?>">
                                         <span class="input-group-addon">To</span>
                                         <input type="text" class="form-control dpd2" name="date_to" value="<?php
-                                        if (!empty($to)) {
-                                            echo $to;
-                                        }
-                                        ?>" placeholder="<?php echo lang('date_to'); ?>">
+                                                                                                            if (!empty($to)) {
+                                                                                                                echo $to;
+                                                                                                            }
+                                                                                                            ?>" placeholder="<?php echo lang('date_to'); ?>">
                                         <input type="hidden" class="form-control dpd2" name="doctor" value="<?php
-                                        if (!empty($doctor)) {
-                                            echo $doctor;
-                                        }
-                                        ?>">
+                                                                                                            if (!empty($doctor)) {
+                                                                                                                echo $doctor;
+                                                                                                            }
+                                                                                                            ?>">
                                     </div>
                                     <div class="row"></div>
-                                    <span class="help-block"></span> 
+                                    <span class="help-block"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <button type="submit" name="submit" class="btn btn-info range_submit"><?php echo lang('submit'); ?></button>
@@ -48,27 +47,23 @@
                     <button class="btn btn-info green no-print pull-right" onclick="javascript:window.print();"><?php echo lang('print'); ?></button>
                 </div>
             </div>
-            
-            
+
+
             <style>
-                
-                
-                #editable-sample_length{
+                #editable-sample_length {
                     display: none;
                 }
-                
-                #editable-sample_info{
+
+                #editable-sample_info {
                     display: none;
                 }
-                
-                .pagination{
+
+                .pagination {
                     display: none;
                 }
-                
-                
             </style>
-            
-            
+
+
             <div class="panel-body col-md-7">
                 <div class="adv-table editable-table ">
                     <div class="space15"></div>
@@ -76,7 +71,7 @@
                         <thead>
                             <tr>
                                 <th><?php echo lang('invoice_id'); ?></th>
-                                <th><?php echo lang('patient'); ?></th>   
+                                <th><?php echo lang('patient'); ?></th>
                                 <th><?php echo lang('date'); ?></th>
                                 <th><?php echo lang('total'); ?></th>
                                 <th><?php echo lang('doctors_commission'); ?></th>
@@ -84,51 +79,50 @@
                         </thead>
                         <tbody>
 
-                        <style>
+                            <style>
+                                .img_url {
+                                    height: 20px;
+                                    width: 20px;
+                                    background-size: contain;
+                                    max-height: 20px;
+                                    border-radius: 100px;
+                                }
 
-                            .img_url{
-                                height:20px;
-                                width:20px;
-                                background-size: contain; 
-                                max-height:20px;
-                                border-radius: 100px;
-                            }
-                            .option_th{
-                                width:18%;
-                            }
+                                .option_th {
+                                    width: 18%;
+                                }
+                            </style>
 
-                        </style>
+                            <?php foreach ($payments as $payment) { ?>
+                                <?php $patient_info = $this->db->get_where('patient', array('id' => $payment->patient))->row(); ?>
 
-                        <?php foreach ($payments as $payment) { ?>
-                            <?php $patient_info = $this->db->get_where('patient', array('id' => $payment->patient))->row(); ?>
+                                <tr class="">
 
-                            <tr class="">
+                                    <td>
+                                        <?php
+                                        echo $payment->id;
+                                        ?>
+                                    </td>
 
-                                <td>
-                                    <?php
-                                    echo $payment->id;
-                                    ?>
-                                </td>
-
-                                <td>
-                                    <?php
-                                    if (!empty($patient_info)) {
-                                        echo $patient_info->name . '</br>' . $patient_info->address . '</br>' . $patient_info->phone;
-                                    }
-                                    ?>
-                                </td>
+                                    <td>
+                                        <?php
+                                        if (!empty($patient_info)) {
+                                            echo $patient_info->name . '</br>' . $patient_info->address . '</br>' . $patient_info->phone;
+                                        }
+                                        ?>
+                                    </td>
 
 
-                                <td><?php echo date('d/m/y', $payment->date); ?></td>
-                                <td><?php echo $settings->currency; ?> <?php echo $payment->gross_total; ?></td>
-                                <td><?php echo $settings->currency; ?> <?php
-                                    if (!empty($payment->doctor)) {
-                                        $doc_com[] = $payment->doctor_amount;
-                                        echo $payment->doctor_amount;
-                                    }
-                                    ?></td>
-                            </tr>
-                        <?php } ?>
+                                    <td><?php echo date('d/m/y', $payment->date); ?></td>
+                                    <td><?php echo $settings->currency; ?> <?php echo $payment->gross_total; ?></td>
+                                    <td><?php echo $settings->currency; ?> <?php
+                                                                            if (!empty($payment->doctor)) {
+                                                                                $doc_com[] = $payment->doctor_amount;
+                                                                                echo $payment->doctor_amount;
+                                                                            }
+                                                                            ?></td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -140,7 +134,7 @@
                         <div class="row">
                             <div class="col-xs-4">
                                 <i class="fa fa-money"></i>
-                                <?php echo lang('total_doctors_commission'); ?>
+                                <?php echo 'Comisión Total Optometristas' ?>
                             </div>
                             <div class="col-xs-8">
                                 <div class="degree">
@@ -171,7 +165,7 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
-                        $(document).ready(function () {
-                            $(".flashmessage").delay(3000).fadeOut(100);
-                        });
+    $(document).ready(function() {
+        $(".flashmessage").delay(3000).fadeOut(100);
+    });
 </script>

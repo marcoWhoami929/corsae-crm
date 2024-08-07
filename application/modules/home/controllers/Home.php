@@ -33,7 +33,7 @@ class Home extends MX_Controller
     public function currentMonth()
     {
         date_default_timezone_set('America/Mazatlan');
-        $date = date('F, Y');
+        $date = date('Y');
         $fecha = substr($date, 0, 10);
         $mes = date('F', strtotime($fecha));
         $anio = date('Y', strtotime($fecha));

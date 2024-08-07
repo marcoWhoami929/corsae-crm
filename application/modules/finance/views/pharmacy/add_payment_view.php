@@ -342,7 +342,7 @@
 
                     } else {
 
-                        $("#editPaymentForm .qfloww").append('<div class="remove1" id="id-div' + id + '"><div class="name pos_element"> Name: ' + res[2] + '</div><div class="company pos_element">Company: ' + res[3] + '</div><div class="price pos_element">price: ' + res[1] + '</div><div class="current_stock pos_element">Current Stock: ' + res[4] + '</div><div class="quantity pos_element">quantity:<div></div>')
+                        $("#editPaymentForm .qfloww").append('<div class="remove1" id="id-div' + id + '"><div class="name pos_element"> Producto: ' + res[2] + '</div><div class="company pos_element">Compañia: ' + res[3] + '</div><div class="price pos_element">Precio: ' + res[1] + '</div><div class="current_stock pos_element">Existencia Actual: ' + res[4] + '</div><div class="quantity pos_element">Cantidad:<div></div>')
                     }
                     var input2 = $('<input>').attr({
                         type: 'text',

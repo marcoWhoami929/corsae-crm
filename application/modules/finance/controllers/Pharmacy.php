@@ -188,7 +188,7 @@ class Pharmacy extends MX_Controller
             $qty = $value;
             if ($current_stock < $qty) {
                 $this->session->set_flashdata('quantity_check', 'No hay stock suficiente de ' . $current_medicine->name);
-                redirect('pharmacy/addPaymentView');
+                redirect('finance/pharmacy/addPaymentView');
             }
             $item_price[] = $unit_price * $value;
             $category_name[] = $key . '*' . $unit_price . '*' . $qty . '*' . $cost;
